@@ -1,0 +1,584 @@
+2022-05-138 00:20:55 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=30m30s81ms).
+2022-05-138 00:48:30 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=27m35s780ms).
+2022-05-138 01:21:30 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=32m29s518ms).
+2022-05-138 01:38:42 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m41s611ms).
+2022-05-138 02:41:54 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h2m42s581ms).
+2022-05-138 04:29:54 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h46m57s586ms).
+2022-05-138 06:18:08 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h47m44s168ms).
+2022-05-138 08:06:22 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h47m44s212ms).
+2022-05-138 09:34:55 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h28m3s263ms).
+2022-05-138 11:23:01 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 7, active threads = 1, queued tasks = 0, completed tasks = 6]
+2022-05-138 11:23:04 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h47m38s514ms).
+2022-05-138 13:11:19 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h47m44s591ms).
+2022-05-138 14:59:33 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h47m44s658ms).
+2022-05-138 16:45:03 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h45m29s567ms).
+2022-05-138 17:12:30 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 0, completed tasks = 7]
+2022-05-138 18:36:44 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h19m10s907ms).
+2022-05-138 19:01:11 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 9, active threads = 1, queued tasks = 0, completed tasks = 8]
+2022-05-138 20:27:30 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h23m46s220ms).
+2022-05-138 21:19:38 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=52m7s170ms).
+2022-05-138 21:35:04 WARN HikariPool-1 - Retrograde clock change detected (housekeeper delta=25s948ms), soft-evicting connections from pool.
+2022-05-138 21:45:59 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 10, active threads = 1, queued tasks = 0, completed tasks = 9]
+2022-05-138 22:15:59 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 11, active threads = 1, queued tasks = 0, completed tasks = 10]
+2022-05-138 22:45:59 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 12, active threads = 1, queued tasks = 0, completed tasks = 11]
+2022-05-138 22:59:45 INFO HV000001: Hibernate Validator 6.2.3.Final
+2022-05-138 22:59:45 INFO Starting AehdbApplication using Java 11.0.7 on guyunmoui-MacBookPro.local with PID 76092 (/Users/plant/CodeFactory/workspace/aehdb/target/classes started by edwin in /Users/plant/CodeFactory/workspace/aehdb)
+2022-05-138 22:59:45 INFO No active profile set, falling back to 1 default profile: "default"
+2022-05-138 22:59:45 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-138 22:59:45 INFO Finished Spring Data repository scanning in 57 ms. Found 3 JPA repository interfaces.
+2022-05-138 22:59:46 INFO Tomcat initialized with port(s): 18080 (http)
+2022-05-138 22:59:46 INFO Initializing ProtocolHandler ["http-nio-18080"]
+2022-05-138 22:59:46 INFO Starting service [Tomcat]
+2022-05-138 22:59:46 INFO Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-138 22:59:46 INFO Initializing Spring embedded WebApplicationContext
+2022-05-138 22:59:46 INFO Root WebApplicationContext: initialization completed in 1132 ms
+2022-05-138 22:59:46 INFO HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-138 22:59:46 INFO HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-05-138 22:59:46 INFO HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-138 22:59:46 DEBUG Adding type registration boolean -> org.hibernate.type.BooleanType@4cae66a8
+2022-05-138 22:59:46 DEBUG Adding type registration boolean -> org.hibernate.type.BooleanType@4cae66a8
+2022-05-138 22:59:46 DEBUG Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@4cae66a8
+2022-05-138 22:59:46 DEBUG Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@2bdab835
+2022-05-138 22:59:46 DEBUG Adding type registration true_false -> org.hibernate.type.TrueFalseType@4f64d9cb
+2022-05-138 22:59:46 DEBUG Adding type registration yes_no -> org.hibernate.type.YesNoType@71567f33
+2022-05-138 22:59:46 DEBUG Adding type registration byte -> org.hibernate.type.ByteType@3855d9b2
+2022-05-138 22:59:46 DEBUG Adding type registration byte -> org.hibernate.type.ByteType@3855d9b2
+2022-05-138 22:59:46 DEBUG Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@3855d9b2
+2022-05-138 22:59:46 DEBUG Adding type registration character -> org.hibernate.type.CharacterType@532dacf5
+2022-05-138 22:59:46 DEBUG Adding type registration char -> org.hibernate.type.CharacterType@532dacf5
+2022-05-138 22:59:46 DEBUG Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@532dacf5
+2022-05-138 22:59:46 DEBUG Adding type registration short -> org.hibernate.type.ShortType@2f4d01b6
+2022-05-138 22:59:46 DEBUG Adding type registration short -> org.hibernate.type.ShortType@2f4d01b6
+2022-05-138 22:59:46 DEBUG Adding type registration java.lang.Short -> org.hibernate.type.ShortType@2f4d01b6
+2022-05-138 22:59:46 DEBUG Adding type registration integer -> org.hibernate.type.IntegerType@661e279d
+2022-05-138 22:59:46 DEBUG Adding type registration int -> org.hibernate.type.IntegerType@661e279d
+2022-05-138 22:59:46 DEBUG Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@661e279d
+2022-05-138 22:59:46 DEBUG Adding type registration long -> org.hibernate.type.LongType@32e5af53
+2022-05-138 22:59:46 DEBUG Adding type registration long -> org.hibernate.type.LongType@32e5af53
+2022-05-138 22:59:46 DEBUG Adding type registration java.lang.Long -> org.hibernate.type.LongType@32e5af53
+2022-05-138 22:59:46 DEBUG Adding type registration float -> org.hibernate.type.FloatType@27bcb4ad
+2022-05-138 22:59:46 DEBUG Adding type registration float -> org.hibernate.type.FloatType@27bcb4ad
+2022-05-138 22:59:46 DEBUG Adding type registration java.lang.Float -> org.hibernate.type.FloatType@27bcb4ad
+2022-05-138 22:59:46 DEBUG Adding type registration double -> org.hibernate.type.DoubleType@1e191150
+2022-05-138 22:59:46 DEBUG Adding type registration double -> org.hibernate.type.DoubleType@1e191150
+2022-05-138 22:59:46 DEBUG Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@1e191150
+2022-05-138 22:59:46 DEBUG Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@aca3c85
+2022-05-138 22:59:46 DEBUG Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@aca3c85
+2022-05-138 22:59:46 DEBUG Adding type registration big_integer -> org.hibernate.type.BigIntegerType@69a373fd
+2022-05-138 22:59:46 DEBUG Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@69a373fd
+2022-05-138 22:59:46 DEBUG Adding type registration string -> org.hibernate.type.StringType@6df11e91
+2022-05-138 22:59:46 DEBUG Adding type registration java.lang.String -> org.hibernate.type.StringType@6df11e91
+2022-05-138 22:59:46 DEBUG Adding type registration nstring -> org.hibernate.type.StringNVarcharType@53cddaf8
+2022-05-138 22:59:46 DEBUG Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@7de35070
+2022-05-138 22:59:46 DEBUG Adding type registration url -> org.hibernate.type.UrlType@8b41ad
+2022-05-138 22:59:46 DEBUG Adding type registration java.net.URL -> org.hibernate.type.UrlType@8b41ad
+2022-05-138 22:59:46 DEBUG Adding type registration Duration -> org.hibernate.type.DurationType@4a9b3956
+2022-05-138 22:59:46 DEBUG Adding type registration java.time.Duration -> org.hibernate.type.DurationType@4a9b3956
+2022-05-138 22:59:46 DEBUG Adding type registration Instant -> org.hibernate.type.InstantType@3c16528d
+2022-05-138 22:59:46 DEBUG Adding type registration java.time.Instant -> org.hibernate.type.InstantType@3c16528d
+2022-05-138 22:59:46 DEBUG Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@203b953c
+2022-05-138 22:59:46 DEBUG Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@203b953c
+2022-05-138 22:59:46 DEBUG Adding type registration LocalDate -> org.hibernate.type.LocalDateType@51fe7f15
+2022-05-138 22:59:46 DEBUG Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@51fe7f15
+2022-05-138 22:59:46 DEBUG Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@7bede4ea
+2022-05-138 22:59:46 DEBUG Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@7bede4ea
+2022-05-138 22:59:46 DEBUG Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@5a3cf878
+2022-05-138 22:59:46 DEBUG Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@5a3cf878
+2022-05-138 22:59:46 DEBUG Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@1b409a79
+2022-05-138 22:59:46 DEBUG Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@1b409a79
+2022-05-138 22:59:46 DEBUG Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@539316bb
+2022-05-138 22:59:46 DEBUG Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@539316bb
+2022-05-138 22:59:46 DEBUG Adding type registration date -> org.hibernate.type.DateType@65d9e72a
+2022-05-138 22:59:46 DEBUG Adding type registration java.sql.Date -> org.hibernate.type.DateType@65d9e72a
+2022-05-138 22:59:46 DEBUG Adding type registration time -> org.hibernate.type.TimeType@464aeb09
+2022-05-138 22:59:46 DEBUG Adding type registration java.sql.Time -> org.hibernate.type.TimeType@464aeb09
+2022-05-138 22:59:46 DEBUG Adding type registration timestamp -> org.hibernate.type.TimestampType@b7d2d51
+2022-05-138 22:59:46 DEBUG Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@b7d2d51
+2022-05-138 22:59:46 DEBUG Adding type registration java.util.Date -> org.hibernate.type.TimestampType@b7d2d51
+2022-05-138 22:59:46 DEBUG Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@66b0e207
+2022-05-138 22:59:46 DEBUG Adding type registration calendar -> org.hibernate.type.CalendarType@6a96d639
+2022-05-138 22:59:46 DEBUG Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@6a96d639
+2022-05-138 22:59:46 DEBUG Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@6a96d639
+2022-05-138 22:59:46 DEBUG Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@1e120628
+2022-05-138 22:59:46 DEBUG Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@baa9ce4
+2022-05-138 22:59:46 DEBUG Adding type registration locale -> org.hibernate.type.LocaleType@49653791
+2022-05-138 22:59:46 DEBUG Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@49653791
+2022-05-138 22:59:46 DEBUG Adding type registration currency -> org.hibernate.type.CurrencyType@25214797
+2022-05-138 22:59:46 DEBUG Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@25214797
+2022-05-138 22:59:46 DEBUG Adding type registration timezone -> org.hibernate.type.TimeZoneType@5d5d3a5c
+2022-05-138 22:59:46 DEBUG Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@5d5d3a5c
+2022-05-138 22:59:46 DEBUG Adding type registration class -> org.hibernate.type.ClassType@50a7c72b
+2022-05-138 22:59:46 DEBUG Adding type registration java.lang.Class -> org.hibernate.type.ClassType@50a7c72b
+2022-05-138 22:59:46 DEBUG Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@d108406
+2022-05-138 22:59:46 DEBUG Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@d108406
+2022-05-138 22:59:46 DEBUG Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@6a5dd083
+2022-05-138 22:59:46 DEBUG Adding type registration binary -> org.hibernate.type.BinaryType@7f5ce33e
+2022-05-138 22:59:46 DEBUG Adding type registration byte[] -> org.hibernate.type.BinaryType@7f5ce33e
+2022-05-138 22:59:46 DEBUG Adding type registration [B -> org.hibernate.type.BinaryType@7f5ce33e
+2022-05-138 22:59:46 DEBUG Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@6eede35e
+2022-05-138 22:59:46 DEBUG Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@6eede35e
+2022-05-138 22:59:46 DEBUG Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@6eede35e
+2022-05-138 22:59:46 DEBUG Adding type registration row_version -> org.hibernate.type.RowVersionType@46d0f89c
+2022-05-138 22:59:46 DEBUG Adding type registration image -> org.hibernate.type.ImageType@5773d271
+2022-05-138 22:59:46 DEBUG Adding type registration characters -> org.hibernate.type.CharArrayType@76e6c070
+2022-05-138 22:59:46 DEBUG Adding type registration char[] -> org.hibernate.type.CharArrayType@76e6c070
+2022-05-138 22:59:46 DEBUG Adding type registration [C -> org.hibernate.type.CharArrayType@76e6c070
+2022-05-138 22:59:46 DEBUG Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@4ebd6fd6
+2022-05-138 22:59:46 DEBUG Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@4ebd6fd6
+2022-05-138 22:59:46 DEBUG Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@4ebd6fd6
+2022-05-138 22:59:46 DEBUG Adding type registration text -> org.hibernate.type.TextType@4438938e
+2022-05-138 22:59:46 DEBUG Adding type registration ntext -> org.hibernate.type.NTextType@91a2543
+2022-05-138 22:59:46 DEBUG Adding type registration blob -> org.hibernate.type.BlobType@51eb0e84
+2022-05-138 22:59:46 DEBUG Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@51eb0e84
+2022-05-138 22:59:46 DEBUG Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@6775c0d1
+2022-05-138 22:59:46 DEBUG Adding type registration clob -> org.hibernate.type.ClobType@53bb71e5
+2022-05-138 22:59:46 DEBUG Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@53bb71e5
+2022-05-138 22:59:46 DEBUG Adding type registration nclob -> org.hibernate.type.NClobType@51ed2f68
+2022-05-138 22:59:46 DEBUG Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@51ed2f68
+2022-05-138 22:59:46 DEBUG Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@28cb86b2
+2022-05-138 22:59:46 DEBUG Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@3b3056a6
+2022-05-138 22:59:46 DEBUG Adding type registration serializable -> org.hibernate.type.SerializableType@7d8b66d9
+2022-05-138 22:59:46 DEBUG Adding type registration object -> org.hibernate.type.ObjectType@362a561e
+2022-05-138 22:59:46 DEBUG Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@362a561e
+2022-05-138 22:59:46 DEBUG Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@6b9697ae
+2022-05-138 22:59:46 DEBUG Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@5cf0673d
+2022-05-138 22:59:46 DEBUG Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@40c76f5a
+2022-05-138 22:59:46 DEBUG Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@a323a5b
+2022-05-138 22:59:46 DEBUG Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@5546e754
+2022-05-138 22:59:46 DEBUG Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@ad0bb4e
+2022-05-138 22:59:46 DEBUG Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@7196a8f1
+2022-05-138 22:59:46 DEBUG Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@6a6da47a
+2022-05-138 22:59:46 INFO HikariPool-1 - Starting...
+2022-05-138 22:59:46 INFO HikariPool-1 - Start completed.
+2022-05-138 22:59:46 INFO HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-05-138 22:59:46 DEBUG Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@59a2d756
+2022-05-138 22:59:46 DEBUG Adding type registration java.util.UUID -> org.hibernate.type.PostgresUUIDType@59a2d756
+2022-05-138 22:59:46 DEBUG HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@d108406
+2022-05-138 22:59:46 DEBUG Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@2b6262bc] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@5cffec7]
+2022-05-138 22:59:46 DEBUG Could not find matching scoped JavaTypeDescriptor for requested Java class [aehdb.comm.model.converter.TFCodeConverter]; falling back to static registry
+2022-05-138 22:59:46 DEBUG Could not find matching scoped JavaTypeDescriptor for requested Java class [java.lang.String]; falling back to static registry
+2022-05-138 22:59:46 DEBUG Created AttributeConverterTypeAdapter -> converted::aehdb.comm.model.converter.TFCodeConverter
+2022-05-138 22:59:46 DEBUG Using ORDINAL-based conversion for Enum aehdb.chat.chat.model.dto.MessageDto$MESSAGETYPE
+2022-05-138 22:59:46 DEBUG Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@2b6262bc] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@6ca33187]
+2022-05-138 22:59:47 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-138 22:59:47 TRACE Handling #sessionFactoryCreated from [org.hibernate.internal.SessionFactoryImpl@6ca33187] for TypeConfiguration
+2022-05-138 22:59:47 INFO Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-138 22:59:47 WARN spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-138 22:59:47 WARN 
+
+Using generated security password: 2cd0cf7e-fddb-4f8b-b384-48d134046747
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2022-05-138 22:59:47 INFO Will not secure any request
+2022-05-138 22:59:48 INFO Starting ProtocolHandler ["http-nio-18080"]
+2022-05-138 22:59:48 INFO Tomcat started on port(s): 18080 (http) with context path ''
+2022-05-138 22:59:48 INFO Starting...
+2022-05-138 22:59:48 INFO BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@3df4cd96]]
+2022-05-138 22:59:48 INFO Started.
+2022-05-138 22:59:48 INFO Started AehdbApplication in 3.337 seconds (JVM running for 4.373)
+2022-05-138 23:00:47 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2022-05-138 23:03:34 INFO Application shutdown requested.
+2022-05-138 23:03:34 INFO Stopping...
+2022-05-138 23:03:34 INFO BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@3df4cd96]]
+2022-05-138 23:03:34 INFO Stopped.
+2022-05-138 23:03:34 INFO Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-138 23:03:34 TRACE Handling #sessionFactoryClosed from [org.hibernate.internal.SessionFactoryImpl@6ca33187] for TypeConfiguration
+2022-05-138 23:03:34 DEBUG Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@44c3ff42] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@6ca33187]
+2022-05-138 23:03:34 INFO HikariPool-1 - Shutdown initiated...
+2022-05-138 23:03:34 INFO HikariPool-1 - Shutdown completed.
+2022-05-138 23:03:38 INFO HV000001: Hibernate Validator 6.2.3.Final
+2022-05-138 23:03:38 INFO Starting AehdbApplication using Java 11.0.7 on guyunmoui-MacBookPro.local with PID 76228 (/Users/plant/CodeFactory/workspace/aehdb/target/classes started by edwin in /Users/plant/CodeFactory/workspace/aehdb)
+2022-05-138 23:03:38 INFO No active profile set, falling back to 1 default profile: "default"
+2022-05-138 23:03:38 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-138 23:03:38 INFO Finished Spring Data repository scanning in 50 ms. Found 3 JPA repository interfaces.
+2022-05-138 23:03:39 INFO Tomcat initialized with port(s): 18080 (http)
+2022-05-138 23:03:39 INFO Initializing ProtocolHandler ["http-nio-18080"]
+2022-05-138 23:03:39 INFO Starting service [Tomcat]
+2022-05-138 23:03:39 INFO Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-138 23:03:39 INFO Initializing Spring embedded WebApplicationContext
+2022-05-138 23:03:39 INFO Root WebApplicationContext: initialization completed in 1076 ms
+2022-05-138 23:03:39 INFO HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-138 23:03:39 INFO HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-05-138 23:03:39 INFO HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-138 23:03:39 DEBUG Adding type registration boolean -> org.hibernate.type.BooleanType@4cae66a8
+2022-05-138 23:03:39 DEBUG Adding type registration boolean -> org.hibernate.type.BooleanType@4cae66a8
+2022-05-138 23:03:39 DEBUG Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@4cae66a8
+2022-05-138 23:03:39 DEBUG Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@2bdab835
+2022-05-138 23:03:39 DEBUG Adding type registration true_false -> org.hibernate.type.TrueFalseType@4f64d9cb
+2022-05-138 23:03:39 DEBUG Adding type registration yes_no -> org.hibernate.type.YesNoType@71567f33
+2022-05-138 23:03:39 DEBUG Adding type registration byte -> org.hibernate.type.ByteType@3855d9b2
+2022-05-138 23:03:39 DEBUG Adding type registration byte -> org.hibernate.type.ByteType@3855d9b2
+2022-05-138 23:03:39 DEBUG Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@3855d9b2
+2022-05-138 23:03:39 DEBUG Adding type registration character -> org.hibernate.type.CharacterType@532dacf5
+2022-05-138 23:03:39 DEBUG Adding type registration char -> org.hibernate.type.CharacterType@532dacf5
+2022-05-138 23:03:39 DEBUG Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@532dacf5
+2022-05-138 23:03:39 DEBUG Adding type registration short -> org.hibernate.type.ShortType@2f4d01b6
+2022-05-138 23:03:39 DEBUG Adding type registration short -> org.hibernate.type.ShortType@2f4d01b6
+2022-05-138 23:03:39 DEBUG Adding type registration java.lang.Short -> org.hibernate.type.ShortType@2f4d01b6
+2022-05-138 23:03:39 DEBUG Adding type registration integer -> org.hibernate.type.IntegerType@661e279d
+2022-05-138 23:03:39 DEBUG Adding type registration int -> org.hibernate.type.IntegerType@661e279d
+2022-05-138 23:03:39 DEBUG Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@661e279d
+2022-05-138 23:03:39 DEBUG Adding type registration long -> org.hibernate.type.LongType@32e5af53
+2022-05-138 23:03:39 DEBUG Adding type registration long -> org.hibernate.type.LongType@32e5af53
+2022-05-138 23:03:39 DEBUG Adding type registration java.lang.Long -> org.hibernate.type.LongType@32e5af53
+2022-05-138 23:03:39 DEBUG Adding type registration float -> org.hibernate.type.FloatType@27bcb4ad
+2022-05-138 23:03:39 DEBUG Adding type registration float -> org.hibernate.type.FloatType@27bcb4ad
+2022-05-138 23:03:39 DEBUG Adding type registration java.lang.Float -> org.hibernate.type.FloatType@27bcb4ad
+2022-05-138 23:03:39 DEBUG Adding type registration double -> org.hibernate.type.DoubleType@1e191150
+2022-05-138 23:03:39 DEBUG Adding type registration double -> org.hibernate.type.DoubleType@1e191150
+2022-05-138 23:03:39 DEBUG Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@1e191150
+2022-05-138 23:03:39 DEBUG Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@aca3c85
+2022-05-138 23:03:39 DEBUG Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@aca3c85
+2022-05-138 23:03:39 DEBUG Adding type registration big_integer -> org.hibernate.type.BigIntegerType@69a373fd
+2022-05-138 23:03:39 DEBUG Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@69a373fd
+2022-05-138 23:03:39 DEBUG Adding type registration string -> org.hibernate.type.StringType@6df11e91
+2022-05-138 23:03:39 DEBUG Adding type registration java.lang.String -> org.hibernate.type.StringType@6df11e91
+2022-05-138 23:03:39 DEBUG Adding type registration nstring -> org.hibernate.type.StringNVarcharType@53cddaf8
+2022-05-138 23:03:39 DEBUG Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@7de35070
+2022-05-138 23:03:39 DEBUG Adding type registration url -> org.hibernate.type.UrlType@8b41ad
+2022-05-138 23:03:39 DEBUG Adding type registration java.net.URL -> org.hibernate.type.UrlType@8b41ad
+2022-05-138 23:03:39 DEBUG Adding type registration Duration -> org.hibernate.type.DurationType@4a9b3956
+2022-05-138 23:03:39 DEBUG Adding type registration java.time.Duration -> org.hibernate.type.DurationType@4a9b3956
+2022-05-138 23:03:39 DEBUG Adding type registration Instant -> org.hibernate.type.InstantType@3c16528d
+2022-05-138 23:03:39 DEBUG Adding type registration java.time.Instant -> org.hibernate.type.InstantType@3c16528d
+2022-05-138 23:03:39 DEBUG Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@203b953c
+2022-05-138 23:03:39 DEBUG Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@203b953c
+2022-05-138 23:03:39 DEBUG Adding type registration LocalDate -> org.hibernate.type.LocalDateType@51fe7f15
+2022-05-138 23:03:39 DEBUG Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@51fe7f15
+2022-05-138 23:03:39 DEBUG Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@7bede4ea
+2022-05-138 23:03:39 DEBUG Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@7bede4ea
+2022-05-138 23:03:39 DEBUG Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@5a3cf878
+2022-05-138 23:03:39 DEBUG Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@5a3cf878
+2022-05-138 23:03:39 DEBUG Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@1b409a79
+2022-05-138 23:03:39 DEBUG Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@1b409a79
+2022-05-138 23:03:39 DEBUG Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@539316bb
+2022-05-138 23:03:39 DEBUG Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@539316bb
+2022-05-138 23:03:39 DEBUG Adding type registration date -> org.hibernate.type.DateType@65d9e72a
+2022-05-138 23:03:39 DEBUG Adding type registration java.sql.Date -> org.hibernate.type.DateType@65d9e72a
+2022-05-138 23:03:39 DEBUG Adding type registration time -> org.hibernate.type.TimeType@464aeb09
+2022-05-138 23:03:39 DEBUG Adding type registration java.sql.Time -> org.hibernate.type.TimeType@464aeb09
+2022-05-138 23:03:39 DEBUG Adding type registration timestamp -> org.hibernate.type.TimestampType@b7d2d51
+2022-05-138 23:03:39 DEBUG Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@b7d2d51
+2022-05-138 23:03:39 DEBUG Adding type registration java.util.Date -> org.hibernate.type.TimestampType@b7d2d51
+2022-05-138 23:03:39 DEBUG Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@66b0e207
+2022-05-138 23:03:39 DEBUG Adding type registration calendar -> org.hibernate.type.CalendarType@6a96d639
+2022-05-138 23:03:39 DEBUG Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@6a96d639
+2022-05-138 23:03:39 DEBUG Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@6a96d639
+2022-05-138 23:03:39 DEBUG Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@1e120628
+2022-05-138 23:03:39 DEBUG Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@baa9ce4
+2022-05-138 23:03:39 DEBUG Adding type registration locale -> org.hibernate.type.LocaleType@49653791
+2022-05-138 23:03:39 DEBUG Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@49653791
+2022-05-138 23:03:39 DEBUG Adding type registration currency -> org.hibernate.type.CurrencyType@25214797
+2022-05-138 23:03:39 DEBUG Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@25214797
+2022-05-138 23:03:39 DEBUG Adding type registration timezone -> org.hibernate.type.TimeZoneType@5d5d3a5c
+2022-05-138 23:03:39 DEBUG Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@5d5d3a5c
+2022-05-138 23:03:39 DEBUG Adding type registration class -> org.hibernate.type.ClassType@50a7c72b
+2022-05-138 23:03:39 DEBUG Adding type registration java.lang.Class -> org.hibernate.type.ClassType@50a7c72b
+2022-05-138 23:03:39 DEBUG Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@d108406
+2022-05-138 23:03:39 DEBUG Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@d108406
+2022-05-138 23:03:39 DEBUG Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@6a5dd083
+2022-05-138 23:03:39 DEBUG Adding type registration binary -> org.hibernate.type.BinaryType@7f5ce33e
+2022-05-138 23:03:39 DEBUG Adding type registration byte[] -> org.hibernate.type.BinaryType@7f5ce33e
+2022-05-138 23:03:39 DEBUG Adding type registration [B -> org.hibernate.type.BinaryType@7f5ce33e
+2022-05-138 23:03:39 DEBUG Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@6eede35e
+2022-05-138 23:03:39 DEBUG Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@6eede35e
+2022-05-138 23:03:39 DEBUG Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@6eede35e
+2022-05-138 23:03:39 DEBUG Adding type registration row_version -> org.hibernate.type.RowVersionType@46d0f89c
+2022-05-138 23:03:39 DEBUG Adding type registration image -> org.hibernate.type.ImageType@5773d271
+2022-05-138 23:03:39 DEBUG Adding type registration characters -> org.hibernate.type.CharArrayType@76e6c070
+2022-05-138 23:03:39 DEBUG Adding type registration char[] -> org.hibernate.type.CharArrayType@76e6c070
+2022-05-138 23:03:39 DEBUG Adding type registration [C -> org.hibernate.type.CharArrayType@76e6c070
+2022-05-138 23:03:39 DEBUG Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@4ebd6fd6
+2022-05-138 23:03:39 DEBUG Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@4ebd6fd6
+2022-05-138 23:03:39 DEBUG Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@4ebd6fd6
+2022-05-138 23:03:39 DEBUG Adding type registration text -> org.hibernate.type.TextType@4438938e
+2022-05-138 23:03:39 DEBUG Adding type registration ntext -> org.hibernate.type.NTextType@91a2543
+2022-05-138 23:03:39 DEBUG Adding type registration blob -> org.hibernate.type.BlobType@51eb0e84
+2022-05-138 23:03:39 DEBUG Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@51eb0e84
+2022-05-138 23:03:39 DEBUG Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@6775c0d1
+2022-05-138 23:03:39 DEBUG Adding type registration clob -> org.hibernate.type.ClobType@53bb71e5
+2022-05-138 23:03:39 DEBUG Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@53bb71e5
+2022-05-138 23:03:39 DEBUG Adding type registration nclob -> org.hibernate.type.NClobType@51ed2f68
+2022-05-138 23:03:39 DEBUG Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@51ed2f68
+2022-05-138 23:03:39 DEBUG Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@28cb86b2
+2022-05-138 23:03:39 DEBUG Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@3b3056a6
+2022-05-138 23:03:39 DEBUG Adding type registration serializable -> org.hibernate.type.SerializableType@7d8b66d9
+2022-05-138 23:03:39 DEBUG Adding type registration object -> org.hibernate.type.ObjectType@362a561e
+2022-05-138 23:03:39 DEBUG Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@362a561e
+2022-05-138 23:03:39 DEBUG Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@6b9697ae
+2022-05-138 23:03:39 DEBUG Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@5cf0673d
+2022-05-138 23:03:39 DEBUG Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@40c76f5a
+2022-05-138 23:03:39 DEBUG Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@a323a5b
+2022-05-138 23:03:39 DEBUG Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@5546e754
+2022-05-138 23:03:39 DEBUG Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@ad0bb4e
+2022-05-138 23:03:39 DEBUG Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@7196a8f1
+2022-05-138 23:03:39 DEBUG Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@6a6da47a
+2022-05-138 23:03:39 INFO HikariPool-1 - Starting...
+2022-05-138 23:03:39 INFO HikariPool-1 - Start completed.
+2022-05-138 23:03:39 INFO HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-05-138 23:03:39 DEBUG Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@59a2d756
+2022-05-138 23:03:39 DEBUG Adding type registration java.util.UUID -> org.hibernate.type.PostgresUUIDType@59a2d756
+2022-05-138 23:03:39 DEBUG HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@d108406
+2022-05-138 23:03:39 DEBUG Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@2b6262bc] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@5cffec7]
+2022-05-138 23:03:39 DEBUG Could not find matching scoped JavaTypeDescriptor for requested Java class [aehdb.comm.model.converter.TFCodeConverter]; falling back to static registry
+2022-05-138 23:03:39 DEBUG Could not find matching scoped JavaTypeDescriptor for requested Java class [java.lang.String]; falling back to static registry
+2022-05-138 23:03:39 DEBUG Created AttributeConverterTypeAdapter -> converted::aehdb.comm.model.converter.TFCodeConverter
+2022-05-138 23:03:39 DEBUG Using ORDINAL-based conversion for Enum aehdb.chat.chat.model.dto.MessageDto$MESSAGETYPE
+2022-05-138 23:03:39 DEBUG Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@2b6262bc] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@6ca33187]
+2022-05-138 23:03:40 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-138 23:03:40 TRACE Handling #sessionFactoryCreated from [org.hibernate.internal.SessionFactoryImpl@6ca33187] for TypeConfiguration
+2022-05-138 23:03:40 INFO Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-138 23:03:40 WARN spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-138 23:03:40 WARN 
+
+Using generated security password: 9d2ea7dc-f2a6-4d76-8c8a-0a38041cad8a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2022-05-138 23:03:40 INFO Will not secure any request
+2022-05-138 23:03:40 INFO Starting ProtocolHandler ["http-nio-18080"]
+2022-05-138 23:03:40 INFO Tomcat started on port(s): 18080 (http) with context path ''
+2022-05-138 23:03:40 INFO Starting...
+2022-05-138 23:03:40 INFO BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@3df4cd96]]
+2022-05-138 23:03:40 INFO Started.
+2022-05-138 23:03:40 INFO Started AehdbApplication in 3.107 seconds (JVM running for 4.045)
+2022-05-138 23:03:44 INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-138 23:03:44 INFO Initializing Servlet 'dispatcherServlet'
+2022-05-138 23:03:44 INFO Completed initialization in 1 ms
+2022-05-138 23:03:47 TRACE binding parameter [1] as [VARCHAR] - [aaa]
+2022-05-138 23:03:47 TRACE extracted value ([id1_5_0_] : [BIGINT]) - [1]
+2022-05-138 23:03:47 TRACE extracted value ([id1_3_1_] : [BIGINT]) - [1]
+2022-05-138 23:03:47 TRACE extracted value ([create_d2_5_0_] : [TIMESTAMP]) - [null]
+2022-05-138 23:03:47 TRACE extracted value ([modified3_5_0_] : [TIMESTAMP]) - [null]
+2022-05-138 23:03:47 TRACE extracted value ([accnt_id4_5_0_] : [VARCHAR]) - [aaa]
+2022-05-138 23:03:47 TRACE extracted value ([orgn_id5_5_0_] : [INTEGER]) - [111]
+2022-05-138 23:03:47 TRACE extracted value ([password6_5_0_] : [VARCHAR]) - [1242352352]
+2022-05-138 23:03:47 TRACE extracted value ([user_nm7_5_0_] : [VARCHAR]) - [null]
+2022-05-138 23:03:47 TRACE extracted value ([role_nm2_3_1_] : [VARCHAR]) - [ROLE_ADMIN]
+2022-05-138 23:03:47 TRACE extracted value ([user_id1_6_0__] : [BIGINT]) - [1]
+2022-05-138 23:03:47 TRACE extracted value ([role_id2_6_0__] : [BIGINT]) - [1]
+2022-05-138 23:03:47 TRACE extracted value ([id1_5_0_] : [BIGINT]) - [1]
+2022-05-138 23:03:47 TRACE extracted value ([id1_3_1_] : [BIGINT]) - [2]
+2022-05-138 23:03:47 TRACE extracted value ([role_nm2_3_1_] : [VARCHAR]) - [ROLE_USER]
+2022-05-138 23:03:47 TRACE extracted value ([user_id1_6_0__] : [BIGINT]) - [1]
+2022-05-138 23:03:47 TRACE extracted value ([role_id2_6_0__] : [BIGINT]) - [2]
+2022-05-138 23:03:47 TRACE extracted value ([id1_5_0_] : [BIGINT]) - [1]
+2022-05-138 23:03:47 TRACE extracted value ([id1_3_1_] : [BIGINT]) - [3]
+2022-05-138 23:03:47 TRACE extracted value ([role_nm2_3_1_] : [VARCHAR]) - [ROLE_CNSL]
+2022-05-138 23:03:47 TRACE extracted value ([user_id1_6_0__] : [BIGINT]) - [1]
+2022-05-138 23:03:47 TRACE extracted value ([role_id2_6_0__] : [BIGINT]) - [3]
+2022-05-138 23:03:47 TRACE Created collection wrapper: [aehdb.mng.role.model.entity.Role.users#1]
+2022-05-138 23:03:47 TRACE Created collection wrapper: [aehdb.mng.role.model.entity.Role.users#2]
+2022-05-138 23:03:47 TRACE Created collection wrapper: [aehdb.mng.role.model.entity.Role.users#3]
+2022-05-138 23:03:47 TRACE binding parameter [1] as [TIMESTAMP] - [2022-05-18T23:03:47.480378]
+2022-05-138 23:03:47 TRACE binding parameter [2] as [TIMESTAMP] - [2022-05-18T23:03:47.480378]
+2022-05-138 23:03:47 DEBUG Converted value on binding : FALSE -> F
+2022-05-138 23:03:47 TRACE binding parameter [3] as [VARCHAR] - [F]
+2022-05-138 23:03:47 TRACE binding parameter [4] as [BIGINT] - [11]
+2022-05-138 23:03:47 TRACE binding parameter [5] as [VARCHAR] - [itsm111]
+2022-05-138 23:03:47 TRACE binding parameter [6] as [OTHER] - [4dbfb558-923e-4510-ad7b-aa93bac10262]
+2022-05-138 23:04:40 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2022-05-138 23:06:16 INFO Application shutdown requested.
+2022-05-138 23:06:16 INFO Stopping...
+2022-05-138 23:06:16 INFO BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@3df4cd96]]
+2022-05-138 23:06:16 INFO Stopped.
+2022-05-138 23:06:16 INFO Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-05-138 23:06:16 TRACE Handling #sessionFactoryClosed from [org.hibernate.internal.SessionFactoryImpl@6ca33187] for TypeConfiguration
+2022-05-138 23:06:16 DEBUG Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@5e2e0236] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@6ca33187]
+2022-05-138 23:06:16 INFO HikariPool-1 - Shutdown initiated...
+2022-05-138 23:06:16 INFO HikariPool-1 - Shutdown completed.
+2022-05-138 23:06:19 INFO HV000001: Hibernate Validator 6.2.3.Final
+2022-05-138 23:06:19 INFO Starting AehdbApplication using Java 11.0.7 on guyunmoui-MacBookPro.local with PID 76324 (/Users/plant/CodeFactory/workspace/aehdb/target/classes started by edwin in /Users/plant/CodeFactory/workspace/aehdb)
+2022-05-138 23:06:19 INFO No active profile set, falling back to 1 default profile: "default"
+2022-05-138 23:06:20 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-138 23:06:20 INFO Finished Spring Data repository scanning in 52 ms. Found 3 JPA repository interfaces.
+2022-05-138 23:06:20 INFO Tomcat initialized with port(s): 18080 (http)
+2022-05-138 23:06:20 INFO Initializing ProtocolHandler ["http-nio-18080"]
+2022-05-138 23:06:20 INFO Starting service [Tomcat]
+2022-05-138 23:06:20 INFO Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-138 23:06:20 INFO Initializing Spring embedded WebApplicationContext
+2022-05-138 23:06:20 INFO Root WebApplicationContext: initialization completed in 995 ms
+2022-05-138 23:06:20 INFO HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-138 23:06:20 INFO HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-05-138 23:06:20 INFO HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-138 23:06:20 DEBUG Adding type registration boolean -> org.hibernate.type.BooleanType@44dd0d38
+2022-05-138 23:06:20 DEBUG Adding type registration boolean -> org.hibernate.type.BooleanType@44dd0d38
+2022-05-138 23:06:20 DEBUG Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@44dd0d38
+2022-05-138 23:06:20 DEBUG Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@60b616c8
+2022-05-138 23:06:20 DEBUG Adding type registration true_false -> org.hibernate.type.TrueFalseType@7b8aebd0
+2022-05-138 23:06:20 DEBUG Adding type registration yes_no -> org.hibernate.type.YesNoType@639c7f9c
+2022-05-138 23:06:20 DEBUG Adding type registration byte -> org.hibernate.type.ByteType@5a7b6b75
+2022-05-138 23:06:20 DEBUG Adding type registration byte -> org.hibernate.type.ByteType@5a7b6b75
+2022-05-138 23:06:20 DEBUG Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@5a7b6b75
+2022-05-138 23:06:20 DEBUG Adding type registration character -> org.hibernate.type.CharacterType@2cae5fa7
+2022-05-138 23:06:20 DEBUG Adding type registration char -> org.hibernate.type.CharacterType@2cae5fa7
+2022-05-138 23:06:20 DEBUG Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@2cae5fa7
+2022-05-138 23:06:20 DEBUG Adding type registration short -> org.hibernate.type.ShortType@660b1a9d
+2022-05-138 23:06:20 DEBUG Adding type registration short -> org.hibernate.type.ShortType@660b1a9d
+2022-05-138 23:06:20 DEBUG Adding type registration java.lang.Short -> org.hibernate.type.ShortType@660b1a9d
+2022-05-138 23:06:20 DEBUG Adding type registration integer -> org.hibernate.type.IntegerType@6fe04f2a
+2022-05-138 23:06:20 DEBUG Adding type registration int -> org.hibernate.type.IntegerType@6fe04f2a
+2022-05-138 23:06:20 DEBUG Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@6fe04f2a
+2022-05-138 23:06:20 DEBUG Adding type registration long -> org.hibernate.type.LongType@7523d5a1
+2022-05-138 23:06:20 DEBUG Adding type registration long -> org.hibernate.type.LongType@7523d5a1
+2022-05-138 23:06:20 DEBUG Adding type registration java.lang.Long -> org.hibernate.type.LongType@7523d5a1
+2022-05-138 23:06:20 DEBUG Adding type registration float -> org.hibernate.type.FloatType@44641d6c
+2022-05-138 23:06:20 DEBUG Adding type registration float -> org.hibernate.type.FloatType@44641d6c
+2022-05-138 23:06:20 DEBUG Adding type registration java.lang.Float -> org.hibernate.type.FloatType@44641d6c
+2022-05-138 23:06:20 DEBUG Adding type registration double -> org.hibernate.type.DoubleType@26874f2c
+2022-05-138 23:06:20 DEBUG Adding type registration double -> org.hibernate.type.DoubleType@26874f2c
+2022-05-138 23:06:20 DEBUG Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@26874f2c
+2022-05-138 23:06:20 DEBUG Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@5323999f
+2022-05-138 23:06:20 DEBUG Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@5323999f
+2022-05-138 23:06:20 DEBUG Adding type registration big_integer -> org.hibernate.type.BigIntegerType@7f51f588
+2022-05-138 23:06:20 DEBUG Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@7f51f588
+2022-05-138 23:06:20 DEBUG Adding type registration string -> org.hibernate.type.StringType@372954e1
+2022-05-138 23:06:20 DEBUG Adding type registration java.lang.String -> org.hibernate.type.StringType@372954e1
+2022-05-138 23:06:20 DEBUG Adding type registration nstring -> org.hibernate.type.StringNVarcharType@1002d192
+2022-05-138 23:06:20 DEBUG Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@55c50f52
+2022-05-138 23:06:20 DEBUG Adding type registration url -> org.hibernate.type.UrlType@79f5a6ed
+2022-05-138 23:06:20 DEBUG Adding type registration java.net.URL -> org.hibernate.type.UrlType@79f5a6ed
+2022-05-138 23:06:20 DEBUG Adding type registration Duration -> org.hibernate.type.DurationType@120350eb
+2022-05-138 23:06:20 DEBUG Adding type registration java.time.Duration -> org.hibernate.type.DurationType@120350eb
+2022-05-138 23:06:20 DEBUG Adding type registration Instant -> org.hibernate.type.InstantType@643ecfef
+2022-05-138 23:06:20 DEBUG Adding type registration java.time.Instant -> org.hibernate.type.InstantType@643ecfef
+2022-05-138 23:06:20 DEBUG Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@5b44318
+2022-05-138 23:06:20 DEBUG Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@5b44318
+2022-05-138 23:06:20 DEBUG Adding type registration LocalDate -> org.hibernate.type.LocalDateType@1b1252c8
+2022-05-138 23:06:20 DEBUG Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@1b1252c8
+2022-05-138 23:06:20 DEBUG Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@41f964f9
+2022-05-138 23:06:20 DEBUG Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@41f964f9
+2022-05-138 23:06:20 DEBUG Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@27bc1d44
+2022-05-138 23:06:20 DEBUG Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@27bc1d44
+2022-05-138 23:06:20 DEBUG Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@5c53c235
+2022-05-138 23:06:20 DEBUG Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@5c53c235
+2022-05-138 23:06:20 DEBUG Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@2035d65b
+2022-05-138 23:06:20 DEBUG Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@2035d65b
+2022-05-138 23:06:20 DEBUG Adding type registration date -> org.hibernate.type.DateType@1c7cd434
+2022-05-138 23:06:20 DEBUG Adding type registration java.sql.Date -> org.hibernate.type.DateType@1c7cd434
+2022-05-138 23:06:20 DEBUG Adding type registration time -> org.hibernate.type.TimeType@64440065
+2022-05-138 23:06:20 DEBUG Adding type registration java.sql.Time -> org.hibernate.type.TimeType@64440065
+2022-05-138 23:06:20 DEBUG Adding type registration timestamp -> org.hibernate.type.TimestampType@52d7ab79
+2022-05-138 23:06:20 DEBUG Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@52d7ab79
+2022-05-138 23:06:20 DEBUG Adding type registration java.util.Date -> org.hibernate.type.TimestampType@52d7ab79
+2022-05-138 23:06:20 DEBUG Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@641ed324
+2022-05-138 23:06:20 DEBUG Adding type registration calendar -> org.hibernate.type.CalendarType@c0c8f96
+2022-05-138 23:06:20 DEBUG Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@c0c8f96
+2022-05-138 23:06:20 DEBUG Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@c0c8f96
+2022-05-138 23:06:20 DEBUG Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@482a58c7
+2022-05-138 23:06:20 DEBUG Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@2d4fb0d8
+2022-05-138 23:06:20 DEBUG Adding type registration locale -> org.hibernate.type.LocaleType@2755617b
+2022-05-138 23:06:20 DEBUG Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@2755617b
+2022-05-138 23:06:20 DEBUG Adding type registration currency -> org.hibernate.type.CurrencyType@1b0e031b
+2022-05-138 23:06:20 DEBUG Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@1b0e031b
+2022-05-138 23:06:20 DEBUG Adding type registration timezone -> org.hibernate.type.TimeZoneType@8077c97
+2022-05-138 23:06:20 DEBUG Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@8077c97
+2022-05-138 23:06:20 DEBUG Adding type registration class -> org.hibernate.type.ClassType@4601047
+2022-05-138 23:06:20 DEBUG Adding type registration java.lang.Class -> org.hibernate.type.ClassType@4601047
+2022-05-138 23:06:20 DEBUG Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@32a8ca06
+2022-05-138 23:06:20 DEBUG Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@32a8ca06
+2022-05-138 23:06:20 DEBUG Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@799c8758
+2022-05-138 23:06:20 DEBUG Adding type registration binary -> org.hibernate.type.BinaryType@635ff2a5
+2022-05-138 23:06:20 DEBUG Adding type registration byte[] -> org.hibernate.type.BinaryType@635ff2a5
+2022-05-138 23:06:20 DEBUG Adding type registration [B -> org.hibernate.type.BinaryType@635ff2a5
+2022-05-138 23:06:20 DEBUG Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@7aae1170
+2022-05-138 23:06:20 DEBUG Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@7aae1170
+2022-05-138 23:06:20 DEBUG Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@7aae1170
+2022-05-138 23:06:20 DEBUG Adding type registration row_version -> org.hibernate.type.RowVersionType@675ec28b
+2022-05-138 23:06:20 DEBUG Adding type registration image -> org.hibernate.type.ImageType@570b2057
+2022-05-138 23:06:20 DEBUG Adding type registration characters -> org.hibernate.type.CharArrayType@11bfffb3
+2022-05-138 23:06:20 DEBUG Adding type registration char[] -> org.hibernate.type.CharArrayType@11bfffb3
+2022-05-138 23:06:20 DEBUG Adding type registration [C -> org.hibernate.type.CharArrayType@11bfffb3
+2022-05-138 23:06:20 DEBUG Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@f03ee8f
+2022-05-138 23:06:20 DEBUG Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@f03ee8f
+2022-05-138 23:06:20 DEBUG Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@f03ee8f
+2022-05-138 23:06:20 DEBUG Adding type registration text -> org.hibernate.type.TextType@5e5a8718
+2022-05-138 23:06:20 DEBUG Adding type registration ntext -> org.hibernate.type.NTextType@4e50ae56
+2022-05-138 23:06:20 DEBUG Adding type registration blob -> org.hibernate.type.BlobType@7e2c6702
+2022-05-138 23:06:20 DEBUG Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@7e2c6702
+2022-05-138 23:06:20 DEBUG Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@4ce267cc
+2022-05-138 23:06:20 DEBUG Adding type registration clob -> org.hibernate.type.ClobType@13d289c7
+2022-05-138 23:06:20 DEBUG Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@13d289c7
+2022-05-138 23:06:20 DEBUG Adding type registration nclob -> org.hibernate.type.NClobType@698d6d30
+2022-05-138 23:06:20 DEBUG Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@698d6d30
+2022-05-138 23:06:20 DEBUG Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@538b3c88
+2022-05-138 23:06:20 DEBUG Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@22ae905f
+2022-05-138 23:06:20 DEBUG Adding type registration serializable -> org.hibernate.type.SerializableType@524f5ea5
+2022-05-138 23:06:20 DEBUG Adding type registration object -> org.hibernate.type.ObjectType@19705650
+2022-05-138 23:06:20 DEBUG Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@19705650
+2022-05-138 23:06:20 DEBUG Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@2df3545d
+2022-05-138 23:06:20 DEBUG Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@75ad30c1
+2022-05-138 23:06:20 DEBUG Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@fe8aaeb
+2022-05-138 23:06:20 DEBUG Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@6b9697ae
+2022-05-138 23:06:20 DEBUG Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@5cf0673d
+2022-05-138 23:06:20 DEBUG Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@40c76f5a
+2022-05-138 23:06:20 DEBUG Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@a323a5b
+2022-05-138 23:06:20 DEBUG Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@5546e754
+2022-05-138 23:06:20 INFO HikariPool-1 - Starting...
+2022-05-138 23:06:20 INFO HikariPool-1 - Start completed.
+2022-05-138 23:06:21 INFO HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-05-138 23:06:21 DEBUG Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@3dfe59d7
+2022-05-138 23:06:21 DEBUG Adding type registration java.util.UUID -> org.hibernate.type.PostgresUUIDType@3dfe59d7
+2022-05-138 23:06:21 DEBUG HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@32a8ca06
+2022-05-138 23:06:21 DEBUG Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@3193e21d] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@79604abe]
+2022-05-138 23:06:21 DEBUG Could not find matching scoped JavaTypeDescriptor for requested Java class [aehdb.comm.model.converter.TFCodeConverter]; falling back to static registry
+2022-05-138 23:06:21 DEBUG Could not find matching scoped JavaTypeDescriptor for requested Java class [java.lang.String]; falling back to static registry
+2022-05-138 23:06:21 DEBUG Created AttributeConverterTypeAdapter -> converted::aehdb.comm.model.converter.TFCodeConverter
+2022-05-138 23:06:21 DEBUG Using ORDINAL-based conversion for Enum aehdb.chat.chat.model.dto.MessageDto$MESSAGETYPE
+2022-05-138 23:06:21 DEBUG Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@3193e21d] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@55c46ec1]
+2022-05-138 23:06:21 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-138 23:06:21 TRACE Handling #sessionFactoryCreated from [org.hibernate.internal.SessionFactoryImpl@55c46ec1] for TypeConfiguration
+2022-05-138 23:06:21 INFO Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-138 23:06:22 WARN spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-138 23:06:22 WARN 
+
+Using generated security password: 4663693c-c6c0-4985-81ed-309e3ad2e107
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2022-05-138 23:06:22 INFO Will not secure any request
+2022-05-138 23:06:22 INFO Starting ProtocolHandler ["http-nio-18080"]
+2022-05-138 23:06:22 INFO Tomcat started on port(s): 18080 (http) with context path ''
+2022-05-138 23:06:22 INFO Starting...
+2022-05-138 23:06:22 INFO BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@45649467]]
+2022-05-138 23:06:22 INFO Started.
+2022-05-138 23:06:22 INFO Started AehdbApplication in 3.094 seconds (JVM running for 4.034)
+2022-05-138 23:06:43 INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-138 23:06:43 INFO Initializing Servlet 'dispatcherServlet'
+2022-05-138 23:06:43 INFO Completed initialization in 2 ms
+2022-05-138 23:06:43 TRACE binding parameter [1] as [VARCHAR] - [aaa]
+2022-05-138 23:06:43 TRACE extracted value ([id1_5_0_] : [BIGINT]) - [1]
+2022-05-138 23:06:43 TRACE extracted value ([id1_3_1_] : [BIGINT]) - [1]
+2022-05-138 23:06:43 TRACE extracted value ([create_d2_5_0_] : [TIMESTAMP]) - [null]
+2022-05-138 23:06:43 TRACE extracted value ([modified3_5_0_] : [TIMESTAMP]) - [null]
+2022-05-138 23:06:43 TRACE extracted value ([accnt_id4_5_0_] : [VARCHAR]) - [aaa]
+2022-05-138 23:06:43 TRACE extracted value ([orgn_id5_5_0_] : [INTEGER]) - [111]
+2022-05-138 23:06:43 TRACE extracted value ([password6_5_0_] : [VARCHAR]) - [1242352352]
+2022-05-138 23:06:43 TRACE extracted value ([user_nm7_5_0_] : [VARCHAR]) - [null]
+2022-05-138 23:06:43 TRACE extracted value ([role_nm2_3_1_] : [VARCHAR]) - [ROLE_ADMIN]
+2022-05-138 23:06:43 TRACE extracted value ([user_id1_6_0__] : [BIGINT]) - [1]
+2022-05-138 23:06:43 TRACE extracted value ([role_id2_6_0__] : [BIGINT]) - [1]
+2022-05-138 23:06:43 TRACE extracted value ([id1_5_0_] : [BIGINT]) - [1]
+2022-05-138 23:06:43 TRACE extracted value ([id1_3_1_] : [BIGINT]) - [2]
+2022-05-138 23:06:43 TRACE extracted value ([role_nm2_3_1_] : [VARCHAR]) - [ROLE_USER]
+2022-05-138 23:06:43 TRACE extracted value ([user_id1_6_0__] : [BIGINT]) - [1]
+2022-05-138 23:06:43 TRACE extracted value ([role_id2_6_0__] : [BIGINT]) - [2]
+2022-05-138 23:06:43 TRACE extracted value ([id1_5_0_] : [BIGINT]) - [1]
+2022-05-138 23:06:43 TRACE extracted value ([id1_3_1_] : [BIGINT]) - [3]
+2022-05-138 23:06:43 TRACE extracted value ([role_nm2_3_1_] : [VARCHAR]) - [ROLE_CNSL]
+2022-05-138 23:06:43 TRACE extracted value ([user_id1_6_0__] : [BIGINT]) - [1]
+2022-05-138 23:06:43 TRACE extracted value ([role_id2_6_0__] : [BIGINT]) - [3]
+2022-05-138 23:06:43 TRACE Created collection wrapper: [aehdb.mng.role.model.entity.Role.users#1]
+2022-05-138 23:06:43 TRACE Created collection wrapper: [aehdb.mng.role.model.entity.Role.users#2]
+2022-05-138 23:06:43 TRACE Created collection wrapper: [aehdb.mng.role.model.entity.Role.users#3]
+2022-05-138 23:06:43 TRACE binding parameter [1] as [TIMESTAMP] - [2022-05-18T23:06:43.859327]
+2022-05-138 23:06:43 TRACE binding parameter [2] as [TIMESTAMP] - [2022-05-18T23:06:43.859327]
+2022-05-138 23:06:43 DEBUG Converted value on binding : FALSE -> F
+2022-05-138 23:06:43 TRACE binding parameter [3] as [VARCHAR] - [F]
+2022-05-138 23:06:43 TRACE binding parameter [4] as [BIGINT] - [11]
+2022-05-138 23:06:43 TRACE binding parameter [5] as [VARCHAR] - [itsm111]
+2022-05-138 23:06:43 TRACE binding parameter [6] as [OTHER] - [3a950c30-64ca-4f98-81b1-c573c807f963]
+2022-05-138 23:07:22 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2022-05-138 23:14:30 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m35s337ms).
+2022-05-138 23:42:28 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=27m27s825ms).

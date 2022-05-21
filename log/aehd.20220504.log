@@ -1,0 +1,30 @@
+2022-05-124 00:17:05 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 12, active threads = 1, queued tasks = 0, completed tasks = 13]
+2022-05-124 00:48:00 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=30m22s48ms).
+2022-05-124 01:47:48 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=50m48s458ms).
+2022-05-124 02:24:11 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=35m52s302ms).
+2022-05-124 03:33:28 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h8m47s743ms).
+2022-05-124 03:50:07 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m8s849ms).
+2022-05-124 04:07:36 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m28s975ms).
+2022-05-124 05:24:52 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h16m45s671ms).
+2022-05-124 07:13:06 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h47m44s435ms).
+2022-05-124 09:01:21 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h47m44s689ms).
+2022-05-124 09:33:56 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=32m4s861ms).
+2022-05-124 09:51:14 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m18s669ms).
+2022-05-124 10:54:19 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h2m34s609ms).
+2022-05-124 12:43:04 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h43m44s636ms).
+2022-05-124 14:00:24 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h16m49s867ms).
+2022-05-124 14:04:21 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 12, active threads = 1, queued tasks = 0, completed tasks = 14]
+2022-05-124 14:34:21 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 12, active threads = 1, queued tasks = 0, completed tasks = 15]
+2022-05-124 15:52:05 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h13m40s910ms).
+2022-05-124 17:42:24 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h29m18s822ms).
+2022-05-124 19:30:39 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h47m44s620ms).
+2022-05-124 21:18:54 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h47m45s348ms).
+2022-05-124 21:20:53 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 12, active threads = 1, queued tasks = 0, completed tasks = 16]
+2022-05-124 21:32:57 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m29s10ms).
+2022-05-124 21:38:08 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m40s250ms).
+2022-05-124 22:05:04 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=26m26s230ms).
+2022-05-124 22:21:09 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m35s201ms).
+2022-05-124 22:46:06 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 12, active threads = 1, queued tasks = 0, completed tasks = 17]
+2022-05-124 23:16:05 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 12, active threads = 1, queued tasks = 0, completed tasks = 18]
+2022-05-124 23:23:59 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=50s168ms).
+2022-05-124 23:54:29 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=30m29s468ms).
