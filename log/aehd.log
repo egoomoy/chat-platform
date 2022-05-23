@@ -1,52 +1,160 @@
-2022-05-140 00:09:28 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=26m51s30ms).
-2022-05-140 00:28:45 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18m16s922ms).
-2022-05-140 00:46:06 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m21s420ms).
-2022-05-140 01:10:19 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=23m43s408ms).
-2022-05-140 01:26:51 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m1s461ms).
-2022-05-140 01:27:20 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 5, active threads = 1, queued tasks = 0, completed tasks = 4]
-2022-05-140 01:45:40 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m17s79ms).
-2022-05-140 02:40:23 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=54m43s506ms).
-2022-05-140 04:10:45 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h29m51s409ms).
-2022-05-140 05:40:51 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h29m36s407ms).
-2022-05-140 07:29:10 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h47m48s932ms).
-2022-05-140 09:09:04 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h39m24s275ms).
-2022-05-140 09:36:59 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m54s174ms).
-2022-05-140 09:50:05 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m36s584ms).
-2022-05-140 09:51:35 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 0, completed tasks = 5]
-2022-05-140 10:15:27 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m22s164ms).
-2022-05-140 10:24:06 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m8s717ms).
-2022-05-140 10:25:32 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=55s570ms).
-2022-05-140 10:26:51 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=48s788ms).
-2022-05-140 10:38:06 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m45s552ms).
-2022-05-140 10:59:32 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=20m55s891ms).
-2022-05-140 11:04:51 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m48s481ms).
-2022-05-140 11:06:57 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 7, active threads = 1, queued tasks = 0, completed tasks = 6]
-2022-05-140 11:06:58 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m37s619ms).
-2022-05-140 11:17:17 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m18s884ms).
-2022-05-140 11:17:43 WARN HikariPool-1 - Retrograde clock change detected (housekeeper delta=26s51ms), soft-evicting connections from pool.
-2022-05-140 11:46:43 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 8, active threads = 1, queued tasks = 0, completed tasks = 7]
-2022-05-140 12:16:43 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 9, active threads = 1, queued tasks = 0, completed tasks = 8]
-2022-05-140 12:54:21 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=30m35s456ms).
-2022-05-140 14:00:10 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h5m19s354ms).
-2022-05-140 15:46:36 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h35m25s899ms).
-2022-05-140 15:56:34 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 10, active threads = 1, queued tasks = 0, completed tasks = 9]
-2022-05-140 16:01:07 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m30s939ms).
-2022-05-140 16:29:41 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=28m33s373ms).
-2022-05-140 16:56:49 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=26m38s44ms).
-2022-05-140 17:21:50 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 11, active threads = 1, queued tasks = 0, completed tasks = 10]
-2022-05-140 17:51:50 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 12, active threads = 1, queued tasks = 0, completed tasks = 11]
-2022-05-140 18:21:50 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 12, active threads = 1, queued tasks = 0, completed tasks = 12]
-2022-05-140 18:57:56 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=30m32s433ms).
-2022-05-140 19:47:00 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=48m34s326ms).
-2022-05-140 20:51:14 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h3m44s262ms).
-2022-05-140 21:49:45 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=58m1s10ms).
-2022-05-140 22:45:00 WARN HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=55m14s519ms).
-2022-05-140 22:54:24 INFO Application shutdown requested.
-2022-05-140 22:54:24 INFO Stopping...
-2022-05-140 22:54:24 INFO BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@45649467]]
-2022-05-140 22:54:24 INFO Stopped.
-2022-05-140 22:54:24 INFO Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-05-140 22:54:24 TRACE Handling #sessionFactoryClosed from [org.hibernate.internal.SessionFactoryImpl@55c46ec1] for TypeConfiguration
-2022-05-140 22:54:24 DEBUG Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@3b3ccb0] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@55c46ec1]
-2022-05-140 22:54:24 INFO HikariPool-1 - Shutdown initiated...
-2022-05-140 22:54:24 INFO HikariPool-1 - Shutdown completed.
+2022-05-143 22:50:23 INFO HV000001: Hibernate Validator 6.2.3.Final
+2022-05-143 22:50:23 INFO Starting AehdbApplication using Java 11.0.15 on edwin-Mac-mini.local with PID 29767 (/Users/edwin/codecode/spring/chat-platform/target/classes started by edwin in /Users/edwin/codecode/spring/chat-platform)
+2022-05-143 22:50:23 INFO No active profile set, falling back to 1 default profile: "default"
+2022-05-143 22:50:23 INFO Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-143 22:50:23 INFO Finished Spring Data repository scanning in 21 ms. Found 3 JPA repository interfaces.
+2022-05-143 22:50:24 INFO Tomcat initialized with port(s): 18080 (http)
+2022-05-143 22:50:24 INFO Initializing ProtocolHandler ["http-nio-18080"]
+2022-05-143 22:50:24 INFO Starting service [Tomcat]
+2022-05-143 22:50:24 INFO Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-143 22:50:24 INFO Initializing Spring embedded WebApplicationContext
+2022-05-143 22:50:24 INFO Root WebApplicationContext: initialization completed in 574 ms
+2022-05-143 22:50:24 INFO HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-143 22:50:24 INFO HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-05-143 22:50:24 INFO HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-143 22:50:24 DEBUG Adding type registration boolean -> org.hibernate.type.BooleanType@5889fc44
+2022-05-143 22:50:24 DEBUG Adding type registration boolean -> org.hibernate.type.BooleanType@5889fc44
+2022-05-143 22:50:24 DEBUG Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@5889fc44
+2022-05-143 22:50:24 DEBUG Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@4536a715
+2022-05-143 22:50:24 DEBUG Adding type registration true_false -> org.hibernate.type.TrueFalseType@4522d793
+2022-05-143 22:50:24 DEBUG Adding type registration yes_no -> org.hibernate.type.YesNoType@44fb6ebd
+2022-05-143 22:50:24 DEBUG Adding type registration byte -> org.hibernate.type.ByteType@2565a7d0
+2022-05-143 22:50:24 DEBUG Adding type registration byte -> org.hibernate.type.ByteType@2565a7d0
+2022-05-143 22:50:24 DEBUG Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@2565a7d0
+2022-05-143 22:50:24 DEBUG Adding type registration character -> org.hibernate.type.CharacterType@9d99851
+2022-05-143 22:50:24 DEBUG Adding type registration char -> org.hibernate.type.CharacterType@9d99851
+2022-05-143 22:50:24 DEBUG Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@9d99851
+2022-05-143 22:50:24 DEBUG Adding type registration short -> org.hibernate.type.ShortType@376b5cb2
+2022-05-143 22:50:24 DEBUG Adding type registration short -> org.hibernate.type.ShortType@376b5cb2
+2022-05-143 22:50:24 DEBUG Adding type registration java.lang.Short -> org.hibernate.type.ShortType@376b5cb2
+2022-05-143 22:50:24 DEBUG Adding type registration integer -> org.hibernate.type.IntegerType@29b5533
+2022-05-143 22:50:24 DEBUG Adding type registration int -> org.hibernate.type.IntegerType@29b5533
+2022-05-143 22:50:24 DEBUG Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@29b5533
+2022-05-143 22:50:24 DEBUG Adding type registration long -> org.hibernate.type.LongType@37fef327
+2022-05-143 22:50:24 DEBUG Adding type registration long -> org.hibernate.type.LongType@37fef327
+2022-05-143 22:50:24 DEBUG Adding type registration java.lang.Long -> org.hibernate.type.LongType@37fef327
+2022-05-143 22:50:24 DEBUG Adding type registration float -> org.hibernate.type.FloatType@108b121f
+2022-05-143 22:50:24 DEBUG Adding type registration float -> org.hibernate.type.FloatType@108b121f
+2022-05-143 22:50:24 DEBUG Adding type registration java.lang.Float -> org.hibernate.type.FloatType@108b121f
+2022-05-143 22:50:24 DEBUG Adding type registration double -> org.hibernate.type.DoubleType@472c9f88
+2022-05-143 22:50:24 DEBUG Adding type registration double -> org.hibernate.type.DoubleType@472c9f88
+2022-05-143 22:50:24 DEBUG Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@472c9f88
+2022-05-143 22:50:24 DEBUG Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@7b44bfb8
+2022-05-143 22:50:24 DEBUG Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@7b44bfb8
+2022-05-143 22:50:24 DEBUG Adding type registration big_integer -> org.hibernate.type.BigIntegerType@2aa6bbad
+2022-05-143 22:50:24 DEBUG Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@2aa6bbad
+2022-05-143 22:50:24 DEBUG Adding type registration string -> org.hibernate.type.StringType@9f9146d
+2022-05-143 22:50:24 DEBUG Adding type registration java.lang.String -> org.hibernate.type.StringType@9f9146d
+2022-05-143 22:50:24 DEBUG Adding type registration nstring -> org.hibernate.type.StringNVarcharType@21c75084
+2022-05-143 22:50:24 DEBUG Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@6d815fb7
+2022-05-143 22:50:24 DEBUG Adding type registration url -> org.hibernate.type.UrlType@7e050be1
+2022-05-143 22:50:24 DEBUG Adding type registration java.net.URL -> org.hibernate.type.UrlType@7e050be1
+2022-05-143 22:50:24 DEBUG Adding type registration Duration -> org.hibernate.type.DurationType@2f86f9cf
+2022-05-143 22:50:24 DEBUG Adding type registration java.time.Duration -> org.hibernate.type.DurationType@2f86f9cf
+2022-05-143 22:50:24 DEBUG Adding type registration Instant -> org.hibernate.type.InstantType@6dded900
+2022-05-143 22:50:24 DEBUG Adding type registration java.time.Instant -> org.hibernate.type.InstantType@6dded900
+2022-05-143 22:50:24 DEBUG Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@60c96eb4
+2022-05-143 22:50:24 DEBUG Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@60c96eb4
+2022-05-143 22:50:24 DEBUG Adding type registration LocalDate -> org.hibernate.type.LocalDateType@2b3f7704
+2022-05-143 22:50:24 DEBUG Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@2b3f7704
+2022-05-143 22:50:24 DEBUG Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@3b57f915
+2022-05-143 22:50:24 DEBUG Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@3b57f915
+2022-05-143 22:50:24 DEBUG Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@6aad919c
+2022-05-143 22:50:24 DEBUG Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@6aad919c
+2022-05-143 22:50:24 DEBUG Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@66298fe9
+2022-05-143 22:50:24 DEBUG Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@66298fe9
+2022-05-143 22:50:24 DEBUG Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@19dac2d6
+2022-05-143 22:50:24 DEBUG Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@19dac2d6
+2022-05-143 22:50:24 DEBUG Adding type registration date -> org.hibernate.type.DateType@27afbf14
+2022-05-143 22:50:24 DEBUG Adding type registration java.sql.Date -> org.hibernate.type.DateType@27afbf14
+2022-05-143 22:50:24 DEBUG Adding type registration time -> org.hibernate.type.TimeType@13fe5bb7
+2022-05-143 22:50:24 DEBUG Adding type registration java.sql.Time -> org.hibernate.type.TimeType@13fe5bb7
+2022-05-143 22:50:24 DEBUG Adding type registration timestamp -> org.hibernate.type.TimestampType@2a19a0fe
+2022-05-143 22:50:24 DEBUG Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@2a19a0fe
+2022-05-143 22:50:24 DEBUG Adding type registration java.util.Date -> org.hibernate.type.TimestampType@2a19a0fe
+2022-05-143 22:50:24 DEBUG Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@2342f1ff
+2022-05-143 22:50:24 DEBUG Adding type registration calendar -> org.hibernate.type.CalendarType@1999149e
+2022-05-143 22:50:24 DEBUG Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@1999149e
+2022-05-143 22:50:24 DEBUG Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@1999149e
+2022-05-143 22:50:24 DEBUG Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@2964511
+2022-05-143 22:50:24 DEBUG Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@71f0806b
+2022-05-143 22:50:24 DEBUG Adding type registration locale -> org.hibernate.type.LocaleType@64f3ca6
+2022-05-143 22:50:24 DEBUG Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@64f3ca6
+2022-05-143 22:50:24 DEBUG Adding type registration currency -> org.hibernate.type.CurrencyType@368424db
+2022-05-143 22:50:24 DEBUG Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@368424db
+2022-05-143 22:50:24 DEBUG Adding type registration timezone -> org.hibernate.type.TimeZoneType@4243341e
+2022-05-143 22:50:24 DEBUG Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@4243341e
+2022-05-143 22:50:24 DEBUG Adding type registration class -> org.hibernate.type.ClassType@3b021664
+2022-05-143 22:50:24 DEBUG Adding type registration java.lang.Class -> org.hibernate.type.ClassType@3b021664
+2022-05-143 22:50:24 DEBUG Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@67afe909
+2022-05-143 22:50:24 DEBUG Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@67afe909
+2022-05-143 22:50:24 DEBUG Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@16ea0f22
+2022-05-143 22:50:24 DEBUG Adding type registration binary -> org.hibernate.type.BinaryType@77b71c9
+2022-05-143 22:50:24 DEBUG Adding type registration byte[] -> org.hibernate.type.BinaryType@77b71c9
+2022-05-143 22:50:24 DEBUG Adding type registration [B -> org.hibernate.type.BinaryType@77b71c9
+2022-05-143 22:50:24 DEBUG Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@38c10190
+2022-05-143 22:50:24 DEBUG Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@38c10190
+2022-05-143 22:50:24 DEBUG Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@38c10190
+2022-05-143 22:50:24 DEBUG Adding type registration row_version -> org.hibernate.type.RowVersionType@4e7bc939
+2022-05-143 22:50:24 DEBUG Adding type registration image -> org.hibernate.type.ImageType@2037f12b
+2022-05-143 22:50:24 DEBUG Adding type registration characters -> org.hibernate.type.CharArrayType@720a1fd0
+2022-05-143 22:50:24 DEBUG Adding type registration char[] -> org.hibernate.type.CharArrayType@720a1fd0
+2022-05-143 22:50:24 DEBUG Adding type registration [C -> org.hibernate.type.CharArrayType@720a1fd0
+2022-05-143 22:50:24 DEBUG Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@3ac0a14b
+2022-05-143 22:50:24 DEBUG Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@3ac0a14b
+2022-05-143 22:50:24 DEBUG Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@3ac0a14b
+2022-05-143 22:50:24 DEBUG Adding type registration text -> org.hibernate.type.TextType@50ff7063
+2022-05-143 22:50:24 DEBUG Adding type registration ntext -> org.hibernate.type.NTextType@d28c214
+2022-05-143 22:50:24 DEBUG Adding type registration blob -> org.hibernate.type.BlobType@1d944fc0
+2022-05-143 22:50:24 DEBUG Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@1d944fc0
+2022-05-143 22:50:24 DEBUG Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@2af9a5ef
+2022-05-143 22:50:24 DEBUG Adding type registration clob -> org.hibernate.type.ClobType@faec277
+2022-05-143 22:50:24 DEBUG Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@faec277
+2022-05-143 22:50:24 DEBUG Adding type registration nclob -> org.hibernate.type.NClobType@315b4202
+2022-05-143 22:50:24 DEBUG Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@315b4202
+2022-05-143 22:50:24 DEBUG Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@171aa66
+2022-05-143 22:50:24 DEBUG Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@25470477
+2022-05-143 22:50:24 DEBUG Adding type registration serializable -> org.hibernate.type.SerializableType@1124910c
+2022-05-143 22:50:24 DEBUG Adding type registration object -> org.hibernate.type.ObjectType@7db791df
+2022-05-143 22:50:24 DEBUG Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@7db791df
+2022-05-143 22:50:24 DEBUG Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@5c5f0edc
+2022-05-143 22:50:24 DEBUG Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@153cfd86
+2022-05-143 22:50:24 DEBUG Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@7e31062c
+2022-05-143 22:50:24 DEBUG Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@595fed99
+2022-05-143 22:50:24 DEBUG Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@7d522180
+2022-05-143 22:50:24 DEBUG Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@ff03361
+2022-05-143 22:50:24 DEBUG Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@790654d5
+2022-05-143 22:50:24 DEBUG Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@5f935d49
+2022-05-143 22:50:24 INFO HikariPool-1 - Starting...
+2022-05-143 22:50:24 INFO HikariPool-1 - Start completed.
+2022-05-143 22:50:24 INFO HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-05-143 22:50:24 DEBUG Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@312f3050
+2022-05-143 22:50:24 DEBUG Adding type registration java.util.UUID -> org.hibernate.type.PostgresUUIDType@312f3050
+2022-05-143 22:50:24 DEBUG HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@67afe909
+2022-05-143 22:50:24 DEBUG Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@11228bee] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@7d626f2]
+2022-05-143 22:50:24 DEBUG Could not find matching scoped JavaTypeDescriptor for requested Java class [aehdb.comm.model.converter.TFCodeConverter]; falling back to static registry
+2022-05-143 22:50:24 DEBUG Could not find matching scoped JavaTypeDescriptor for requested Java class [java.lang.String]; falling back to static registry
+2022-05-143 22:50:24 DEBUG Created AttributeConverterTypeAdapter -> converted::aehdb.comm.model.converter.TFCodeConverter
+2022-05-143 22:50:24 DEBUG Using ORDINAL-based conversion for Enum aehdb.chat.chat.model.dto.MessageDto$MESSAGETYPE
+2022-05-143 22:50:24 DEBUG Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@11228bee] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@b8142f4]
+2022-05-143 22:50:24 INFO HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-143 22:50:24 TRACE Handling #sessionFactoryCreated from [org.hibernate.internal.SessionFactoryImpl@b8142f4] for TypeConfiguration
+2022-05-143 22:50:24 INFO Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-143 22:50:25 WARN spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-143 22:50:25 WARN 
+
+Using generated security password: f07a1975-0c6c-4ba3-b488-574cdac200b7
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2022-05-143 22:50:25 INFO Will not secure any request
+2022-05-143 22:50:25 INFO Starting ProtocolHandler ["http-nio-18080"]
+2022-05-143 22:50:25 INFO Tomcat started on port(s): 18080 (http) with context path ''
+2022-05-143 22:50:25 INFO Starting...
+2022-05-143 22:50:25 INFO BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@44d36b56]]
+2022-05-143 22:50:25 INFO Started.
+2022-05-143 22:50:25 INFO Started AehdbApplication in 1.884 seconds (JVM running for 2.528)
+2022-05-143 22:51:17 INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-143 22:51:17 INFO Initializing Servlet 'dispatcherServlet'
+2022-05-143 22:51:17 INFO Completed initialization in 1 ms
+2022-05-143 22:51:25 INFO WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]

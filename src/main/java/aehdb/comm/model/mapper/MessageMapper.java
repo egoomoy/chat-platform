@@ -4,14 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
 
 import aehdb.chat.chat.model.dto.MessageDto;
 import aehdb.chat.chat.model.entity.Message;
+import aehdb.chat.room.model.dto.RoomDto;
 import aehdb.chat.room.model.entity.Room;
 
 
 @Mapper(componentModel = "spring")
 public interface MessageMapper extends GenericMapper<MessageDto, Message> {
+	RoomMapper roomMapper = Mappers.getMapper(RoomMapper.class);
 	@Override
     public default MessageDto toDto(Message e) {
         if ( e == null ) {
@@ -25,8 +28,10 @@ public interface MessageMapper extends GenericMapper<MessageDto, Message> {
         messageDto.setSenderId( e.getSenderId() );
         messageDto.setSenderNm( e.getSenderNm() );
         messageDto.setMessage( e.getMessage() );
-        messageDto.setRoomId(e.getRoom().getId());;
-
+        
+        RoomDto roomDto = roomMapper.toDto(e.getRoom());
+        messageDto.setRoomDto(roomDto);
+        
         return messageDto;
     }
 
@@ -44,8 +49,7 @@ public interface MessageMapper extends GenericMapper<MessageDto, Message> {
         message.setSenderNm( d.getSenderNm() );
         message.setMessage( d.getMessage() );
 
-        Room room = new Room();
-        room.setId(d.getRoomId());
+        Room room = roomMapper.toEntity(d.getRoomDto());
         message.setRoom(room);
         
         return message;

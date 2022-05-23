@@ -19,19 +19,19 @@ public class ChatController {
 	@MessageMapping("/chat/enter")
 	public void enter(MessageDto messageDto) {
 		messageDto.setMessage(messageDto.getSenderNm()+"님이 입장하셨습니다.");
-		simpMessagingTemplate.convertAndSend(MESSAGE_DESTINATION+messageDto.getRoomId(), messageDto);
+		simpMessagingTemplate.convertAndSend(MESSAGE_DESTINATION+messageDto.getRoomDto().getRoomUuid(), messageDto);
 	}
 
 	@MessageMapping("/chat/message")
 	public void message(MessageDto messageDto) {
-		simpMessagingTemplate.convertAndSend(MESSAGE_DESTINATION+messageDto.getRoomId(), messageDto);
+		simpMessagingTemplate.convertAndSend(MESSAGE_DESTINATION+messageDto.getRoomDto().getRoomUuid(), messageDto);
 	}
 
 	@MessageMapping("/chat/exit")
 	public void exit(MessageDto messageDto) {
 		// 
 		messageDto.setMessage(messageDto.getSenderNm()+"님이 퇴장하셨습니다.");
-		simpMessagingTemplate.convertAndSend(MESSAGE_DESTINATION+messageDto.getRoomId(), messageDto);
+		simpMessagingTemplate.convertAndSend(MESSAGE_DESTINATION+messageDto.getRoomDto().getRoomUuid(), messageDto);
 	}
 
 }
