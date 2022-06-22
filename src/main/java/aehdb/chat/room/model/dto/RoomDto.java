@@ -8,21 +8,43 @@ import javax.validation.constraints.Size;
 
 import aehdb.comm.model.converter.TFCode;
 import aehdb.comm.model.converter.TFCodeConverter;
+import aehdb.comm.model.dto.BaseResponse;
 import aehdb.mng.legacy.model.dto.LegacyDto;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
-@Getter
-@Setter
 public class RoomDto {
-	private Long id;
-	private UUID roomUuid;
-	@NotEmpty(message = "errors.required")
-	@Size(min = 1, max = 50, message = "errors.range")
-	private String roomNm;
-	@Convert(converter = TFCodeConverter.class)
-	private TFCode isClosed = TFCode.FALSE;
-	private LegacyDto legacyDto;
+	@Getter
+	@Builder
+	@AllArgsConstructor
+	public static class Item {
+		private Long id;
+		private UUID roomUuid;
+		private String roomNm;
+		private TFCode isClosed = TFCode.FALSE;
+		private LegacyDto legacy;
+	}
+
+	@Getter
+	@Setter
+	public static class Request {
+		@NotEmpty(message = "errors.required")
+		@Size(min = 1, max = 50, message = "errors.range")
+		private String roomNm;
+		@Convert(converter = TFCodeConverter.class)
+		private TFCode isClosed = TFCode.FALSE;
+		private Long legacyId;
+	}
+
+	@Getter
+	@SuperBuilder
+	public static class Response extends BaseResponse {
+		private Item item;
+	}
+
 }
 
 // 문제가 뭐냐면 내부 어플리케이션일 때는 화면에서 pk를 암

@@ -1,6 +1,5 @@
 package aehdb.mng.legacy.model.entity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -28,5 +27,5 @@ public class Legacy {
 	private String lgcyNm;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "legacy")
-	private List<Room> room = new ArrayList<>();
+	private List<Room> room;
 }

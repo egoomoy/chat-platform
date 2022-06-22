@@ -6,8 +6,8 @@ import java.util.List;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-import aehdb.chat.chat.model.dto.MessageDto;
-import aehdb.chat.chat.model.entity.Message;
+import aehdb.chat.message.model.dto.MessageDto;
+import aehdb.chat.message.model.entity.Message;
 import aehdb.chat.room.model.dto.RoomDto;
 import aehdb.chat.room.model.entity.Room;
 
@@ -29,8 +29,8 @@ public interface MessageMapper extends GenericMapper<MessageDto, Message> {
         messageDto.setSenderNm( e.getSenderNm() );
         messageDto.setMessage( e.getMessage() );
         
-        RoomDto roomDto = roomMapper.toDto(e.getRoom());
-        messageDto.setRoomDto(roomDto);
+        RoomDto.Item roomDto = roomMapper.toDto(e.getRoom());
+        messageDto.setRoom(roomDto);
         
         return messageDto;
     }
@@ -49,7 +49,7 @@ public interface MessageMapper extends GenericMapper<MessageDto, Message> {
         message.setSenderNm( d.getSenderNm() );
         message.setMessage( d.getMessage() );
 
-        Room room = roomMapper.toEntity(d.getRoomDto());
+        Room room = roomMapper.toEntity(d.getRoom());
         message.setRoom(room);
         
         return message;

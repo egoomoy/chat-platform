@@ -17,17 +17,23 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.validation.constraints.NotNull;
 
-import aehdb.chat.chat.model.entity.Message;
+import aehdb.chat.message.model.entity.Message;
 import aehdb.comm.model.converter.TFCode;
 import aehdb.comm.model.converter.TFCodeConverter;
 import aehdb.comm.model.entity.BaseEntity;
 import aehdb.mng.legacy.model.entity.Legacy;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Room extends BaseEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

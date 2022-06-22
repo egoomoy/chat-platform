@@ -6,6 +6,6 @@ import aehdb.chat.room.model.dto.RoomDto;
 import aehdb.chat.room.model.entity.Room;
 
 @Mapper(componentModel = "spring")
-public interface RoomMapperAuto extends GenericMapper<RoomDto, Room> {
+public interface RoomMapperAuto extends GenericMapper<RoomDto.Item, Room> {
 
 }

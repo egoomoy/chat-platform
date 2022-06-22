@@ -1,4 +1,4 @@
-package aehdb.chat.chat.model.entity;
+package aehdb.chat.message.model.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
-import aehdb.chat.chat.model.dto.MessageDto.MESSAGETYPE;
+import aehdb.chat.message.model.dto.MessageDto.MESSAGETYPE;
 import aehdb.chat.room.model.entity.Room;
 import aehdb.comm.model.entity.BaseEntity;
 import lombok.Getter;

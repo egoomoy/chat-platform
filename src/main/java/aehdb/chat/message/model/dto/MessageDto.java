@@ -1,4 +1,4 @@
-package aehdb.chat.chat.model.dto;
+package aehdb.chat.message.model.dto;
 
 import aehdb.chat.room.model.dto.RoomDto;
 import lombok.Getter;
@@ -13,7 +13,7 @@ public class MessageDto {
 
 	private Long id;
 	private MESSAGETYPE type;
-	private RoomDto roomDto;
+	private RoomDto.Item room;
 	private String senderId;
 	private String senderNm;
 	private String message;

@@ -7,96 +7,75 @@ import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
 import aehdb.chat.room.model.dto.RoomDto;
+import aehdb.chat.room.model.dto.RoomDto.Item;
+import aehdb.chat.room.model.dto.RoomDto.Item.ItemBuilder;
 import aehdb.chat.room.model.entity.Room;
-import aehdb.mng.legacy.model.dto.LegacyDto;
-import aehdb.mng.legacy.model.entity.Legacy;
+import aehdb.chat.room.model.entity.Room.RoomBuilder;
 
 @Mapper(componentModel = "spring")
-public interface RoomMapper extends GenericMapper<RoomDto, Room> {
-		LegacyMapper legacyMapper = Mappers.getMapper(LegacyMapper.class);
-		@Override
-	    public default RoomDto toDto(Room e) {
-	        if ( e == null ) {
-	            return null;
-	        }
+public interface RoomMapper extends GenericMapper<RoomDto.Item, Room> {
+	LegacyMapper legacyMapper = Mappers.getMapper(LegacyMapper.class);
 
-	        RoomDto roomDto = new RoomDto();
+	@Override
+	public default RoomDto.Item toDto(Room e) {
+		if (e == null) {
+			return null;
+		}
 
-	        roomDto.setId( e.getId() );
-	        roomDto.setRoomUuid( e.getRoomUuid() );
-	        roomDto.setRoomNm( e.getRoomNm() );
-	        roomDto.setIsClosed( e.getIsClosed() );
+		ItemBuilder item = Item.builder();
 
-	        LegacyDto legacyDto = legacyMapper.toDto(e.getLegacy());
-	        roomDto.setLegacyDto(legacyDto);
-	        
-	        return roomDto;
-	    }
+		item.id(e.getId());
+		item.isClosed(e.getIsClosed());
+		item.legacy(legacyMapper.toDto(e.getLegacy()));
+		item.roomNm(e.getRoomNm());
+		item.roomUuid(e.getRoomUuid());
 
-	    @Override
-	    public default Room toEntity(RoomDto d) {
-	        if ( d == null ) {
-	            return null;
-	        }
+		return item.build();
+	}
 
-	        Room room = new Room();
+	@Override
+	public default Room toEntity(RoomDto.Item d) {
+		if (d == null) {
+			return null;
+		}
 
-	        room.setId( d.getId() );
-	        room.setRoomUuid( d.getRoomUuid() );
-	        room.setIsClosed( d.getIsClosed() );
-	        room.setRoomNm( d.getRoomNm() );
-	        
-	        Legacy legacy = legacyMapper.toEntity(d.getLegacyDto());
-	        room.setLegacy(legacy);
+		RoomBuilder room = Room.builder();
 
-	        return room;
-	    }
+		room.id(d.getId());
+		room.isClosed(d.getIsClosed());
+		room.legacy(legacyMapper.toEntity(d.getLegacy()));
+		room.roomNm(d.getRoomNm());
+		room.roomUuid(d.getRoomUuid());
 
-	    @Override
-	    public default List<RoomDto> toDto(List<Room> e) {
-	        if ( e == null ) {
-	            return null;
-	        }
+		return room.build();
+	}
 
-	        List<RoomDto> list = new ArrayList<RoomDto>( e.size() );
-	        for ( Room room : e ) {
-	            list.add( toDto( room ) );
-	        }
+	@Override
+	public default List<RoomDto.Item> toDto(List<Room> e) {
+		if (e == null) {
+			return null;
+		}
 
-	        return list;
-	    }
+		List<RoomDto.Item> list = new ArrayList<RoomDto.Item>(e.size());
+		for (Room room : e) {
+			list.add(toDto(room));
+		}
 
-	    @Override
-	    public default List<Room> toEntity(List<RoomDto> d) {
-	        if ( d == null ) {
-	            return null;
-	        }
+		return list;
+	}
 
-	        List<Room> list = new ArrayList<Room>( d.size() );
-	        for ( RoomDto roomDto : d ) {
-	            list.add( toEntity( roomDto ) );
-	        }
+	@Override
+	public default List<Room> toEntity(List<RoomDto.Item> d) {
+		if (d == null) {
+			return null;
+		}
 
-	        return list;
-	    }
+		List<Room> list = new ArrayList<Room>(d.size());
+		for (RoomDto.Item roomDto : d) {
+			list.add(toEntity(roomDto));
+		}
 
-	    @Override
-	    public default void updateFromDto(RoomDto dto, Room entity) {
-	        if ( dto == null ) {
-	            return;
-	        }
+		return list;
+	}
 
-	        if ( dto.getId() != null ) {
-	            entity.setId( dto.getId() );
-	        }
-	        if ( dto.getRoomUuid() != null ) {
-	            entity.setRoomUuid( dto.getRoomUuid() );
-	        }
-	        if ( dto.getIsClosed() != null ) {
-	            entity.setIsClosed( dto.getIsClosed() );
-	        }
-	        if ( dto.getRoomNm() != null ) {
-	            entity.setRoomNm( dto.getRoomNm() );
-	        }
-	    }
 }
