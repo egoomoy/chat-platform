@@ -4,105 +4,101 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.mapstruct.Mapper;
-import org.mapstruct.factory.Mappers;
 
 import aehdb.chat.message.model.dto.MessageDto;
+import aehdb.chat.message.model.dto.MessageDto.Item;
+import aehdb.chat.message.model.dto.MessageDto.Item.ItemBuilder;
 import aehdb.chat.message.model.entity.Message;
-import aehdb.chat.room.model.dto.RoomDto;
-import aehdb.chat.room.model.entity.Room;
-
 
 @Mapper(componentModel = "spring")
-public interface MessageMapper extends GenericMapper<MessageDto, Message> {
-	RoomMapper roomMapper = Mappers.getMapper(RoomMapper.class);
+public interface MessageMapper extends GenericMapper<MessageDto.Item, Message> {
 	@Override
-    public default MessageDto toDto(Message e) {
-        if ( e == null ) {
-            return null;
-        }
+	public default Item toDto(Message e) {
+		if (e == null) {
+			return null;
+		}
 
-        MessageDto messageDto = new MessageDto();
+		ItemBuilder item = Item.builder();
 
-        messageDto.setId( e.getId() );
-        messageDto.setType( e.getType() );
-        messageDto.setSenderId( e.getSenderId() );
-        messageDto.setSenderNm( e.getSenderNm() );
-        messageDto.setMessage( e.getMessage() );
-        
-        RoomDto.Item roomDto = roomMapper.toDto(e.getRoom());
-        messageDto.setRoom(roomDto);
-        
-        return messageDto;
-    }
+		item.roomUuid(e.getRoomUuid());
+		item.id(e.getId());
+		item.type(e.getType());
+		item.senderId(e.getSenderId());
+		item.senderNm(e.getSenderNm());
+		item.message(e.getMessage());
 
-    @Override
-    public default Message toEntity(MessageDto d) {
-        if ( d == null ) {
-            return null;
-        }
+		return item.build();
+	}
 
-        Message message = new Message();
+	@Override
+	public default Message toEntity(Item d) {
+		if (d == null) {
+			return null;
+		}
 
-        message.setId( d.getId() );
-        message.setType( d.getType() );
-        message.setSenderId( d.getSenderId() );
-        message.setSenderNm( d.getSenderNm() );
-        message.setMessage( d.getMessage() );
+		Message message = new Message();
 
-        Room room = roomMapper.toEntity(d.getRoom());
-        message.setRoom(room);
-        
-        return message;
-    }
+		message.setRoomUuid(d.getRoomUuid());
+		message.setId(d.getId());
+		message.setType(d.getType());
+		message.setSenderId(d.getSenderId());
+		message.setSenderNm(d.getSenderNm());
+		message.setMessage(d.getMessage());
 
-    @Override
-    public default List<MessageDto> toDto(List<Message> e) {
-        if ( e == null ) {
-            return null;
-        }
+		return message;
+	}
 
-        List<MessageDto> list = new ArrayList<MessageDto>( e.size() );
-        for ( Message message : e ) {
-            list.add( toDto( message ) );
-        }
+	@Override
+	public default List<Item> toDto(List<Message> e) {
+		if (e == null) {
+			return null;
+		}
 
-        return list;
-    }
+		List<Item> list = new ArrayList<Item>(e.size());
+		for (Message message : e) {
+			list.add(toDto(message));
+		}
 
-    @Override
-    public default List<Message> toEntity(List<MessageDto> d) {
-        if ( d == null ) {
-            return null;
-        }
+		return list;
+	}
 
-        List<Message> list = new ArrayList<Message>( d.size() );
-        for ( MessageDto messageDto : d ) {
-            list.add( toEntity( messageDto ) );
-        }
+	@Override
+	public default List<Message> toEntity(List<Item> d) {
+		if (d == null) {
+			return null;
+		}
 
-        return list;
-    }
+		List<Message> list = new ArrayList<Message>(d.size());
+		for (Item item : d) {
+			list.add(toEntity(item));
+		}
 
-    @Override
-    public default void updateFromDto(MessageDto dto, Message entity) {
-        if ( dto == null ) {
-            return;
-        }
+		return list;
+	}
 
-        if ( dto.getId() != null ) {
-            entity.setId( dto.getId() );
-        }
-        if ( dto.getType() != null ) {
-            entity.setType( dto.getType() );
-        }
-        if ( dto.getSenderId() != null ) {
-            entity.setSenderId( dto.getSenderId() );
-        }
-        if ( dto.getSenderNm() != null ) {
-            entity.setSenderNm( dto.getSenderNm() );
-        }
-        if ( dto.getMessage() != null ) {
-            entity.setMessage( dto.getMessage() );
-        }
-    }
+	@Override
+	public default void updateFromDto(Item dto, Message entity) {
+		if (dto == null) {
+			return;
+		}
+
+		if(dto.getRoomUuid() != null) {
+			entity.setRoomUuid(dto.getRoomUuid());
+		}
+		if (dto.getId() != null) {
+			entity.setId(dto.getId());
+		}
+		if (dto.getType() != null) {
+			entity.setType(dto.getType());
+		}
+		if (dto.getSenderId() != null) {
+			entity.setSenderId(dto.getSenderId());
+		}
+		if (dto.getSenderNm() != null) {
+			entity.setSenderNm(dto.getSenderNm());
+		}
+		if (dto.getMessage() != null) {
+			entity.setMessage(dto.getMessage());
+		}
+	}
 }

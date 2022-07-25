@@ -7,6 +7,6 @@ import aehdb.chat.message.model.entity.Message;
 
 
 @Mapper(componentModel = "spring")
-public interface MessageMapperAuto extends GenericMapper<MessageDto.Item, Message> {
+public interface UpgradeMessageMapper extends UpgradeGenericMapper<MessageDto.Item, Message,MessageDto.Request, MessageDto.Response > {
 
 }

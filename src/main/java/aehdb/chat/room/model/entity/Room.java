@@ -1,7 +1,5 @@
 package aehdb.chat.room.model.entity;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 import javax.persistence.Column;
@@ -13,11 +11,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.validation.constraints.NotNull;
 
-import aehdb.chat.message.model.entity.Message;
 import aehdb.comm.model.converter.TFCode;
 import aehdb.comm.model.converter.TFCodeConverter;
 import aehdb.comm.model.entity.BaseEntity;
@@ -54,9 +50,6 @@ public class Room extends BaseEntity {
 	@JoinColumn(name = "legacy_id") // 외래키
 	private Legacy legacy;
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "room")
-	private List<Message> message = new ArrayList<>();
-
 	@PrePersist
 	public void autoUUIDFill() {
 		this.setRoomUuid(UUID.randomUUID());

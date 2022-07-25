@@ -24,12 +24,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
         .and()
         .authorizeRequests()
-        .antMatchers("/login").permitAll()
+        .antMatchers("/**").permitAll()
         .antMatchers("/ws/**").permitAll()
         .antMatchers("/chat/**").permitAll()
         .antMatchers("/sub/**").permitAll()
         .antMatchers("/pub/**").permitAll()
-        .antMatchers("/mng/**").hasRole("ADMIN")
+//        .antMatchers("/mng/**").hasRole("ADMIN")
+        .antMatchers("/mng/**").permitAll()
         .anyRequest().hasRole("USER");
 
 	    http.addFilterBefore(jwtSecurityFilter, UsernamePasswordAuthenticationFilter.class);

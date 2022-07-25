@@ -1,14 +1,18 @@
 package aehdb.chat.room.service.impl;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
 import aehdb.chat.room.model.dto.RoomDto;
+import aehdb.chat.room.model.dto.RoomDto.Request;
 import aehdb.chat.room.model.entity.Room;
 import aehdb.chat.room.model.repository.RoomRepository;
 import aehdb.chat.room.service.RoomService;
 import aehdb.comm.model.mapper.RoomMapper;
+import aehdb.mng.board.model.dto.BoardDto;
+import aehdb.mng.board.model.entity.Board;
 import aehdb.mng.legacy.model.dto.LegacyDto;
 import lombok.RequiredArgsConstructor;
 
@@ -28,7 +32,6 @@ public class RoomServiceImpl implements RoomService {
 		// 실제 데이터는 req에서 조작되어야하고,
 		// Res와 item은 불변성 유지해야한다.
 		Room room =roomRepository.findRoomByRoomUuid(uuid);
-		
 		RoomDto.Item roomDtoItem = roomMapperImp.toDto(room);
 
 		return roomDtoItem;
@@ -48,6 +51,31 @@ public class RoomServiceImpl implements RoomService {
 		room = roomRepository.save(room);
 		
 		return roomMapperImp.toDto(room);
+	}
+
+	@Override
+	public List<RoomDto.Item> selectRoomList(){
+		List<Room> roomEntityList = null;
+		roomEntityList = roomRepository.findAllByOrderByIdDesc();
+		
+		List<RoomDto.Item> RoomDtoList = roomMapperImp.toDto(roomEntityList);
+		
+//		List<Board> boardEntityList = null;
+//
+//		String searchTitle = boardSearchDto.getSearchTitle();
+//		if ("".equals(searchTitle)) {
+//			boardEntityList = boardRepository.findAllByOrderByIdDesc();
+//		} else {
+//			boardEntityList = boardRepository.findByTitleContainsOrderByIdDesc(searchTitle);
+//		}
+//
+//		List<BoardDto> boardDtoList = boardMapperImpl.toDto(boardEntityList);
+//		
+//		return boardDtoList;
+	
+		
+		
+		return RoomDtoList;
 	}
 
 	

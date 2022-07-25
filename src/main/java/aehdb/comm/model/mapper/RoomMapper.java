@@ -29,6 +29,7 @@ public interface RoomMapper extends GenericMapper<RoomDto.Item, Room> {
 		item.legacy(legacyMapper.toDto(e.getLegacy()));
 		item.roomNm(e.getRoomNm());
 		item.roomUuid(e.getRoomUuid());
+		item.createDate(e.getCreateDate());
 
 		return item.build();
 	}
