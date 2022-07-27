@@ -31,12 +31,17 @@ public class RoomController {
 		List<RoomDto.Item> roomList = roomService.selectRoomList();
 		List<RoomDto.Response> responseRoomList = new ArrayList<RoomDto.Response>();
 
-//		roomList.sort(new Comparator<RoomDto.Item>() {
-//			@Override
-//			public int compare(RoomDto.Item first, RoomDto.Item second) {
-//				return second.getLastMessage().getId().intValue() - first.getLastMessage().getId().intValue();
-//			}
-//		}); 
+		roomList.sort(new Comparator<RoomDto.Item>() {
+			@Override
+			public int compare(RoomDto.Item first, RoomDto.Item second) {
+				if (first.getLastMessage() != null && second.getLastMessage() != null) {
+					return second.getLastMessage().getId().intValue() - first.getLastMessage().getId().intValue();
+				} else {
+					return -1;
+				}
+			}
+		}); 
+		
 		for (Item rtnRoom : roomList) {
 			if (rtnRoom.getLastMessage() != null) {
 				RoomDto.Response response = RoomDto.Response.builder()
