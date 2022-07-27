@@ -31,7 +31,7 @@ public class MessageServiceImpl implements MessageService {
 	@Override
 	public List<Item> selectMessageList(UUID uuid) throws Exception {
 		List<Message> messageEntityList = null;
-		messageEntityList = messageRepository.findAllByroomUuid(uuid);
+		messageEntityList = messageRepository.findAllByroomUuidOrderByIdAsc(uuid);
 		List<MessageDto.Item> MessageDtoList = upgradeMessageMapperImpl.entitiytoItem(messageEntityList);
 		return MessageDtoList;
 	}

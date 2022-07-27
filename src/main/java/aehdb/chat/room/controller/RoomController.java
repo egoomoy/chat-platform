@@ -36,7 +36,14 @@ public class RoomController {
 			public int compare(RoomDto.Item first, RoomDto.Item second) {
 				if (first.getLastMessage() != null && second.getLastMessage() != null) {
 					return second.getLastMessage().getId().intValue() - first.getLastMessage().getId().intValue();
-				} else {
+				} else if(first.getLastMessage() == null || second.getLastMessage() == null) {
+					if(first.getLastMessage() == null) {
+						return -1;
+					} else {
+						return 1;
+					}
+				} 
+				else {
 					return -1;
 				}
 			}
