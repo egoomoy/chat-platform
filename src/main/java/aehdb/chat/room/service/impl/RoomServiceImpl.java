@@ -6,13 +6,10 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 import aehdb.chat.room.model.dto.RoomDto;
-import aehdb.chat.room.model.dto.RoomDto.Request;
 import aehdb.chat.room.model.entity.Room;
 import aehdb.chat.room.model.repository.RoomRepository;
 import aehdb.chat.room.service.RoomService;
 import aehdb.comm.model.mapper.RoomMapper;
-import aehdb.mng.board.model.dto.BoardDto;
-import aehdb.mng.board.model.entity.Board;
 import aehdb.mng.legacy.model.dto.LegacyDto;
 import lombok.RequiredArgsConstructor;
 
@@ -31,16 +28,15 @@ public class RoomServiceImpl implements RoomService {
 		// entity를 response화 하면된다?
 		// 실제 데이터는 req에서 조작되어야하고,
 		// Res와 item은 불변성 유지해야한다.
-		Room room =roomRepository.findRoomByRoomUuid(uuid);
+		Room room = roomRepository.findRoomByRoomUuid(uuid);
 		RoomDto.Item roomDtoItem = roomMapperImp.toDto(room);
-
 		return roomDtoItem;
 	}
 
 	public RoomDto.Item createRoom(RoomDto.Request roomDtoReq) {
 		LegacyDto lc = new LegacyDto();
 		lc.setId(roomDtoReq.getLegacyId());
-		
+
 		RoomDto.Item roomItem = RoomDto.Item.builder()
 				.roomNm(roomDtoReq.getRoomNm())
 				.isClosed(roomDtoReq.getIsClosed())
@@ -49,46 +45,20 @@ public class RoomServiceImpl implements RoomService {
 
 		Room room = roomMapperImp.toEntity(roomItem);
 		room = roomRepository.save(room);
-		
 		return roomMapperImp.toDto(room);
 	}
 
 	@Override
-	public List<RoomDto.Item> selectRoomList(){
+	public List<RoomDto.Item> selectRoomList() {
 		List<Room> roomEntityList = null;
 		roomEntityList = roomRepository.findAllByOrderByIdDesc();
-		
-		List<RoomDto.Item> RoomDtoList = roomMapperImp.toDto(roomEntityList);
-		
-//		List<Board> boardEntityList = null;
-//
-//		String searchTitle = boardSearchDto.getSearchTitle();
-//		if ("".equals(searchTitle)) {
-//			boardEntityList = boardRepository.findAllByOrderByIdDesc();
-//		} else {
-//			boardEntityList = boardRepository.findByTitleContainsOrderByIdDesc(searchTitle);
-//		}
-//
-//		List<BoardDto> boardDtoList = boardMapperImpl.toDto(boardEntityList);
-//		
-//		return boardDtoList;
-	
-		
-		
-		return RoomDtoList;
+		List<RoomDto.Item> tempRoomDtoList = roomMapperImp.toDto(roomEntityList);
+		return tempRoomDtoList;
 	}
 
-	
 	// 순환 참조 테스트
 //	@Override
 //	public Room tempfindRoomByRoomUuid(UUID uuid) throws Exception {
-//		// 만약 여기서 req 객체를 받았다고 가정해보자
-//		// 난 그럼 req 객체를 토대로 Item을 세팅해주는건가..? AllArgsConstructor 든 Builder 든으로 생성을 한다?
-//		// item을 빌더로 만들 경우에는 확실히 객체의 불변성을 보장해준다?
-//		// item을 entity화 시켜주고 로직 처리를 한다.
-//		// entity를 response화 하면된다?
-//		// 실제 데이터는 req에서 조작되어야하고,
-//		// Res와 item은 불변성 유지해야한다.
 //		Room room =roomRepository.findRoomByRoomUuid(uuid);
 //		return room;
 //

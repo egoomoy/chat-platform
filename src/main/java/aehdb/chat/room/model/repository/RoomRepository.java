@@ -20,6 +20,7 @@ import aehdb.chat.room.model.entity.Room;
 public interface RoomRepository extends JpaRepository<Room, Long> {
 
 	List<Room> findAllByOrderByIdDesc();
+
 	Room findRoomByRoomUuid(UUID uuid);
 
 }

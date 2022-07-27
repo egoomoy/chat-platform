@@ -1,8 +1,11 @@
 package aehdb.chat.message.model.dto;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
+
 import javax.validation.constraints.NotEmpty;
-import aehdb.chat.room.model.dto.RoomDto;
+
+import aehdb.chat.room.model.entity.Room;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -23,6 +26,7 @@ public class MessageDto {
 		private String senderId;
 		private String senderNm;
 		private String message;
+		private LocalDateTime modified_date;
 	}
 
 	@Getter

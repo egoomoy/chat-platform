@@ -14,6 +14,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.JoinFormula;
+
+import aehdb.chat.message.model.entity.Message;
 import aehdb.comm.model.converter.TFCode;
 import aehdb.comm.model.converter.TFCodeConverter;
 import aehdb.comm.model.entity.BaseEntity;
@@ -49,6 +52,16 @@ public class Room extends BaseEntity {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "legacy_id") // 외래키
 	private Legacy legacy;
+
+	@ManyToOne(fetch = FetchType.LAZY)	
+	@JoinFormula("(" +
+		    "SELECT ms.id  " +
+		    "FROM message ms " +
+		    "WHERE ms.room_uuid = room_uuid " +
+		    "ORDER BY ms.create_date DESC " +
+		    "LIMIT 1" +
+		")")
+	private Message lastMessage;
 	
 	@PrePersist
 	public void autoUUIDFill() {
@@ -57,4 +70,10 @@ public class Room extends BaseEntity {
 	// 생성자 이용할까 하다가 이왕이면 이게 맞다고 생각이 드는건..? 내 생각이 맞았다.
 	// the constructor method is called when you create the object in memory.
 	// the prePersist event is fired right before you persist it into database.
+	
+	
+	
+//
+//	@OneToMany(fetch = FetchType.LAZY, mappedBy = "legacy")
+//	private List<Room> room;
 }

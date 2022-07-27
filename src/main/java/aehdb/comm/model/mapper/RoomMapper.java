@@ -15,6 +15,7 @@ import aehdb.chat.room.model.entity.Room.RoomBuilder;
 @Mapper(componentModel = "spring")
 public interface RoomMapper extends GenericMapper<RoomDto.Item, Room> {
 	LegacyMapper legacyMapper = Mappers.getMapper(LegacyMapper.class);
+	UpgradeMessageMapper upgradeMessageMapper = Mappers.getMapper(UpgradeMessageMapper.class);
 
 	@Override
 	public default RoomDto.Item toDto(Room e) {
@@ -30,6 +31,7 @@ public interface RoomMapper extends GenericMapper<RoomDto.Item, Room> {
 		item.roomNm(e.getRoomNm());
 		item.roomUuid(e.getRoomUuid());
 		item.createDate(e.getCreateDate());
+		item.lastMessage(upgradeMessageMapper.entitiytoItem(e.getLastMessage()));
 
 		return item.build();
 	}

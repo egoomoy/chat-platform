@@ -7,6 +7,7 @@ import javax.persistence.Convert;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
+import aehdb.chat.message.model.dto.MessageDto;
 import aehdb.comm.model.converter.TFCode;
 import aehdb.comm.model.converter.TFCodeConverter;
 import aehdb.mng.legacy.model.dto.LegacyDto;
@@ -26,6 +27,7 @@ public class RoomDto {
 		private TFCode isClosed = TFCode.FALSE;
 		private LegacyDto legacy;
 		private LocalDateTime createDate;
+		private MessageDto.Item lastMessage;
 	}
 
 	@Getter
@@ -47,6 +49,8 @@ public class RoomDto {
 		private String roomNm;
 		private TFCode isClosed = TFCode.FALSE;
 		private LocalDateTime createDate;
+		private String lastMessage;
+		private LocalDateTime lastMessageDate;
 
 	}
 

@@ -1,6 +1,8 @@
 package aehdb.chat.room.controller;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.UUID;
 
@@ -15,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import aehdb.chat.room.model.dto.RoomDto;
 import aehdb.chat.room.model.dto.RoomDto.Item;
-import aehdb.chat.room.model.dto.RoomDto.Response;
 import aehdb.chat.room.service.RoomService;
 import lombok.RequiredArgsConstructor;
 
@@ -29,15 +30,26 @@ public class RoomController {
 	public List<RoomDto.Response> getRooms() throws Exception {
 		List<RoomDto.Item> roomList = roomService.selectRoomList();
 		List<RoomDto.Response> responseRoomList = new ArrayList<RoomDto.Response>();
+
+//		roomList.sort(new Comparator<RoomDto.Item>() {
+//			@Override
+//			public int compare(RoomDto.Item first, RoomDto.Item second) {
+//				return second.getLastMessage().getId().intValue() - first.getLastMessage().getId().intValue();
+//			}
+//		}); 
 		for (Item rtnRoom : roomList) {
-			RoomDto.Response response = RoomDto.Response.builder()
-					.id(rtnRoom.getId())
-					.roomUuid(rtnRoom.getRoomUuid())
-					.roomNm(rtnRoom.getRoomNm())
-					.isClosed(rtnRoom.getIsClosed())
-					.createDate(rtnRoom.getCreateDate())
-					.build();
-			responseRoomList.add(response);
+			if (rtnRoom.getLastMessage() != null) {
+				RoomDto.Response response = RoomDto.Response.builder()
+						.id(rtnRoom.getId())
+						.roomUuid(rtnRoom.getRoomUuid())
+						.roomNm(rtnRoom.getRoomNm())
+						.isClosed(rtnRoom.getIsClosed())
+						.createDate(rtnRoom.getCreateDate())
+						.lastMessage(rtnRoom.getLastMessage().getMessage())
+						.lastMessageDate(rtnRoom.getLastMessage().getModified_date())
+						.build();
+				responseRoomList.add(response);
+			}
 		}
 		return responseRoomList;
 	}
