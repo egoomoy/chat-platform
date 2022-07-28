@@ -1,14 +1,13 @@
 package aehdb.chat.room.controller;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 import java.util.UUID;
 
 import javax.validation.Valid;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import aehdb.chat.room.model.dto.RoomDto;
 import aehdb.chat.room.model.dto.RoomDto.Item;
+import aehdb.chat.room.model.dto.RoomDto.Response.ResponseBuilder;
 import aehdb.chat.room.service.RoomService;
 import lombok.RequiredArgsConstructor;
 
@@ -31,37 +31,20 @@ public class RoomController {
 		List<RoomDto.Item> roomList = roomService.selectRoomList();
 		List<RoomDto.Response> responseRoomList = new ArrayList<RoomDto.Response>();
 
-		roomList.sort(new Comparator<RoomDto.Item>() {
-			@Override
-			public int compare(RoomDto.Item first, RoomDto.Item second) {
-				if (first.getLastMessage() != null && second.getLastMessage() != null) {
-					return second.getLastMessage().getId().intValue() - first.getLastMessage().getId().intValue();
-				} else if(first.getLastMessage() == null || second.getLastMessage() == null) {
-					if(first.getLastMessage() == null) {
-						return -1;
-					} else {
-						return 1;
-					}
-				} 
-				else {
-					return -1;
-				}
-			}
-		}); 
-		
 		for (Item rtnRoom : roomList) {
-			if (rtnRoom.getLastMessage() != null) {
-				RoomDto.Response response = RoomDto.Response.builder()
-						.id(rtnRoom.getId())
-						.roomUuid(rtnRoom.getRoomUuid())
-						.roomNm(rtnRoom.getRoomNm())
-						.isClosed(rtnRoom.getIsClosed())
-						.createDate(rtnRoom.getCreateDate())
-						.lastMessage(rtnRoom.getLastMessage().getMessage())
-						.lastMessageDate(rtnRoom.getLastMessage().getModified_date())
-						.build();
-				responseRoomList.add(response);
+			ResponseBuilder rb = RoomDto.Response.builder();
+			rb.id(rtnRoom.getId());
+			rb.roomUuid(rtnRoom.getRoomUuid());
+			rb.roomNm(rtnRoom.getRoomNm());
+			rb.isClosed(rtnRoom.getIsClosed());
+			rb.createDate(rtnRoom.getCreateDate());
+			rb.status(rtnRoom.getStatus());
+			if (rtnRoom.getMessage().size() != 0) {
+				rb.lastMessage(rtnRoom.getMessage().get(0).getMessage());
+				rb.lastMessageDate(rtnRoom.getMessage().get(0).getModified_date());
 			}
+			responseRoomList.add(rb.build());
+//			}
 		}
 		return responseRoomList;
 	}
@@ -75,6 +58,7 @@ public class RoomController {
 				.roomNm(rtnRoom.getRoomNm())
 				.isClosed(rtnRoom.getIsClosed())
 				.createDate(rtnRoom.getCreateDate())
+				.status(rtnRoom.getStatus())
 				.build();
 		return response;
 	}
@@ -88,9 +72,29 @@ public class RoomController {
 				.roomNm(rtnRoom.getRoomNm())
 				.isClosed(rtnRoom.getIsClosed())
 				.createDate(rtnRoom.getCreateDate())
+				.status(rtnRoom.getStatus())
 				.build();
 		return response;
+	}
 
+	@PatchMapping("/room")
+	public RoomDto.Response updateRoom(@RequestBody @Valid RoomDto.Request roomDtoReq) throws Exception {
+		final RoomDto.Item rtnRoom = roomService.updateRoom(roomDtoReq);
+
+		ResponseBuilder rb = RoomDto.Response.builder();
+		rb.id(rtnRoom.getId());
+		rb.roomUuid(rtnRoom.getRoomUuid());
+		rb.roomNm(rtnRoom.getRoomNm());
+		rb.isClosed(rtnRoom.getIsClosed());
+		rb.createDate(rtnRoom.getCreateDate());
+		rb.status(rtnRoom.getStatus());
+		if (rtnRoom.getMessage().size() != 0) {
+			rb.lastMessage(rtnRoom.getMessage().get(0).getMessage());
+			rb.lastMessageDate(rtnRoom.getMessage().get(0).getModified_date());
+		}
+		RoomDto.Response response = rb.build();
+
+		return response;
 	}
 
 	// 순환참조 테스트

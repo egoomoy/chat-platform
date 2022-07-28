@@ -9,7 +9,7 @@ public interface MessageService {
 	
 	public MessageDto.Item insertMessage(MessageDto.Request req) throws Exception;
 	
-	List<MessageDto.Item> selectMessageList(UUID uuid) throws Exception;
+	List<MessageDto.Item> selectMessageList(Long id) throws Exception;
 
 
 }

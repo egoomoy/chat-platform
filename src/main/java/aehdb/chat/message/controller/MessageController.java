@@ -45,13 +45,13 @@ public class MessageController {
 
 		MessageDto.Item transDto = messageSerivce.insertMessage(req);
 		MessageDto.Response res = upgradeMessageMapperImpl.itemToRes(transDto);
-
-		simpMessagingTemplate.convertAndSend(MESSAGE_DESTINATION + res.getRoomUuid(), res);
+		
+		simpMessagingTemplate.convertAndSend(MESSAGE_DESTINATION + res.builder().roomUuid(transDto.getRoom().getRoomUuid()).build().getRoomUuid(), res);
 	}
 
-	@GetMapping("/messages/{roomUUID}")
-	public List<MessageDto.Response> getMessageDtos(@PathVariable("roomUUID") String id) throws Exception {
-		List<MessageDto.Item> MessageItemList = messageSerivce.selectMessageList(UUID.fromString(id));
+	@GetMapping("/messages/{id}")
+	public List<MessageDto.Response> getMessageDtos(@PathVariable("id") Long id) throws Exception {
+		List<MessageDto.Item> MessageItemList = messageSerivce.selectMessageList(id);
 		List<MessageDto.Response> responseMessageList = upgradeMessageMapperImpl.itemToRes(MessageItemList);
 		return responseMessageList;
 	}

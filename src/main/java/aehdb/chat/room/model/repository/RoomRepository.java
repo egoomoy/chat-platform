@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 //import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.Query;
 
 import aehdb.chat.room.model.entity.Room;
 
@@ -19,8 +20,8 @@ import aehdb.chat.room.model.entity.Room;
 
 public interface RoomRepository extends JpaRepository<Room, Long> {
 
+//	@Query("select distinct r from Room r left join r.message")
+	@Query("select distinct r from Room r left join fetch r.message")
 	List<Room> findAllByOrderByIdDesc();
-
 	Room findRoomByRoomUuid(UUID uuid);
-
 }

@@ -12,9 +12,9 @@ public interface MessageRepository extends JpaRepository<Message, Long> {
 
 	List<Message> findAll();
 
-	List<Message> findAllByroomUuid(UUID roomUuid);
-	List<Message> findAllByroomUuidOrderByIdAsc(UUID roomUuid);
+	List<Message> findAllByroomId(UUID roomUuid);
+	List<Message> findAllByroomIdOrderByIdAsc(Long id);
 
-	Optional<Message> findTop1ByroomUuid(UUID roomUuid);
+//	Optional<Message> findTop1ByroomUuid(UUID roomUuid);
 
 }

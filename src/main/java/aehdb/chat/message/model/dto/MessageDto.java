@@ -5,7 +5,9 @@ import java.util.UUID;
 
 import javax.validation.constraints.NotEmpty;
 
-import aehdb.chat.room.model.entity.Room;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import aehdb.chat.room.model.dto.RoomDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -17,16 +19,16 @@ public class MessageDto {
 	}
 
 	@Getter
-	@Builder
+	@Setter
 	@AllArgsConstructor
 	public static class Item {
 		private Long id;
-		private UUID roomUuid;
 		private MESSAGETYPE type;
 		private String senderId;
 		private String senderNm;
 		private String message;
 		private LocalDateTime modified_date;
+		private RoomDto.Item room;
 	}
 
 	@Getter
@@ -34,6 +36,8 @@ public class MessageDto {
 	public static class Request {
 		@NotEmpty(message = "errors.required")
 		private UUID roomUuid;
+		@NotEmpty(message = "errors.required")
+		private Long roomId;
 		private MESSAGETYPE type;
 		private String senderId;
 		private String message;
@@ -45,6 +49,7 @@ public class MessageDto {
 	@Builder
 	public static class Response {
 		private Long id;
+		private Long roomId;
 		private MESSAGETYPE type;
 		private UUID roomUuid;
 		private String senderId;

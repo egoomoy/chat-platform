@@ -1,53 +1,60 @@
 package aehdb.chat.room.model.dto;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 import javax.persistence.Convert;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import aehdb.chat.message.model.dto.MessageDto;
+import aehdb.comm.model.converter.RoomStatusCode;
 import aehdb.comm.model.converter.TFCode;
 import aehdb.comm.model.converter.TFCodeConverter;
 import aehdb.mng.legacy.model.dto.LegacyDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 public class RoomDto {
 	@Getter
-	@Builder
+	@Setter
 	@AllArgsConstructor
+	@NoArgsConstructor
 	public static class Item {
 		private Long id;
 		private UUID roomUuid;
 		private String roomNm;
 		private TFCode isClosed = TFCode.FALSE;
+		private RoomStatusCode status = RoomStatusCode.OPEN;
 		private LegacyDto legacy;
 		private LocalDateTime createDate;
-		private MessageDto.Item lastMessage;
+		private List<MessageDto.Item> message;
 	}
 
 	@Getter
 	@Setter
 	public static class Request {
-		@NotEmpty(message = "errors.required")
-		@Size(min = 1, max = 50, message = "errors.range")
+		private Long id;
 		private String roomNm;
 		@Convert(converter = TFCodeConverter.class)
 		private TFCode isClosed = TFCode.FALSE;
+		private RoomStatusCode status = RoomStatusCode.OPEN;
 		private Long legacyId;
 	}
 
 	@Getter
 	@Builder
+	@JsonInclude(JsonInclude.Include.NON_NULL)
 	public static class Response {
 		private Long id;
 		private UUID roomUuid;
 		private String roomNm;
 		private TFCode isClosed = TFCode.FALSE;
+		private RoomStatusCode status = RoomStatusCode.OPEN;
 		private LocalDateTime createDate;
 		private String lastMessage;
 		private LocalDateTime lastMessageDate;

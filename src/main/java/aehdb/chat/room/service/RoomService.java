@@ -12,6 +12,8 @@ public interface RoomService {
 
 	List<RoomDto.Item> selectRoomList() throws Exception;
 
+	public RoomDto.Item updateRoom(RoomDto.Request roomDtoReq) throws Exception;
+
 	// 순환참조 테스트 
 //	public Room tempfindRoomByRoomUuid(UUID uuid) throws Exception;
 	
