@@ -26,11 +26,11 @@ public class MessageController {
 	private final MessageService messageSerivce;
 
 	private final SimpMessagingTemplate simpMessagingTemplate;
-	private final String MESSAGE_DESTINATION = "/sub/chat/room/";
+	private final String MESSAGE_DESTINATION = "/chat/sub/room/";
 	private final WebSocketMessageBrokerStats webSocketMessageBrokerStats;
 	private final UpgradeMessageMapperImpl upgradeMessageMapperImpl;
 
-	@MessageMapping("/chat/message")
+	@MessageMapping("/message")
 	public void enter(MessageDto.Request req) throws Exception {
 		switch (req.getType()) {
 		case ENTER:

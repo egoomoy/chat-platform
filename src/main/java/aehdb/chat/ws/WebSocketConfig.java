@@ -26,14 +26,14 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
 	@Override
 	public void configureMessageBroker(MessageBrokerRegistry registry) {
-		registry.setApplicationDestinationPrefixes("/pub")
-				.enableSimpleBroker("/sub")
+		registry.setApplicationDestinationPrefixes("/chat/pub")
+				.enableSimpleBroker("/chat/sub")
 				.setHeartbeatValue(new long[] { 5000, 5000 })
 				.setTaskScheduler(taskScheduler);
 	}
 
 	@Override
 	public void registerStompEndpoints(StompEndpointRegistry registry) {
-		registry.addEndpoint("/ws").setAllowedOriginPatterns("*").withSockJS();
+		registry.addEndpoint("/chat/ws").setAllowedOriginPatterns("*").withSockJS();
 	}
 }
