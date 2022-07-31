@@ -2,8 +2,6 @@ package aehdb.comm.model.mapper;
 
 import java.util.List;
 
-import org.mapstruct.BeanMapping;
-
 
 public interface GenericMapper <D,E>{
 	D toDto(E e);

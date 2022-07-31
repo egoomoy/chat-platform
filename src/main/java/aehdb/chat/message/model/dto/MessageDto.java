@@ -5,7 +5,7 @@ import java.util.UUID;
 
 import javax.validation.constraints.NotEmpty;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import aehdb.chat.room.model.dto.RoomDto;
 import lombok.AllArgsConstructor;
@@ -45,8 +45,8 @@ public class MessageDto {
 	}
 
 	@Getter
-	@Setter
 	@Builder
+	@JsonInclude(JsonInclude.Include.NON_NULL)
 	public static class Response {
 		private Long id;
 		private Long roomId;

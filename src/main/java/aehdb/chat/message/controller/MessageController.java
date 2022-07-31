@@ -1,7 +1,6 @@
 package aehdb.chat.message.controller;
 
 import java.util.List;
-import java.util.UUID;
 
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
@@ -30,7 +29,7 @@ public class MessageController {
 	private final WebSocketMessageBrokerStats webSocketMessageBrokerStats;
 	private final UpgradeMessageMapperImpl upgradeMessageMapperImpl;
 
-	@MessageMapping("/message")
+	@MessageMapping("/message") // /chat/pub/message
 	public void enter(MessageDto.Request req) throws Exception {
 		switch (req.getType()) {
 		case ENTER:

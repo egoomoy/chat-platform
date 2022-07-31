@@ -15,11 +15,9 @@ import aehdb.mng.board.model.dto.BoardDto;
 import aehdb.mng.board.model.dto.BoardSearchDto;
 import aehdb.mng.board.service.BoardService;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequiredArgsConstructor
-@Slf4j
 public class BoardController {
 	private final BoardService boardService;
 

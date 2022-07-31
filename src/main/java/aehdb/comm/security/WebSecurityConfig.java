@@ -1,5 +1,6 @@
 package aehdb.comm.security;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.core.annotation.Order;
@@ -7,6 +8,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import lombok.RequiredArgsConstructor;
@@ -15,6 +18,10 @@ import lombok.RequiredArgsConstructor;
 @EnableWebSecurity
 @Import({ WebSecurityConfig.DefualtSecurityConfig.class,WebSecurityConfig.ChatSecurityConfig.class  })
 public class WebSecurityConfig {
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 	
 	@Order(100)
 	static class ChatSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -26,10 +33,7 @@ public class WebSecurityConfig {
 		        .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 		        .and()
 		        .authorizeRequests()
-		        .antMatchers("/ws/**").permitAll() // 소켓연결
-		        .antMatchers("/chat/**").permitAll() // 방 생성 
-		        .antMatchers("/sub/**").permitAll() // 메시지 전송
-		        .antMatchers("/pub/**").permitAll(); // 메시지 수신
+		        .antMatchers("/chat/**").permitAll(); // 방 생성 
 		}
 	}
 
@@ -47,7 +51,10 @@ public class WebSecurityConfig {
 		        .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 		        .and()
 		        .authorizeRequests()
+		        .antMatchers("/user/**").permitAll()
 		        .antMatchers("/mng/**").permitAll()
+//		        .antMatchers("/mng/**").hasRole(null)
+		        
 		        .anyRequest().hasRole("USER");
 			    http.addFilterBefore(jwtSecurityFilter, UsernamePasswordAuthenticationFilter.class);
 		}

@@ -18,13 +18,19 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import aehdb.comm.model.entity.BaseEntity;
 import aehdb.mng.role.model.entity.Role;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.Accessors;
 
 @Entity
 @Getter
 @Setter
 @DynamicUpdate
+@Accessors(chain=true)
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name="`users`") // "user" is a reserved word in postgresql.
 public class User extends BaseEntity {
 	@Id
@@ -36,7 +42,6 @@ public class User extends BaseEntity {
 	private String accntId;
 
 	@Column(length = 60, nullable = false)
-	@NotEmpty
 	private String password;
 
 	@Column
