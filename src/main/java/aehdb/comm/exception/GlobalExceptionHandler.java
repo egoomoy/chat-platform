@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
+import aehdb.comm.exception.CustomException.AccntidExistedException;
 import lombok.extern.slf4j.Slf4j;
 
 @RestControllerAdvice
@@ -57,6 +58,14 @@ public class GlobalExceptionHandler {
 		log.error("DataIntegrityViolationException", ex.getRootCause());
 		ErrorResponse response = new ErrorResponse(ErrorCode.INTER_SERVER_ERROR);
 		return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+	
+	// custom Exception도 정의해서 사용할 수 있다..
+	@ExceptionHandler(AccntidExistedException.class)
+	public ResponseEntity<ErrorResponse> handleAccntidExistedException(AccntidExistedException ex) {
+		log.error("AccntidExistedException", ex);
+		ErrorResponse response = new ErrorResponse(ErrorCode.UNAUTHORIZED);
+		return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
 	}
 
 }

@@ -6,11 +6,11 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ErrorResponse {
-    private int code ;
+    private int resCode ;
     private String message;
 
     public ErrorResponse(ErrorCode errorCode){
-        this.code = errorCode.getCode();
+        this.resCode = errorCode.getCode();
         this.message = errorCode.getMessage();
     }
 }

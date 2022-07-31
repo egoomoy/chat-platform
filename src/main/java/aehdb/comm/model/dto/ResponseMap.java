@@ -8,8 +8,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class ResponseMap {
-
-	private String response;
+	private int resCode;
 	private String message;
 	private Object data;
 	

@@ -27,25 +27,24 @@ public class UserController {
 	public ResponseMap login(@RequestBody @Valid UserDto.Request userReq, HttpServletRequest req,
 			HttpServletResponse res) throws Exception {
 		try {
-			UserDto.Response user = userServiceImpl.authenticateUser(userReq);
-			Cookie accessToken = cookieUtil.createCookie(JwtUtil.ACCESS_TOKEN_NAME, user.getToken());
-			Cookie refreshToken = cookieUtil.createCookie(JwtUtil.REFRESH_TOKEN_NAME, user.getRefreshJwt());
+			UserDto.Response userRes = userServiceImpl.authenticateUser(userReq);
+			Cookie accessToken = cookieUtil.createCookie(JwtUtil.ACCESS_TOKEN_NAME, userRes.getToken());
+			Cookie refreshToken = cookieUtil.createCookie(JwtUtil.REFRESH_TOKEN_NAME, userRes.getRefreshJwt());
 			res.addCookie(accessToken);
 			res.addCookie(refreshToken);
-			return new ResponseMap("success", "로그인에 성공했습니다.", user);
+			return new ResponseMap(200, "로그인에 성공했습니다.", userRes);
 		} catch (Exception e) {
-			return new ResponseMap("error", "로그인에 실패했습니다.", e.getMessage());
+			return new ResponseMap(400, e.getMessage(), null);
 		}
-
 	}
 
-	@PostMapping(value = "/mng/user/regist")
+	@PostMapping(value = "/user/regist")
 	public ResponseMap regist(@RequestBody @Valid UserDto.Request userReq) throws Exception {
 		try {
 			UserDto.Response userRes = userServiceImpl.registerUser(userReq);
-			return new ResponseMap("success", "사용자 등록 완료", userRes);
+			return new ResponseMap(200, "사용자 등록에 성공했습니다.", userRes);
 		} catch (Exception e) {
-			return new ResponseMap("error", "로그인에 실패했습니다.", e.getMessage());
+			return new ResponseMap(400, e.getMessage(), null);
 		}
 	}
 
