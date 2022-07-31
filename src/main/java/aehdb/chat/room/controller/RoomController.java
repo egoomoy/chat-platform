@@ -22,11 +22,11 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @RestController // @Controller를 사용할 경우 @Responsebody를 컨트롤러에 명시해주어야 한다.
-@RequestMapping("/chat")
+//@RequestMapping("/chat")
 public class RoomController {
 	private final RoomService roomService;
 
-	@GetMapping("/rooms")
+	@GetMapping("/mng/rooms")
 	public List<RoomDto.Response> getRooms() throws Exception {
 		List<RoomDto.Item> roomList = roomService.selectRoomList();
 		List<RoomDto.Response> responseRoomList = new ArrayList<RoomDto.Response>();
@@ -49,7 +49,7 @@ public class RoomController {
 		return responseRoomList;
 	}
 
-	@GetMapping("/room/{roomUUID}")
+	@GetMapping("/mng/room/{roomUUID}")
 	public RoomDto.Response getRoom(@PathVariable("roomUUID") String id) throws Exception {
 		RoomDto.Item rtnRoom = roomService.findRoomByRoomUuid(UUID.fromString(id));
 		RoomDto.Response response = RoomDto.Response.builder()
@@ -63,7 +63,7 @@ public class RoomController {
 		return response;
 	}
 
-	@PostMapping("/room")
+	@PostMapping("/chat/room")
 	public RoomDto.Response createRoom(@RequestBody @Valid RoomDto.Request roomDtoReq) throws Exception {
 		final RoomDto.Item rtnRoom = roomService.createRoom(roomDtoReq);
 		RoomDto.Response response = RoomDto.Response.builder()
@@ -77,7 +77,7 @@ public class RoomController {
 		return response;
 	}
 
-	@PatchMapping("/room")
+	@PatchMapping("/mng/room")
 	public RoomDto.Response updateRoom(@RequestBody @Valid RoomDto.Request roomDtoReq) throws Exception {
 		final RoomDto.Item rtnRoom = roomService.updateRoom(roomDtoReq);
 

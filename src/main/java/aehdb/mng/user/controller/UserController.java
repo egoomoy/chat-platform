@@ -23,7 +23,7 @@ public class UserController {
 	private final CookieUtil cookieUtil;
 	private final UserServiceImpl userServiceImpl;
 
-	@GetMapping(value = "/user/login")
+	@PostMapping(value = "/user/login")
 	public ResponseMap login(@RequestBody @Valid UserDto.Request userReq, HttpServletRequest req,
 			HttpServletResponse res) throws Exception {
 		try {

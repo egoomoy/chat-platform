@@ -23,7 +23,7 @@ public class WebSecurityConfig {
 		return new BCryptPasswordEncoder();
 	}
 	
-	@Order(100)
+	@Order(200)
 	static class ChatSecurityConfig extends WebSecurityConfigurerAdapter {
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
@@ -33,12 +33,12 @@ public class WebSecurityConfig {
 		        .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 		        .and()
 		        .authorizeRequests()
-		        .antMatchers("/chat/**").permitAll(); // 방 생성 
+		        .antMatchers("/chat/*").permitAll(); // 방 생성 
 		}
 	}
 
 
-	@Order(200)
+	@Order(100)
 	@RequiredArgsConstructor
 	static class DefualtSecurityConfig extends WebSecurityConfigurerAdapter {
 		private final JwtSecurityFilter jwtSecurityFilter;
@@ -51,11 +51,10 @@ public class WebSecurityConfig {
 		        .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 		        .and()
 		        .authorizeRequests()
-		        .antMatchers("/user/**").permitAll()
-		        .antMatchers("/mng/**").permitAll()
-//		        .antMatchers("/mng/**").hasRole(null)
+		        .antMatchers("/user/*").permitAll()
+		        .antMatchers("/mng/*").hasRole("ADMIN");
+//		        .anyRequest().hasRole("ADMIN");
 		        
-		        .anyRequest().hasRole("USER");
 			    http.addFilterBefore(jwtSecurityFilter, UsernamePasswordAuthenticationFilter.class);
 		}
 

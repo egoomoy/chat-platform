@@ -10,6 +10,6 @@ import lombok.Setter;
 public class ResponseMap {
 	private int resCode;
 	private String message;
-	private Object data;
+	private Object body;
 	
 }
