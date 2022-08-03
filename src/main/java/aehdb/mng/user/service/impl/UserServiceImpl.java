@@ -10,6 +10,7 @@ import aehdb.comm.exception.CustomException;
 import aehdb.comm.model.mapper.CycleAvoidingMappingContext;
 import aehdb.comm.model.mapper.UserMapperImpl;
 import aehdb.comm.util.JwtUtil;
+import aehdb.comm.util.RedisUtil;
 import aehdb.mng.user.model.dto.CustomUserDetailsDto;
 import aehdb.mng.user.model.dto.UserDto;
 import aehdb.mng.user.model.entity.User;
@@ -25,6 +26,8 @@ public class UserServiceImpl implements UserService {
 	private final PasswordEncoder passwordEncoder;
 	private final UserMapperImpl userMapperImpl;
 	private final JwtUtil jwtUtil;
+	private final RedisUtil redisUtil;
+
 
 	@Override
 	@Transactional
@@ -43,6 +46,8 @@ public class UserServiceImpl implements UserService {
 
 			final String token = jwtUtil.generateToken(userItem);
 			final String refreshJwt = jwtUtil.generateRefreshToken(userItem);
+
+            redisUtil.setDataExpire(refreshJwt, userReq.getAccntId(), JwtUtil.REFRESH_TOKEN_VALIDATION_SECOND);
 
 			UserDto.Response userRes = UserDto.Response.builder()
 					.accntId(userItem.getAccntId())

@@ -54,7 +54,6 @@ public class WebSecurityConfig {
 		        .antMatchers("/user/*").permitAll()
 		        .antMatchers("/mng/*").hasRole("ADMIN");
 //		        .anyRequest().hasRole("ADMIN");
-		        
 			    http.addFilterBefore(jwtSecurityFilter, UsernamePasswordAuthenticationFilter.class);
 		}
 

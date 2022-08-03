@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.stereotype.Component;
 
-import aehdb.comm.model.mapper.UserMapperImpl;
 import aehdb.mng.user.model.dto.CustomUserDetailsDto;
 import aehdb.mng.user.model.dto.UserDto;
 import io.jsonwebtoken.Claims;
@@ -25,10 +24,8 @@ import lombok.RequiredArgsConstructor;
 @Component
 @RequiredArgsConstructor
 public class JwtUtil {
-	private final UserMapperImpl userMapperImpl;
 
-
-	public final static long TOKEN_VALIDATION_SECOND = 1000L * 10;
+	public final static long TOKEN_VALIDATION_SECOND = 1000L * 1;
 	public final static long REFRESH_TOKEN_VALIDATION_SECOND = 1000L * 60 * 24 * 2;
 
 	final static public String ACCESS_TOKEN_NAME = "accessToken";
@@ -68,9 +65,12 @@ public class JwtUtil {
 	public String doGenerateToken(UserDto.Item userItem, long expireTime) {
 		Claims claims = Jwts.claims();
 		claims.put("accntId", userItem.getAccntId());
-		String jwt = Jwts.builder().setClaims(claims).setIssuedAt(new Date(System.currentTimeMillis()))
+		String jwt = Jwts.builder()
+				.setClaims(claims)
+				.setIssuedAt(new Date(System.currentTimeMillis()))
 				.setExpiration(new Date(System.currentTimeMillis() + expireTime))
-				.signWith(getSigningKey(SECRET_KEY), SignatureAlgorithm.HS256).compact();
+				.signWith(getSigningKey(SECRET_KEY), SignatureAlgorithm.HS256)
+				.compact();
 		return jwt;
 	}
 

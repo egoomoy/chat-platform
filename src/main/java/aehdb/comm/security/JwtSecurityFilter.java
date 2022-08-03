@@ -15,6 +15,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import aehdb.comm.util.CookieUtil;
 import aehdb.comm.util.JwtUtil;
+import aehdb.comm.util.RedisUtil;
 import aehdb.mng.user.model.dto.CustomUserDetailsDto;
 import aehdb.mng.user.model.dto.UserDto;
 import aehdb.mng.user.service.UserService;
@@ -29,12 +30,13 @@ public class JwtSecurityFilter extends OncePerRequestFilter {
 	private final JwtUtil jwtUtil;
 	private final UserService userService;
 	private final CookieUtil cookieUtil;
+	private final RedisUtil redisUtil;
 
 	@Override
 	@Transactional
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
 			throws ServletException, IOException, java.io.IOException {
-		
+
 		final Cookie jwtToken = cookieUtil.getCookie(request, JwtUtil.ACCESS_TOKEN_NAME);
 
 		String username = null;
@@ -50,10 +52,13 @@ public class JwtSecurityFilter extends OncePerRequestFilter {
 			if (username != null) {
 				CustomUserDetailsDto userDetails = userService.loadUserByAccntid(username);
 				if (jwtUtil.validateToken(jwt, userDetails)) {
+
 					UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
 							userDetails, null, userDetails.getAuthorities());
+
 					usernamePasswordAuthenticationToken
 							.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+
 					SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
 				}
 			}
@@ -68,12 +73,18 @@ public class JwtSecurityFilter extends OncePerRequestFilter {
 
 		try {
 			if (refreshJwt != null) {
-				refreshUname = jwtUtil.getUsername(refreshJwt);
+//				refreshUname = jwtUtil.getUsername(refreshJwt);
+
+				refreshUname = redisUtil.getData(refreshJwt);
+
 				CustomUserDetailsDto userDetails = userService.loadUserByAccntid(refreshUname);
+
 				UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
 						userDetails, null, userDetails.getAuthorities());
+
 				usernamePasswordAuthenticationToken
 						.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+
 				SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
 
 				UserDto.Item user = new UserDto.Item();

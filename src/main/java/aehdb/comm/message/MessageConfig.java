@@ -18,7 +18,7 @@ public class MessageConfig {
 		// 기본 인코딩을 지정한다.
 		source.setDefaultEncoding("UTF-8");
 		// 프로퍼티 파일의 변경을 감지할 시간 간격을 지정한다.
-		source.setCacheSeconds(60);
+		source.setCacheSeconds(600);
 		// 없는 메세지일 경우 예외를 발생시키는 대신 코드를 기본 메세지로 한다.
 		source.setUseCodeAsDefaultMessage(true);
 		return source;
