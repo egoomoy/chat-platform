@@ -1,4 +1,4 @@
-package aehdb.comm.exception;
+package aehdb.comm.security;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -15,6 +15,8 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import aehdb.comm.exception.ErrorCode;
+import aehdb.comm.exception.ErrorResponse;
 import lombok.extern.slf4j.Slf4j;
 
 @Component
