@@ -18,6 +18,7 @@ import aehdb.chat.room.model.dto.RoomDto;
 import aehdb.chat.room.model.dto.RoomDto.Item;
 import aehdb.chat.room.model.dto.RoomDto.Response.ResponseBuilder;
 import aehdb.chat.room.service.RoomService;
+import aehdb.comm.model.dto.ResponseMap;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
@@ -27,7 +28,7 @@ public class RoomController {
 	private final RoomService roomService;
 
 	@GetMapping("/mng/rooms")
-	public List<RoomDto.Response> getRooms() throws Exception {
+	public ResponseMap getRooms() throws Exception {
 		List<RoomDto.Item> roomList = roomService.selectRoomList();
 		List<RoomDto.Response> responseRoomList = new ArrayList<RoomDto.Response>();
 
@@ -46,11 +47,11 @@ public class RoomController {
 			responseRoomList.add(rb.build());
 //			}
 		}
-		return responseRoomList;
+		return new ResponseMap(200, "", responseRoomList);
 	}
 
 	@GetMapping("/mng/room/{roomUUID}")
-	public RoomDto.Response getRoom(@PathVariable("roomUUID") String id) throws Exception {
+	public ResponseMap getRoom(@PathVariable("roomUUID") String id) throws Exception {
 		RoomDto.Item rtnRoom = roomService.findRoomByRoomUuid(UUID.fromString(id));
 		RoomDto.Response response = RoomDto.Response.builder()
 				.id(rtnRoom.getId())
@@ -60,11 +61,11 @@ public class RoomController {
 				.createDate(rtnRoom.getCreateDate())
 				.status(rtnRoom.getStatus())
 				.build();
-		return response;
+		return new ResponseMap(200, "", response);
 	}
 
 	@PostMapping("/chat/room")
-	public RoomDto.Response createRoom(@RequestBody @Valid RoomDto.Request roomDtoReq) throws Exception {
+	public ResponseMap createRoom(@RequestBody @Valid RoomDto.Request roomDtoReq) throws Exception {
 		final RoomDto.Item rtnRoom = roomService.createRoom(roomDtoReq);
 		RoomDto.Response response = RoomDto.Response.builder()
 				.id(rtnRoom.getId())
@@ -74,11 +75,11 @@ public class RoomController {
 				.createDate(rtnRoom.getCreateDate())
 				.status(rtnRoom.getStatus())
 				.build();
-		return response;
+		return new ResponseMap(200, "", response);
 	}
 
 	@PatchMapping("/mng/room")
-	public RoomDto.Response updateRoom(@RequestBody @Valid RoomDto.Request roomDtoReq) throws Exception {
+	public ResponseMap updateRoom(@RequestBody @Valid RoomDto.Request roomDtoReq) throws Exception {
 		final RoomDto.Item rtnRoom = roomService.updateRoom(roomDtoReq);
 
 		ResponseBuilder rb = RoomDto.Response.builder();
@@ -93,8 +94,7 @@ public class RoomController {
 			rb.lastMessageDate(rtnRoom.getMessage().get(0).getModified_date());
 		}
 		RoomDto.Response response = rb.build();
-
-		return response;
+		return new ResponseMap(200, "", response);
 	}
 
 	// 순환참조 테스트

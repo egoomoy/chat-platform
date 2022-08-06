@@ -74,25 +74,29 @@ public class JwtSecurityFilter extends OncePerRequestFilter {
 		try {
 			if (refreshJwt != null) {
 //				refreshUname = jwtUtil.getUsername(refreshJwt);
-
 				refreshUname = redisUtil.getData(refreshJwt);
 
-				CustomUserDetailsDto userDetails = userService.loadUserByAccntid(refreshUname);
+				if (refreshUname.equals(jwtUtil.getUsername(refreshJwt))) {
 
-				UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
-						userDetails, null, userDetails.getAuthorities());
 
-				usernamePasswordAuthenticationToken
-						.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+					CustomUserDetailsDto userDetails = userService.loadUserByAccntid(refreshUname);
 
-				SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+					UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
+							userDetails, null, userDetails.getAuthorities());
 
-				UserDto.Item user = new UserDto.Item();
-				user.setAccntId(refreshUname);
-				String newToken = jwtUtil.generateToken(user);
+					usernamePasswordAuthenticationToken
+							.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
-				Cookie newAccessToken = cookieUtil.createCookie(JwtUtil.ACCESS_TOKEN_NAME, newToken);
-				response.addCookie(newAccessToken);
+					SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+
+					UserDto.Item user = new UserDto.Item();
+					user.setAccntId(refreshUname);
+					String newToken = jwtUtil.generateToken(user);
+
+					Cookie newAccessToken = cookieUtil.createCookie(JwtUtil.ACCESS_TOKEN_NAME, newToken);
+					response.addCookie(newAccessToken);
+
+				}
 			}
 		} catch (ExpiredJwtException e) {
 

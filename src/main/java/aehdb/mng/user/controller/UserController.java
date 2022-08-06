@@ -34,7 +34,7 @@ public class UserController {
 			res.addCookie(refreshToken);
 			return new ResponseMap(200, "로그인에 성공했습니다.", userRes);
 		} catch (Exception e) {
-			return new ResponseMap(400, e.getMessage(), null);
+			return new ResponseMap(500, e.getMessage(), null);
 		}
 	}
 
@@ -44,7 +44,7 @@ public class UserController {
 			UserDto.Response userRes = userServiceImpl.registerUser(userReq);
 			return new ResponseMap(200, "사용자 등록에 성공했습니다.", userRes);
 		} catch (Exception e) {
-			return new ResponseMap(400, e.getMessage(), null);
+			return new ResponseMap(500, e.getMessage(), null);
 		}
 	}
 

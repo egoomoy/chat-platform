@@ -12,6 +12,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import aehdb.comm.exception.CustomAuthenticationEntryPoint;
 import lombok.RequiredArgsConstructor;
 
 @Configuration
@@ -50,26 +51,14 @@ public class WebSecurityConfig {
 		        .httpBasic().disable() 
 		        .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 		        .and()
+                .exceptionHandling()
+                .authenticationEntryPoint(new CustomAuthenticationEntryPoint())
+//		        .accessDeniedHandler(new CustomAccessDeniedHandler())
+		        .and()
 		        .authorizeRequests()
 		        .antMatchers("/user/*").permitAll()
-		        .antMatchers("/mng/*").hasRole("ADMIN");
-//		        .anyRequest().hasRole("ADMIN");
-			    http.addFilterBefore(jwtSecurityFilter, UsernamePasswordAuthenticationFilter.class);
+		        .antMatchers("/mng/*").hasRole("ADMIN")
+			   .and().addFilterBefore(jwtSecurityFilter, UsernamePasswordAuthenticationFilter.class);
 		}
-
 	}
-
-
-//	@Bean
-//	@Override
-//	public UserDetailsService userDetailsService() {
-//		UserDetails user =
-//			 User.withDefaultPasswordEncoder()
-//				.username("user")
-//				.password("password1")
-//				.roles("USER")
-//				.build();
-//
-//		return new InMemoryUserDetailsManager(user);
-//	}
 }

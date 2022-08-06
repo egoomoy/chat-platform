@@ -11,6 +11,7 @@ import org.springframework.web.socket.config.WebSocketMessageBrokerStats;
 
 import aehdb.chat.message.model.dto.MessageDto;
 import aehdb.chat.message.service.MessageService;
+import aehdb.comm.model.dto.ResponseMap;
 import aehdb.comm.model.mapper.UpgradeMessageMapperImpl;
 import lombok.RequiredArgsConstructor;
 
@@ -44,17 +45,18 @@ public class MessageController {
 
 		MessageDto.Item transDto = messageSerivce.insertMessage(req);
 		MessageDto.Response res = upgradeMessageMapperImpl.itemToRes(transDto);
-		
-		simpMessagingTemplate.convertAndSend(MESSAGE_DESTINATION + res.builder().roomUuid(transDto.getRoom().getRoomUuid()).build().getRoomUuid(), res);
+
+		simpMessagingTemplate.convertAndSend(
+				MESSAGE_DESTINATION + res.builder().roomUuid(transDto.getRoom().getRoomUuid()).build().getRoomUuid(),
+				res);
 	}
 
 	@GetMapping("/messages/{id}")
-	public List<MessageDto.Response> getMessageDtos(@PathVariable("id") Long id) throws Exception {
+	public ResponseMap getMessageDtos(@PathVariable("id") Long id) throws Exception {
 		List<MessageDto.Item> MessageItemList = messageSerivce.selectMessageList(id);
 		List<MessageDto.Response> responseMessageList = upgradeMessageMapperImpl.itemToRes(MessageItemList);
-		return responseMessageList;
+		return new ResponseMap(200, "", responseMessageList);
 	}
-
 
 	@GetMapping("/ws/webSocketMessageBrokerStats")
 	public String connectedEquipments() {
