@@ -28,10 +28,11 @@ public class UserController {
 			HttpServletResponse res) throws Exception {
 		try {
 			UserDto.Response userRes = userServiceImpl.authenticateUser(userReq);
-			Cookie accessToken = cookieUtil.createCookie(JwtUtil.ACCESS_TOKEN_NAME, userRes.getToken());
+//			Cookie accessToken = cookieUtil.createCookie(JwtUtil.ACCESS_TOKEN_NAME, userRes.getToken());
 			Cookie refreshToken = cookieUtil.createCookie(JwtUtil.REFRESH_TOKEN_NAME, userRes.getRefreshJwt());
-			res.addCookie(accessToken);
+//			res.addCookie(accessToken);
 			res.addCookie(refreshToken);
+			res.setHeader("Bearer", userRes.getToken());
 			return new ResponseMap(200, "로그인에 성공했습니다.", userRes);
 		} catch (Exception e) {
 			return new ResponseMap(500, e.getMessage(), null);

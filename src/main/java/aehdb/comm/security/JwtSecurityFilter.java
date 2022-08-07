@@ -37,16 +37,18 @@ public class JwtSecurityFilter extends OncePerRequestFilter {
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
 			throws ServletException, IOException, java.io.IOException {
 
-		final Cookie jwtToken = cookieUtil.getCookie(request, JwtUtil.ACCESS_TOKEN_NAME);
-
+//		final Cookie jwtToken = cookieUtil.getCookie(request, JwtUtil.ACCESS_TOKEN_NAME);
+		String jwt = request.getHeader("Authorization");
+		System.out.println("bearer : " + request.getHeader("Authorization"));
+		
 		String username = null;
-		String jwt = null;
 		String refreshJwt = null;
 		String refreshUname = null;
 
 		try {
-			if (jwtToken != null) {
-				jwt = jwtToken.getValue();
+			if (jwt != null) {
+//				jwt = jwtToken.getValue();
+				jwt = request.getHeader("Authorization").replace("Bearer ",""); 
 				username = jwtUtil.getUsername(jwt);
 			}
 			if (username != null) {
@@ -72,12 +74,11 @@ public class JwtSecurityFilter extends OncePerRequestFilter {
 		}
 
 		try {
-			if (refreshJwt != null) {
+			if (refreshJwt != null && jwt != null) {
 //				refreshUname = jwtUtil.getUsername(refreshJwt);
 				refreshUname = redisUtil.getData(refreshJwt);
 
 				if (refreshUname.equals(jwtUtil.getUsername(refreshJwt))) {
-
 
 					CustomUserDetailsDto userDetails = userService.loadUserByAccntid(refreshUname);
 
@@ -95,6 +96,7 @@ public class JwtSecurityFilter extends OncePerRequestFilter {
 
 					Cookie newAccessToken = cookieUtil.createCookie(JwtUtil.ACCESS_TOKEN_NAME, newToken);
 					response.addCookie(newAccessToken);
+					response.setHeader("Bearer", newToken);
 
 				}
 			}

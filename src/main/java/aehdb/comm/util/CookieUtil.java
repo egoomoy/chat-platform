@@ -9,11 +9,13 @@ import org.springframework.stereotype.Component;
 public class CookieUtil {
 	public Cookie createCookie(String cookieName, String value) {
 		Cookie token = new Cookie(cookieName, value);
-		token.setHttpOnly(true);
-		if (JwtUtil.ACCESS_TOKEN_NAME.equals(cookieName))
+		if (JwtUtil.ACCESS_TOKEN_NAME.equals(cookieName)) {
+			token.setHttpOnly(true);
 			token.setMaxAge((int) JwtUtil.TOKEN_VALIDATION_SECOND);
-		else
+		} else {
+			token.setHttpOnly(true);
 			token.setMaxAge((int) JwtUtil.REFRESH_TOKEN_VALIDATION_SECOND);
+		}
 		token.setPath("/");
 		return token;
 	}

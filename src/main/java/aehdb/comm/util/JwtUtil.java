@@ -25,7 +25,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class JwtUtil {
 
-	public final static long TOKEN_VALIDATION_SECOND = 1000L * 1;
+	public final static long TOKEN_VALIDATION_SECOND = 1000L * 60; /// 1000ms (1sec)
 	public final static long REFRESH_TOKEN_VALIDATION_SECOND = 1000L * 60 * 24 * 2;
 
 	final static public String ACCESS_TOKEN_NAME = "accessToken";
