@@ -27,18 +27,7 @@ public class WebSecurityConfig {
 	static class ChatSecurityConfig extends WebSecurityConfigurerAdapter {
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
-			http.csrf()
-					.disable()
-					.formLogin()
-					.disable()
-					.httpBasic()
-					.disable()
-					.sessionManagement()
-					.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-					.and()
-					.authorizeRequests()
-					.antMatchers("/chat/*")
-					.permitAll(); // 방 생성
+			http.requestMatchers().antMatchers("/chat/**");
 		}
 	}
 
@@ -60,12 +49,14 @@ public class WebSecurityConfig {
 					.and()
 					.exceptionHandling()
 					.authenticationEntryPoint(new CustomAuthenticationEntryPoint())
-//		        .accessDeniedHandler(new CustomAccessDeniedHandler())
+					.accessDeniedHandler(new CustomAccessDeniedHandler())
 					.and()
 					.authorizeRequests()
-					.antMatchers("/user/*")
+					.antMatchers("/user/**")
 					.permitAll()
-					.antMatchers("/mng/*")
+					.antMatchers("/mng/**")
+					.hasRole("ADMIN")
+					.anyRequest()
 					.hasRole("ADMIN")
 					.and()
 					.addFilterBefore(jwtSecurityFilter, UsernamePasswordAuthenticationFilter.class);

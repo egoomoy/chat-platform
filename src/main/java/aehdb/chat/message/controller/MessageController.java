@@ -51,7 +51,7 @@ public class MessageController {
 				res);
 	}
 
-	@GetMapping("/messages/{id}")
+	@GetMapping("/chat/messages/{id}")
 	public ResponseMap getMessageDtos(@PathVariable("id") Long id) throws Exception {
 		List<MessageDto.Item> MessageItemList = messageSerivce.selectMessageList(id);
 		List<MessageDto.Response> responseMessageList = upgradeMessageMapperImpl.itemToRes(MessageItemList);

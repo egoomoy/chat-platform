@@ -46,7 +46,7 @@ public class JwtSecurityFilter extends OncePerRequestFilter {
 		String refreshUname = null;
 
 		try {
-			if (jwt != null) {
+			if (!"".equals(jwt)) {
 //				jwt = jwtToken.getValue();
 				jwt = request.getHeader("Authorization").replace("Bearer ",""); 
 				username = jwtUtil.getUsername(jwt);

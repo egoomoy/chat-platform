@@ -23,7 +23,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class CustomAccessDeniedHandler implements AccessDeniedHandler {
 
-	private static ErrorResponse errRes = new ErrorResponse(ErrorCode.UNAUTHORIZED);
+	private static ErrorResponse errRes = new ErrorResponse(ErrorCode.FORBIDDEN);
 
 	@Override
 	public void handle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,

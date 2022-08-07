@@ -21,13 +21,13 @@ import lombok.RequiredArgsConstructor;
 public class BoardController {
 	private final BoardService boardService;
 
-	@GetMapping(value = "/mng/boards")
+	@GetMapping(value = "/boards")
 	public List<BoardDto> boardList(@RequestBody @Valid BoardDto boardDto, BoardSearchDto boardSearchDto)
 			throws Exception {
 		return boardService.selectBoardList(boardDto, boardSearchDto);
 	}
 
-	@PostMapping(value = "/mng/board")
+	@PostMapping(value = "/board")
 	public HashMap<String, String> insertBoard(@RequestBody @Valid BoardDto boardDto) throws Exception {
 		HashMap<String, String> resultMap = new HashMap<String, String>();
 		boardService.insertBoard(boardDto);
