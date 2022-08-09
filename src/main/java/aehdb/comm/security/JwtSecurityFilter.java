@@ -39,7 +39,7 @@ public class JwtSecurityFilter extends OncePerRequestFilter {
 
 //		final Cookie jwtToken = cookieUtil.getCookie(request, JwtUtil.ACCESS_TOKEN_NAME);
 		String jwt = request.getHeader("Authorization");
-		System.out.println("bearer : " + request.getHeader("Authorization"));
+//		System.out.println("bearer : " + request.getHeader("Authorization"));
 		
 		String username = null;
 		String refreshJwt = null;
@@ -95,7 +95,7 @@ public class JwtSecurityFilter extends OncePerRequestFilter {
 					String newToken = jwtUtil.generateToken(user);
 
 					Cookie newAccessToken = cookieUtil.createCookie(JwtUtil.ACCESS_TOKEN_NAME, newToken);
-					response.addCookie(newAccessToken);
+//					response.addCookie(newAccessToken);
 					response.setHeader("Bearer", newToken);
 
 				}
