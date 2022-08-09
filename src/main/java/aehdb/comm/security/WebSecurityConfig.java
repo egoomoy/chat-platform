@@ -27,7 +27,16 @@ public class WebSecurityConfig {
 	static class ChatSecurityConfig extends WebSecurityConfigurerAdapter {
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
-			http.antMatcher("/chat/**").csrf().disable();
+			http.csrf()
+					.disable() // jwt토큰을 사용하여 쿠키에 의존하면, csrf에서 관련이 몹시 적다. 브라우저 검사를 해보면 알겠지만, 요청하는 페이지의 쿠키만 보여
+					.formLogin()
+					.disable()
+					.httpBasic()
+					.disable()
+					.sessionManagement()
+					.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+					.and()
+					.antMatcher("/chat/**");
 		}
 	}
 
