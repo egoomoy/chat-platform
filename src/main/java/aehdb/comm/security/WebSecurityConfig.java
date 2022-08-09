@@ -27,7 +27,7 @@ public class WebSecurityConfig {
 	static class ChatSecurityConfig extends WebSecurityConfigurerAdapter {
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
-			http.requestMatchers().antMatchers("/chat/**");
+			http.antMatcher("/chat/**").csrf().disable();
 		}
 	}
 
@@ -57,7 +57,7 @@ public class WebSecurityConfig {
 					.antMatchers("/mng/**")
 					.hasRole("ADMIN")
 					.anyRequest()
-					.hasRole("ADMIN")
+					.denyAll()
 					.and()
 					.addFilterBefore(jwtSecurityFilter, UsernamePasswordAuthenticationFilter.class);
 		}
