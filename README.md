@@ -12,3 +12,22 @@
 - redis
 - postgreSQL
 - stomp
+
+## API 정의
+
+- room
+  - 채팅방 생성
+  - 채팅방 리스트 조회
+  - 채팅방 단일 조회
+  - 채팅방 상태 수정
+- message
+  - 메시지 생성
+  - 메시지 리스트 조회 (roomId)
+- user
+  - 사용자 로그인
+  - 사용자 로그아웃
+  - 사용자 등록
+- legacy
+- role
+- tag
+- .....
