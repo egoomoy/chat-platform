@@ -27,6 +27,20 @@ import lombok.RequiredArgsConstructor;
 public class RoomController {
 	private final RoomService roomService;
 
+	@PostMapping("/chat/room")
+	public ResponseMap createRoom(@RequestBody @Valid RoomDto.Request roomDtoReq) throws Exception {
+		final RoomDto.Item rtnRoom = roomService.createRoom(roomDtoReq);
+		RoomDto.Response response = RoomDto.Response.builder()
+				.id(rtnRoom.getId())
+				.roomUuid(rtnRoom.getRoomUuid())
+				.roomNm(rtnRoom.getRoomNm())
+				.isClosed(rtnRoom.getIsClosed())
+				.createDate(rtnRoom.getCreateDate())
+				.status(rtnRoom.getStatus())
+				.build();
+		return new ResponseMap(200, "", response);
+	}
+
 	@GetMapping("/mng/rooms")
 	public ResponseMap getRooms() throws Exception {
 		List<RoomDto.Item> roomList = roomService.selectRoomList();
@@ -53,20 +67,6 @@ public class RoomController {
 	@GetMapping("/mng/room/{roomUUID}")
 	public ResponseMap getRoom(@PathVariable("roomUUID") String id) throws Exception {
 		RoomDto.Item rtnRoom = roomService.findRoomByRoomUuid(UUID.fromString(id));
-		RoomDto.Response response = RoomDto.Response.builder()
-				.id(rtnRoom.getId())
-				.roomUuid(rtnRoom.getRoomUuid())
-				.roomNm(rtnRoom.getRoomNm())
-				.isClosed(rtnRoom.getIsClosed())
-				.createDate(rtnRoom.getCreateDate())
-				.status(rtnRoom.getStatus())
-				.build();
-		return new ResponseMap(200, "", response);
-	}
-
-	@PostMapping("/chat/room")
-	public ResponseMap createRoom(@RequestBody @Valid RoomDto.Request roomDtoReq) throws Exception {
-		final RoomDto.Item rtnRoom = roomService.createRoom(roomDtoReq);
 		RoomDto.Response response = RoomDto.Response.builder()
 				.id(rtnRoom.getId())
 				.roomUuid(rtnRoom.getRoomUuid())
