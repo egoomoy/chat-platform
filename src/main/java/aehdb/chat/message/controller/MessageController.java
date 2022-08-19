@@ -36,19 +36,15 @@ public class MessageController {
 	public void enter(MessageDto.Request req) throws Exception {
 		MessageDto.Item transDto = messageSerivce.insertMessage(req);
 		MessageDto.Response res = upgradeMessageMapperImpl.itemToRes(transDto);
-
-		simpMessagingTemplate.convertAndSend(
-				MESSAGE_DESTINATION + res.getRoomId(),
-				res);
-		
+		res.setRoomUuid(transDto.getRoom().getRoomUuid());
 		kafkaProducer.sendMessage(res);
+
+		//simpMessagingTemplate.convertAndSend(MESSAGE_DESTINATION + req.getRoomUuid(), res);
 	}
 
 	@GetMapping("/chat/messages/{id}")
 	public ResponseMap getMessageDtos(@PathVariable("id") Long id) throws Exception {
-		
 		// 카프카의 보관주기를 이용하여, 데이터 베이스를 읽지 않고 바로 컨슘해서 가져올 수 있지 않을까?
-		
 		List<MessageDto.Item> MessageItemList = messageSerivce.selectMessageList(id);
 		List<MessageDto.Response> responseMessageList = upgradeMessageMapperImpl.itemToRes(MessageItemList);
 		return new ResponseMap(200, "", responseMessageList);
@@ -59,3 +55,4 @@ public class MessageController {
 		return webSocketMessageBrokerStats.toString();
 	}
 }
+
