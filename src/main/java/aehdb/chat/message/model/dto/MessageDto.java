@@ -5,12 +5,11 @@ import java.util.UUID;
 
 import javax.validation.constraints.NotEmpty;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 
 import aehdb.chat.room.model.dto.RoomDto;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 public class MessageDto {
@@ -32,7 +31,6 @@ public class MessageDto {
 	}
 
 	@Getter
-	@Setter
 	public static class Request {
 		@NotEmpty(message = "errors.required")
 		private UUID roomUuid;
@@ -45,8 +43,8 @@ public class MessageDto {
 	}
 
 	@Getter
-	@Builder
-	@JsonInclude(JsonInclude.Include.NON_NULL)
+	@Setter
+	@NoArgsConstructor
 	public static class Response {
 		private Long id;
 		private Long roomId;

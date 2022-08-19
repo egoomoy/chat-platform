@@ -27,6 +27,17 @@ public class MessageServiceImpl implements MessageService {
 	public MessageDto.Item insertMessage(MessageDto.Request rq) throws Exception {
 		MessageDto.Item messageItem = upgradeMessageMapperImpl.reqToItem(rq);
 
+		switch (rq.getType()) {
+		case ENTER:
+			messageItem.setMessage(rq.getSenderNm() + "님이 입장하셨습니다.");
+			break;
+		case EXIT:
+			messageItem.setMessage(rq.getSenderNm() + "님이 퇴장하셨습니다.");
+			break;
+		default:
+			break;
+		}
+		
 		RoomDto.Item room = new RoomDto.Item();
 		room.setId(rq.getRoomId());
 		room.setRoomUuid(rq.getRoomUuid());
