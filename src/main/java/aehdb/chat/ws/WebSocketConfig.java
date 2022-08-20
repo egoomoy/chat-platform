@@ -26,10 +26,10 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
 	@Override
 	public void configureMessageBroker(MessageBrokerRegistry registry) {
-		registry.setApplicationDestinationPrefixes("/chat/pub")
-				.enableSimpleBroker("/chat/sub")
-				.setHeartbeatValue(new long[] { 5000, 5000 })
-				.setTaskScheduler(taskScheduler);
+		registry.setApplicationDestinationPrefixes("/chat/pub");
+//				.enableSimpleBroker("/chat/sub")
+//				.setHeartbeatValue(new long[] { 5000, 5000 })
+//				.setTaskScheduler(taskScheduler);
 	}
 
 	@Override

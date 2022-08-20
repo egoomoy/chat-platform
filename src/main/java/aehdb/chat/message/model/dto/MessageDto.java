@@ -5,7 +5,6 @@ import java.util.UUID;
 
 import javax.validation.constraints.NotEmpty;
 
-
 import aehdb.chat.room.model.dto.RoomDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

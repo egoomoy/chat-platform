@@ -21,47 +21,48 @@ import java.util.Map;
 @EnableKafka
 @Configuration
 public class KafkaConfig {
-    //Sender config
-    @Bean
-    public ProducerFactory<String, MessageDto.Response> producerFactory() {
-        return new DefaultKafkaProducerFactory<>(producerConfigs(), null, new JsonSerializer< MessageDto.Response>());
-    }
+	// Sender config
+	@Bean
+	public KafkaTemplate<String, MessageDto.Request> kafkaTemplate() {
+		return new KafkaTemplate<>(producerFactory());
+	}
 
-    @Bean
-    public KafkaTemplate<String,  MessageDto.Response> kafkaTemplate() {
-        return new KafkaTemplate<>(producerFactory());
-    }
+	@Bean
+	public ProducerFactory<String, MessageDto.Request> producerFactory() {
+		return new DefaultKafkaProducerFactory<>(producerConfigs(), null, new JsonSerializer<MessageDto.Request>());
+	}
 
-    @Bean
-    public Map<String, Object> producerConfigs() {
+	@Bean
+	public Map<String, Object> producerConfigs() {
+		return ImmutableMap.<String, Object>builder()
+				.put("bootstrap.servers", "localhost:9092")// kafka server ip & port
+				.put("key.serializer", IntegerSerializer.class)
+				.put("value.serializer", JsonSerializer.class)// Object json parser
+				.put("group.id", "chatGroup") // group id
+				.build();
+	}
 
-        return ImmutableMap.<String, Object>builder()
-                .put("bootstrap.servers", "localhost:9092")//kafka server ip & port
-                .put("key.serializer", IntegerSerializer.class)
-                .put("value.serializer", JsonSerializer.class)//Object json parser
-                .put("group.id", "chatGroup") // chatting  group id
-                .build();
-    }
-    //Receiver config
-    @Bean
-    public ConcurrentKafkaListenerContainerFactory<String,  MessageDto.Response> kafkaListenerContainerFactory() {
-        ConcurrentKafkaListenerContainerFactory<String,  MessageDto.Response> factory = new ConcurrentKafkaListenerContainerFactory<>();
-        factory.setConsumerFactory(consumerFactory());
-        return factory;
-    }
+	// Receiver config
+	@Bean
+	public ConcurrentKafkaListenerContainerFactory<String, MessageDto.Request> kafkaListenerContainerFactory() {
+		ConcurrentKafkaListenerContainerFactory<String, MessageDto.Request> factory = new ConcurrentKafkaListenerContainerFactory<>();
+		factory.setConsumerFactory(consumerFactory());
+		return factory;
+	}
 
-    @Bean
-    public ConsumerFactory<String,  MessageDto.Response> consumerFactory() {
-        return new DefaultKafkaConsumerFactory<>(consumerConfigs(), null, new JsonDeserializer<>( MessageDto.Response.class));
-    }
+	@Bean
+	public ConsumerFactory<String, MessageDto.Request> consumerFactory() {
+		return new DefaultKafkaConsumerFactory<>(consumerConfigs(), null,
+				new JsonDeserializer<>(MessageDto.Request.class));
+	}
 
-    @Bean
-    public Map<String, Object> consumerConfigs() {
-        return ImmutableMap.<String, Object>builder()
-                .put("bootstrap.servers", "localhost:9092")
-                .put("key.deserializer", IntegerDeserializer.class)
-                .put("value.deserializer", JsonDeserializer.class)
-                .put("group.id", "chatGroup")
-                .build();
-    }
+	@Bean
+	public Map<String, Object> consumerConfigs() {
+		return ImmutableMap.<String, Object>builder()
+				.put("bootstrap.servers", "localhost:9092")
+				.put("key.deserializer", IntegerDeserializer.class)
+				.put("value.deserializer", JsonDeserializer.class)
+				.put("group.id", "chatGroup")
+				.build();
+	}
 }

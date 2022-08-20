@@ -10,13 +10,9 @@ import lombok.RequiredArgsConstructor;
 @Service
 public class KafkaProducer {
     private static final String TOPIC = "chatList";
-	private final KafkaTemplate<String, MessageDto.Response> kafkTemplate;
-	
-	public void sendMessage(MessageDto.Response message) {
-		System.out.println("sendMessage : " + message.getMessage());
-
+	private final KafkaTemplate<String, MessageDto.Request> kafkTemplate;
+	public void sendMessage(MessageDto.Request message) {
+//		System.out.println("send message : " + message.getMessage());
 		this.kafkTemplate.send(TOPIC,message);
-		
 	}
-	
 }

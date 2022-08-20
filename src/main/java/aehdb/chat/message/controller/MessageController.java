@@ -3,7 +3,6 @@ package aehdb.chat.message.controller;
 import java.util.List;
 
 import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,8 +25,8 @@ import lombok.RequiredArgsConstructor;
 public class MessageController {
 	private final MessageService messageSerivce;
 
-	private final SimpMessagingTemplate simpMessagingTemplate;
-	private final String MESSAGE_DESTINATION = "/chat/sub/room/";
+//	private final SimpMessagingTemplate simpMessagingTemplate;
+//	private final String MESSAGE_DESTINATION = "/chat/sub/room/";
 	private final WebSocketMessageBrokerStats webSocketMessageBrokerStats;
 	private final UpgradeMessageMapperImpl upgradeMessageMapperImpl;
 	private final KafkaProducer kafkaProducer;
@@ -35,10 +34,7 @@ public class MessageController {
 	@MessageMapping("/message") // /chat/pub/message
 	public void enter(MessageDto.Request req) throws Exception {
 		MessageDto.Item transDto = messageSerivce.insertMessage(req);
-		MessageDto.Response res = upgradeMessageMapperImpl.itemToRes(transDto);
-		res.setRoomUuid(transDto.getRoom().getRoomUuid());
-		kafkaProducer.sendMessage(res);
-
+		kafkaProducer.sendMessage(req);
 		//simpMessagingTemplate.convertAndSend(MESSAGE_DESTINATION + req.getRoomUuid(), res);
 	}
 
