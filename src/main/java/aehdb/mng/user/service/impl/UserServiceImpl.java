@@ -16,7 +16,6 @@ import aehdb.comm.util.JwtUtil;
 import aehdb.comm.util.RedisUtil;
 import aehdb.mng.legacy.model.dto.LegacyDto;
 import aehdb.mng.legacy.model.entity.Legacy;
-import aehdb.mng.legacy.model.repository.LegacyRepository;
 import aehdb.mng.user.model.dto.CustomUserDetailsDto;
 import aehdb.mng.user.model.dto.UserDto;
 import aehdb.mng.user.model.entity.User;
@@ -33,8 +32,7 @@ public class UserServiceImpl implements UserService {
 	private final UserMapperImpl userMapperImpl;
 	private final JwtUtil jwtUtil;
 	private final RedisUtil redisUtil;
-	private final LegacyRepository legacyRepository;
-
+	
 	@Override
 	@Transactional
 	public CustomUserDetailsDto loadUserByAccntid(String accntId) throws Exception {
@@ -96,12 +94,10 @@ public class UserServiceImpl implements UserService {
 		List<UserDto.Item> userItemList = new ArrayList<UserDto.Item>();
 		Legacy lgcy = new Legacy();
 		lgcy.setId(legacyId);
-
 		List<User> user = userRepository.findByLegacyId(lgcy);
 		for (User u : user) {
 			userItemList.add(userMapperImpl.entitiytoItem(u, new CycleAvoidingMappingContext()));
 		}
-
 		return userItemList;
 	}
 }

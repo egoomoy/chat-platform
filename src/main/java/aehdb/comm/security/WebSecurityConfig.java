@@ -78,7 +78,7 @@ public class WebSecurityConfig {
 					.accessDeniedHandler(new CustomAccessDeniedHandler())
 					.and()
 					.authorizeRequests()
-					.antMatchers("/user/**")
+					.antMatchers("/login")
 					.permitAll()
 					.antMatchers("/temp/**")
 					.permitAll()

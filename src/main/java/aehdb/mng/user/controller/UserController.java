@@ -29,7 +29,7 @@ public class UserController {
 	private final CookieUtil cookieUtil;
 	private final UserServiceImpl userServiceImpl;
 
-	@PostMapping(value = "/user/login")
+	@PostMapping(value = "/login")
 	public ResponseMap login(@RequestBody @Valid UserDto.Request userReq, HttpServletRequest req,
 			HttpServletResponse res) throws Exception {
 		try {
@@ -45,7 +45,7 @@ public class UserController {
 		}
 	}
 
-	@PostMapping(value = "/user/regist")
+	@PostMapping(value = "/temp/user")
 	public ResponseMap regist(@RequestBody @Valid UserDto.Request userReq) throws Exception {
 		try {
 			UserDto.Response userRes = userServiceImpl.registerUser(userReq);
