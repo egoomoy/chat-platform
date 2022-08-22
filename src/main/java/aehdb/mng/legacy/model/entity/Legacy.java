@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import aehdb.chat.room.model.entity.Room;
+import aehdb.mng.user.model.entity.User;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,7 +26,9 @@ public class Legacy {
 	private String lgcyCd;
 	@Column
 	private String lgcyNm;
-	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "legacy")
 	private List<Room> room;
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "legacy")
+	private List<User> users;
+
 }

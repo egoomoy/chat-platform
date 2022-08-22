@@ -11,12 +11,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.annotations.DynamicUpdate;
 
 import aehdb.comm.model.entity.BaseEntity;
+import aehdb.mng.legacy.model.entity.Legacy;
 import aehdb.mng.role.model.entity.Role;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -60,6 +62,10 @@ public class User extends BaseEntity {
 		//    }
 	)
     private Set<Role> role;
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "legacy_id") // 외래키
+	private Legacy legacy;
     
 	// 비밀번호 오류 잠금, del_yn 등 추가 컬럼 
     // 서비스 - 유저 m to m 검토 =>지원 가능한 레거시 서비스 리스트 보관용? one to one으로 개발해도 되긴할 듯?

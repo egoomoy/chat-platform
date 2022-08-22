@@ -30,13 +30,12 @@ public class RoomDto {
 		private String roomNm;
 		private TFCode isClosed = TFCode.FALSE;
 		private RoomStatusCode status = RoomStatusCode.OPEN;
-		private LegacyDto legacy;
+		private LegacyDto.Item legacy;
 		private LocalDateTime createDate;
 		private List<MessageDto.Item> message;
 	}
 
 	@Getter
-	@Setter
 	public static class Request {
 		private Long id;
 		private String roomNm;

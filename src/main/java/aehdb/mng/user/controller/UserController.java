@@ -1,19 +1,25 @@
 package aehdb.mng.user.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import aehdb.comm.model.dto.ResponseMap;
 import aehdb.comm.util.CookieUtil;
 import aehdb.comm.util.JwtUtil;
 import aehdb.mng.user.model.dto.UserDto;
+import aehdb.mng.user.model.dto.UserDto.Response.ResponseBuilder;
 import aehdb.mng.user.service.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 
@@ -50,7 +56,21 @@ public class UserController {
 	}
 
 	@GetMapping(value = "/loginOut")
-	public String loginOut() throws Exception {
+	public String loginOut() {
 		return "loginOut";
+	}
+
+	@GetMapping(value = "/temp/users")
+	public ResponseMap users(@RequestParam Long legacyId, Pageable pageable) throws Exception {
+		List<UserDto.Response> userResList = new ArrayList<UserDto.Response>();
+		List<UserDto.Item> userItemList = userServiceImpl.selectUserList(legacyId, pageable);
+
+		for (UserDto.Item uItem : userItemList) {
+			ResponseBuilder ub = UserDto.Response.builder();
+			ub.accntId(uItem.getAccntId()).userNm(uItem.getUserNm()).legacy(uItem.getLegacy());
+			userResList.add(ub.build());
+		}
+
+		return new ResponseMap(200, "", userResList);
 	}
 }

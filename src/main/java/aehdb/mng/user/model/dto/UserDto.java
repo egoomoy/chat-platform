@@ -6,6 +6,7 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+import aehdb.mng.legacy.model.dto.LegacyDto;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,7 +23,7 @@ public class UserDto {
 		@NotEmpty(message = "errors.required")
 		@Size(min = 1, max = 10, message = "errors.range")
 		private String userNm;
-
+		private LegacyDto.Item legacy;
 	}
 
 	@Getter
@@ -41,6 +42,7 @@ public class UserDto {
 		private String token;
 		@JsonIgnore
 		private String refreshJwt;
+		private LegacyDto.Item legacy;
 
 	}
 }

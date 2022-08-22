@@ -1,7 +1,10 @@
 package aehdb.mng.user.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,6 +14,8 @@ import aehdb.comm.model.mapper.CycleAvoidingMappingContext;
 import aehdb.comm.model.mapper.UserMapperImpl;
 import aehdb.comm.util.JwtUtil;
 import aehdb.comm.util.RedisUtil;
+import aehdb.mng.legacy.model.entity.Legacy;
+import aehdb.mng.legacy.model.repository.LegacyRepository;
 import aehdb.mng.user.model.dto.CustomUserDetailsDto;
 import aehdb.mng.user.model.dto.UserDto;
 import aehdb.mng.user.model.entity.User;
@@ -27,7 +32,7 @@ public class UserServiceImpl implements UserService {
 	private final UserMapperImpl userMapperImpl;
 	private final JwtUtil jwtUtil;
 	private final RedisUtil redisUtil;
-
+	private final LegacyRepository legacyRepository;
 
 	@Override
 	@Transactional
@@ -47,7 +52,7 @@ public class UserServiceImpl implements UserService {
 			final String token = jwtUtil.generateToken(userItem);
 			final String refreshJwt = jwtUtil.generateRefreshToken(userItem);
 
-            redisUtil.setDataExpire(refreshJwt, userReq.getAccntId(), JwtUtil.REFRESH_TOKEN_VALIDATION_SECOND);
+			redisUtil.setDataExpire(refreshJwt, userReq.getAccntId(), JwtUtil.REFRESH_TOKEN_VALIDATION_SECOND);
 
 			UserDto.Response userRes = UserDto.Response.builder()
 					.accntId(userItem.getAccntId())
@@ -79,4 +84,20 @@ public class UserServiceImpl implements UserService {
 		return userRes;
 	}
 
+	@Override
+	public List<UserDto.Item> selectUserList(Long legacyId, Pageable pageable) throws Exception {
+//		LegacyDto.Item lgcyItem = new LegacyDto.Item();
+//		lgcyItem.setId(legacyId);
+//		Legacy lgcy = legacyRepository.findById(legacyId).get();
+		List<UserDto.Item> userItemList = new ArrayList<UserDto.Item>();
+		Legacy lgcy = new Legacy();
+		lgcy.setId(legacyId);
+
+		List<User> user = userRepository.findByLegacyId(lgcy);
+		for (User u : user) {
+			userItemList.add(userMapperImpl.entitiytoItem(u, new CycleAvoidingMappingContext()));
+		}
+
+		return userItemList;
+	}
 }

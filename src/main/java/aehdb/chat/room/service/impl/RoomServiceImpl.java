@@ -26,20 +26,13 @@ public class RoomServiceImpl implements RoomService {
 	private final RoomRepository roomRepository;
 
 	public RoomDto.Item findRoomByRoomUuid(UUID uuid) {
-		// 만약 여기서 req 객체를 받았다고 가정해보자
-		// 난 그럼 req 객체를 토대로 Item을 세팅해주는건가..? AllArgsConstructor 든 Builder 든으로 생성을 한다?
-		// item을 빌더로 만들 경우에는 확실히 객체의 불변성을 보장해준다?
-		// item을 entity화 시켜주고 로직 처리를 한다.
-		// entity를 response화 하면된다?
-		// 실제 데이터는 req에서 조작되어야하고,
-		// Res와 item은 불변성 유지해야한다.
 		Room room = roomRepository.findRoomByRoomUuid(uuid);
 		RoomDto.Item roomDtoItem = roomMapperImp.entitiytoItem(room, new CycleAvoidingMappingContext());
 		return roomDtoItem;
 	}
 
 	public RoomDto.Item createRoom(RoomDto.Request roomDtoReq) {
-		LegacyDto lc = new LegacyDto();
+		LegacyDto.Item lc = new LegacyDto.Item();
 		lc.setId(roomDtoReq.getLegacyId());
 
 		RoomDto.Item roomItem = new RoomDto.Item();

@@ -80,6 +80,8 @@ public class WebSecurityConfig {
 					.authorizeRequests()
 					.antMatchers("/user/**")
 					.permitAll()
+					.antMatchers("/temp/**")
+					.permitAll()
 					.antMatchers("/ws/**")
 					.permitAll()
 					.antMatchers("/mng/**")

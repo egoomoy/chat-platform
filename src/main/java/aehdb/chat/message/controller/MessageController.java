@@ -33,8 +33,8 @@ public class MessageController {
 
 	@MessageMapping("/message") // /chat/pub/message
 	public void enter(MessageDto.Request req) throws Exception {
-		MessageDto.Item transDto = messageSerivce.insertMessage(req);
 		kafkaProducer.sendMessage(req);
+		messageSerivce.insertMessage(req);
 		//simpMessagingTemplate.convertAndSend(MESSAGE_DESTINATION + req.getRoomUuid(), res);
 	}
 
