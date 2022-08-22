@@ -12,6 +12,7 @@
 - redis
 - postgreSQL
 - stomp
+- Kafka
 
 ## API 정의
 
