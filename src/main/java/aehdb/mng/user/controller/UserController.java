@@ -55,11 +55,6 @@ public class UserController {
 		}
 	}
 
-	@GetMapping(value = "/loginOut")
-	public String loginOut() {
-		return "loginOut";
-	}
-
 	@GetMapping(value = "/temp/users")
 	public ResponseMap users(@RequestParam Long legacyId, Pageable pageable) throws Exception {
 		List<UserDto.Response> userResList = new ArrayList<UserDto.Response>();
@@ -67,10 +62,15 @@ public class UserController {
 
 		for (UserDto.Item uItem : userItemList) {
 			ResponseBuilder ub = UserDto.Response.builder();
-			ub.accntId(uItem.getAccntId()).userNm(uItem.getUserNm()).legacy(uItem.getLegacy());
+			ub.accntId(uItem.getAccntId()).userNm(uItem.getUserNm()).legacyNm(uItem.getLegacy().getLgcyNm());
 			userResList.add(ub.build());
 		}
 
 		return new ResponseMap(200, "", userResList);
+	}
+
+	@GetMapping(value = "/loginOut")
+	public String loginOut() {
+		return "loginOut";
 	}
 }

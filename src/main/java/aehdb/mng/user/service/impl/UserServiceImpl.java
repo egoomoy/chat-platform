@@ -14,6 +14,7 @@ import aehdb.comm.model.mapper.CycleAvoidingMappingContext;
 import aehdb.comm.model.mapper.UserMapperImpl;
 import aehdb.comm.util.JwtUtil;
 import aehdb.comm.util.RedisUtil;
+import aehdb.mng.legacy.model.dto.LegacyDto;
 import aehdb.mng.legacy.model.entity.Legacy;
 import aehdb.mng.legacy.model.repository.LegacyRepository;
 import aehdb.mng.user.model.dto.CustomUserDetailsDto;
@@ -72,9 +73,12 @@ public class UserServiceImpl implements UserService {
 		}
 
 		String encodePassword = passwordEncoder.encode(userReq.getPassword());
-
 		UserDto.Item userItem = userMapperImpl.reqToItem(userReq);
 		userItem.setPassword(encodePassword);
+
+		LegacyDto.Item lgcy = new LegacyDto.Item();
+		lgcy.setId(userReq.getLegacyId());
+		userItem.setLegacy(lgcy);
 
 		User user = userMapperImpl.itemtoEntity(userItem, new CycleAvoidingMappingContext());
 		userRepository.save(user);

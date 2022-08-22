@@ -29,7 +29,9 @@ public class UserDto {
 	@Getter
 	public static class Request {
 		private String accntId;
+		private String userNm;
 		private String password;
+		private Long legacyId;
 	}
 
 	@Getter
@@ -42,7 +44,6 @@ public class UserDto {
 		private String token;
 		@JsonIgnore
 		private String refreshJwt;
-		private LegacyDto.Item legacy;
-
+		private String legacyNm;
 	}
 }
