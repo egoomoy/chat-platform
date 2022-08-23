@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -94,7 +94,7 @@ public class UserServiceImpl implements UserService {
 		List<UserDto.Item> userItemList = new ArrayList<UserDto.Item>();
 		Legacy lgcy = new Legacy();
 		lgcy.setId(legacyId);
-		List<User> user = userRepository.findByLegacyId(lgcy);
+		List<User> user = userRepository.findByLegacyId(lgcy, pageable);
 		for (User u : user) {
 			userItemList.add(userMapperImpl.entitiytoItem(u, new CycleAvoidingMappingContext()));
 		}

@@ -2,7 +2,7 @@ package aehdb.mng.user.service;
 
 import java.util.List;
 
-import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
+import org.springframework.data.domain.Pageable;
 
 import aehdb.mng.user.model.dto.CustomUserDetailsDto;
 import aehdb.mng.user.model.dto.UserDto;

@@ -3,6 +3,7 @@ package aehdb.mng.user.model.repository;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -18,7 +19,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	Optional<User> findByAccntId(@Param("accntId") String accntId);
 
 	@Query("select u from User u left join fetch u.legacy where u.legacy.id = :#{#paramLegacy.id}")
-	List<User> findByLegacyId(@Param(value = "paramLegacy") Legacy legacy);
+	List<User> findByLegacyId(@Param(value = "paramLegacy") Legacy legacy , Pageable pageable);
 
 //	// JPQL 객체 파라미터 쿼리
 //		@Query(value = "select sn from Snack sn where sn.id > :#{#paramSnack.id}")
