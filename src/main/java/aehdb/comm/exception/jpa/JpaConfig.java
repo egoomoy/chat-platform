@@ -1,4 +1,4 @@
-package aehdb.comm.jpa;
+package aehdb.comm.exception.jpa;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
