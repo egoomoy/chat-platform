@@ -7,8 +7,6 @@ import java.util.stream.Collectors;
 import aehdb.chatbot.model.dto.BoardRequestDto;
 import aehdb.chatbot.model.dto.BoardResponseDto;
 import aehdb.chatbot.model.entity.Board2;
-import aehdb.chatbot.model.repository.BRepository;
-import aehdb.mng.board.model.entity.Board;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
