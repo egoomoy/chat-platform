@@ -84,6 +84,8 @@ public class WebSecurityConfig {
 					.permitAll()
 					.antMatchers("/chatbot/**")
 					.permitAll()
+					.antMatchers("/api/**")
+					.permitAll()
 					.antMatchers("/ws/**")
 					.permitAll()
 					.antMatchers("/mng/**")

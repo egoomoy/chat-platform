@@ -1,7 +1,5 @@
 package aehdb.chatbot.model.dto;
 
-import aehdb.chatbot.model.entity.ChatbotConversation;
-import aehdb.chatbot.model.entity.ChatbotOptionInfo;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
