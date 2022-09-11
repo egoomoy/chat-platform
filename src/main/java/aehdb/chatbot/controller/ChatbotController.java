@@ -29,58 +29,38 @@ public class ChatbotController {
     private ChatbotConversationRepository chatbotConversationRepository;
 
 
-    public void convertingJsonData(List<Optional<ChatbotConversationRequestDTO>> tmp) {
-        Map<String,Object> jsonConvert=new HashMap<>();
+    public JSONObject convertingJsonData(List<Optional<ChatbotConversationRequestDTO>> tmp) {
+
         Map<String,Object> jsonConvertResult=new HashMap<>();
-        List res=new ArrayList<Map<String,Object>>();
-
-
-        List<Map> jsonResult=new ArrayList<>();
         List<Map> optionsList=new ArrayList<>();
 
         for (int i=0;i<tmp.size();i++){
+            Map<String,Object> jsonConvert=new HashMap<>();
             Optional<ChatbotConversationRequestDTO> oDto=tmp.get(i);
-            jsonConvertResult.clear();
-            jsonConvert.clear();
-            optionsList.clear();
-            for (ChatbotConversation chatbotConversation : oDto.get().getChildChatbotConversation()) {
-                Map<String,Object> options=new HashMap<>();
-                options.put("text",chatbotConversation.getText());
-                options.put("next",chatbotConversation.getNext());
-                optionsList.add(options);
+
+            if  (oDto.get().getChildChatbotConversation().size()!=0) {
+                for (ChatbotConversation chatbotConversation : oDto.get().getChildChatbotConversation()) {
+                    Map<String, Object> options = new HashMap<>();
+                    options.put("text", chatbotConversation.getText());
+                    options.put("next", chatbotConversation.getNext());
+                    optionsList.add(options);
+                }
+                jsonConvert.put("options",optionsList);
             }
-
             jsonConvert.put("text",oDto.get().getText());
-            jsonConvert.put("options",optionsList);
             String s=String.valueOf(i+1);
-
-//            res.add(jsonConvert);
             jsonConvertResult.put(s,jsonConvert);
-
-            res.add(jsonConvertResult);
-            JSONObject jsonObject = new JSONObject(jsonConvertResult);
-            System.out.println("=========jsonObject==========="+res);
-
-//            JSONObject jsonObject2 = new JSONObject(jsonConvertResult);
-//            System.out.println("============final============"+jsonObject2);
-//            jsonConvert.put(s,jsonConvert);
-//            JSONObject jsonObject = new JSONObject(jsonConvert);
-//            jsonResult.add(jsonObject);
-//            System.out.println("===========================json======================"+jsonResult);
-
-
         }
 
+        JSONObject jsonObject = new JSONObject(jsonConvertResult);
+        System.out.println("=========jsonObject==========="+jsonObject);
 
-
-
+        return jsonObject;
     }
-//    public List<Optional<ChatbotConversationRequestDTO>> convertingJsonData(List<Optional<ChatbotConversationRequestDTO>> tmp) {
-//        System.out.println("==========passing data=========="+tmp);
-//    }
+
 
     @GetMapping("/alldata")
-    public List<Optional<ChatbotConversationRequestDTO>> getAllData() {
+    public JSONObject getAllData() {
 
         Map<String, Object> data = new HashMap<String, Object>();
         List<Optional<ChatbotConversationRequestDTO>> tmp=new ArrayList<>();
@@ -92,8 +72,9 @@ public class ChatbotController {
             tmp.add(chatbotConversationRepository.findById(xLong).map(mapToChatbotConversationRequestDTO));
 
         }
-        convertingJsonData(tmp);
-        return tmp;
+        JSONObject jsonObject=null;
+        jsonObject = convertingJsonData(tmp);
+        return jsonObject;
     }
 
     @GetMapping("/{id}")
