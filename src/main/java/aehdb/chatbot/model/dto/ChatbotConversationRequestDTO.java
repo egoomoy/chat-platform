@@ -22,7 +22,8 @@ public class ChatbotConversationRequestDTO {
     private String companyid;
     private String seq;
     private String text;
-    private ChatbotConversation chatbotConversation;
+    //private String text;
+    private ChatbotConversation parentChatbotConversation;
     private Set<ChatbotConversation> childChatbotConversation;
 }
 //
