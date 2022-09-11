@@ -31,23 +31,24 @@ public class ChatbotController {
 
     public JSONObject convertingJsonData(List<Optional<ChatbotConversationRequestDTO>> tmp) {
 
-        Map<String,Object> jsonConvertResult=new HashMap<>();
+        Map<String,Object> jsonConvertResult=new LinkedHashMap<>();
         List<Map> optionsList=new ArrayList<>();
 
         for (int i=0;i<tmp.size();i++){
-            Map<String,Object> jsonConvert=new HashMap<>();
+            Map<String,Object> jsonConvert=new LinkedHashMap<>();
             Optional<ChatbotConversationRequestDTO> oDto=tmp.get(i);
 
+
+            jsonConvert.put("text",oDto.get().getText());
             if  (oDto.get().getChildChatbotConversation().size()!=0) {
                 for (ChatbotConversation chatbotConversation : oDto.get().getChildChatbotConversation()) {
-                    Map<String, Object> options = new HashMap<>();
+                    Map<String, Object> options = new LinkedHashMap<>();
                     options.put("text", chatbotConversation.getText());
                     options.put("next", chatbotConversation.getNext());
                     optionsList.add(options);
                 }
                 jsonConvert.put("options",optionsList);
             }
-            jsonConvert.put("text",oDto.get().getText());
             String s=String.valueOf(i+1);
             jsonConvertResult.put(s,jsonConvert);
         }
@@ -64,14 +65,16 @@ public class ChatbotController {
 
         Map<String, Object> data = new HashMap<String, Object>();
         List<Optional<ChatbotConversationRequestDTO>> tmp=new ArrayList<>();
-        List<Long> tmpList=chatbotConversationRepository.getAllseqs();
-        System.out.println("----------------------"+chatbotConversationRepository.findById(new Long(1)).map(mapToChatbotConversationRequestDTO).map(ResponseEntity::ok));
-        for (int i=1;i< tmpList.size()+1;i++){
-            Long xLong=new Long(i);
-//            System.out.println("====================data info==============="+chatbotConversationRepository.findById(xLong).map(mapToChatbotConversationRequestDTO).map(ResponseEntity::ok));
+        List<Long> tmpList=chatbotConversationRepository.getAllIds();
+        System.out.println("-------------tmpList============="+tmpList);
+        for (int i=0;i< tmpList.size();i++){
+            Long xLong=new Long(tmpList.get(i));
+            System.out.println("========================xLong===================="+xLong);
+            System.out.println("====================data info==============="+chatbotConversationRepository.findById(xLong).map(mapToChatbotConversationRequestDTO).map(ResponseEntity::ok));
             tmp.add(chatbotConversationRepository.findById(xLong).map(mapToChatbotConversationRequestDTO));
 
         }
+        System.out.println("========================tmp===================="+tmp);
         JSONObject jsonObject=null;
         jsonObject = convertingJsonData(tmp);
         return jsonObject;
