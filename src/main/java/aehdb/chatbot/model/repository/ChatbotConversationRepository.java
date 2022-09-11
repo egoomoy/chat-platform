@@ -15,6 +15,10 @@ public interface ChatbotConversationRepository extends JpaRepository<ChatbotConv
 
     @Query("select p.id from #{#entityName} p")
     List<Long> getAllIds();
+
+
+    @Query("select p.seq from #{#entityName} p WHERE parent_chatbot_conversation_id is  null")
+    List<Long> getAllseqs();
 //
 //    @Query("SELECT DISTINCT c FROM ChatbotConversation c JOIN FETCH c.chatbotOptionInfo mI JOIN FETCH m.posts p")
 //    List<Member> findByMemberIdsIn(@Param("memberIds") List<Long> memberIds);
