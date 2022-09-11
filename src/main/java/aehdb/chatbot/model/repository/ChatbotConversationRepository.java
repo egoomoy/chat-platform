@@ -13,7 +13,7 @@ import java.util.List;
 
 public interface ChatbotConversationRepository extends JpaRepository<ChatbotConversation, Long> {
 
-    @Query("select p.id from #{#entityName} p")
+    @Query("select p.id from #{#entityName} p WHERE parent_chatbot_conversation_id is  null")
     List<Long> getAllIds();
 
 
