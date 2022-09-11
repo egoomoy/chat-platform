@@ -9,6 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 import java.util.function.Function;
 
 //@RestController
@@ -39,6 +42,22 @@ public class ChatbotController {
     @Autowired
     private ChatbotConversationRepository chatbotConversationRepository;
 
+
+    @GetMapping("/alldata")
+    public List<Optional<ResponseEntity>> getAllData() {
+
+        List<Optional<ResponseEntity>> tmp=new ArrayList<>();
+        List<Long> tmpList=chatbotConversationRepository.getAllIds();
+        System.out.println("----------------------"+chatbotConversationRepository.findById(new Long(1)).map(mapToChatbotConversationRequestDTO).map(ResponseEntity::ok));
+        for (int i=0;i< tmpList.size();i++){
+            Long xLong=new Long(i);
+            System.out.println("====================data info==============="+chatbotConversationRepository.findById(xLong).map(mapToChatbotConversationRequestDTO).map(ResponseEntity::ok));
+            System.out.println("====================type info==============="+chatbotConversationRepository.findById(xLong).map(mapToChatbotConversationRequestDTO).map(ResponseEntity::ok).getClass().getName());
+            tmp.add(chatbotConversationRepository.findById(xLong).map(mapToChatbotConversationRequestDTO).map(ResponseEntity::ok));
+
+        }
+        return tmp;
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<ChatbotConversationRequestDTO> getAllDetails(@PathVariable("id") Long id) {

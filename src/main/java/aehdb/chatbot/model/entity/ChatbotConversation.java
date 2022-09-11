@@ -20,6 +20,7 @@ public class ChatbotConversation {
     private String companyid; // 회사아이디
     private String seq; // 대화내용의 순번
     private String text; // 챗봇내용
+    private String next; // 챗봇내용
     private String optionflag; // 옵션 여부
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -39,13 +40,13 @@ public class ChatbotConversation {
         return childChatbotConversation;
     }
 
-    @Builder
-    public ChatbotConversation(Long id,String companyid, String seq, String text, String optionflag) {
-        this.id=id;
-        this.companyid = companyid;
-        this.seq = seq;
-        this.text = text;
-        this.optionflag = optionflag;
-    }
+//    @Builder
+//    public ChatbotConversation(Long id,String companyid, String seq, String text, String optionflag) {
+//        this.id=id;
+//        this.companyid = companyid;
+//        this.seq = seq;
+//        this.text = text;
+//        this.optionflag = optionflag;
+//    }
 
 }
