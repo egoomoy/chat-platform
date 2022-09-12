@@ -20,8 +20,8 @@ public class LegacyController {
 	private final LegacyService legacyServiceImpl;
 	private final LegacyMapper legacyMapper;
 
-	@GetMapping(value = "/temp/legacies")
-	public ResponseMap legacies(Pageable pageable) throws Exception {
+	@GetMapping(value = "/mng/legacies")
+	public ResponseMap getLegacies(Pageable pageable) throws Exception {
 		List<LegacyDto.Item> legacyList = legacyServiceImpl.selectLegacyList(pageable);
 		List<LegacyDto.Response> legacyResList = legacyMapper.itemToRes(legacyList);
 		return new ResponseMap(200, "", legacyResList);
