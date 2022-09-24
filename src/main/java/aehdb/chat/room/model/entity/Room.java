@@ -38,7 +38,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @DynamicUpdate
-public class Room extends BaseEntity {
+public class
+Room extends BaseEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

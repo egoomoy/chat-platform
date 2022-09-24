@@ -6,7 +6,10 @@ package aehdb.comm.exception;
  * 
  */
 public class CustomException {
-	public static class NotFoundUserInfoException extends RuntimeException {
+    public CustomException(ErrorCode postsNotFound) {
+    }
+
+    public static class NotFoundUserInfoException extends RuntimeException {
 		private static final long serialVersionUID = -8152624378062985303L;
 		private static final String message = "로그인 정보를 확인하세요.";
 
