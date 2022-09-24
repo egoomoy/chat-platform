@@ -16,10 +16,14 @@ import aehdb.mng.user.model.entity.User;
 public interface UserRepository extends JpaRepository<User, Long> {
 
 	@Query("select u from User u left join fetch u.role where u.accntId = :accntId")
-	Optional<User> findByAccntId(@Param("accntId") String accntId);
+	User findByAccntId(@Param("accntId") String accntId);
 
-	@Query("select u from User u left join fetch u.legacy where u.legacy.id = :#{#paramLegacy.id}")
+	@Query("select u from User u left join fetch u.legacy where u.legacy.id = :#{#paramLegacy.id} ")
 	List<User> findByLegacyId(@Param(value = "paramLegacy") Legacy legacy , Pageable pageable);
+
+	@Query("select u from User u left join fetch u.role where u.id = :id")
+	User findOneById(@Param("id") Long id);
+
 
 //	// JPQL 객체 파라미터 쿼리
 //		@Query(value = "select sn from Snack sn where sn.id > :#{#paramSnack.id}")

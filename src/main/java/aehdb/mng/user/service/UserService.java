@@ -15,6 +15,9 @@ public interface UserService {
 
 	public UserDto.Response authenticateUser(UserDto.Request userReq) throws Exception;
 
-	public List<Item> selectUserList(Long legacyId, Pageable pageable) throws Exception;
+	public List<Item> findUserList(UserDto.Request userReq, Pageable pageable) throws Exception;
+	
+	public UserDto.Item findByUserId(Long id) throws Exception;
+
 
 }

@@ -1,10 +1,12 @@
 package aehdb.mng.user.service.impl;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,6 +18,7 @@ import aehdb.comm.util.JwtUtil;
 import aehdb.comm.util.RedisUtil;
 import aehdb.mng.legacy.model.dto.LegacyDto;
 import aehdb.mng.legacy.model.entity.Legacy;
+import aehdb.mng.role.model.dto.RoleDto.Item;
 import aehdb.mng.user.model.dto.CustomUserDetailsDto;
 import aehdb.mng.user.model.dto.UserDto;
 import aehdb.mng.user.model.entity.User;
@@ -32,17 +35,17 @@ public class UserServiceImpl implements UserService {
 	private final UserMapperImpl userMapperImpl;
 	private final JwtUtil jwtUtil;
 	private final RedisUtil redisUtil;
-	
+
 	@Override
 	@Transactional
 	public CustomUserDetailsDto loadUserByAccntid(String accntId) throws Exception {
-		Optional<User> user = userRepository.findByAccntId(accntId);
+		Optional<User> user = Optional.ofNullable(userRepository.findByAccntId(accntId));
 		CustomUserDetailsDto customUserDetailsDto = new CustomUserDetailsDto(user);
 		return customUserDetailsDto;
 	}
 
 	public UserDto.Response authenticateUser(UserDto.Request userReq) throws Exception {
-		Optional<User> user = userRepository.findByAccntId(userReq.getAccntId());
+		Optional<User> user = Optional.ofNullable(userRepository.findByAccntId(userReq.getAccntId()));
 		if (!user.isPresent() || !passwordEncoder.matches(userReq.getPassword(), user.get().getPassword())) {
 			throw new CustomException.NotFoundUserInfoException();
 		} else {
@@ -65,7 +68,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	public UserDto.Response registerUser(UserDto.Request userReq) throws Exception {
-		Optional<User> existed = userRepository.findByAccntId(userReq.getAccntId());
+		Optional<User> existed = Optional.ofNullable(userRepository.findByAccntId(userReq.getAccntId()));
 		if (existed.isPresent()) {
 			throw new CustomException.AccntidExistedException();
 		}
@@ -87,17 +90,32 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<UserDto.Item> selectUserList(Long legacyId, Pageable pageable) throws Exception {
-//		LegacyDto.Item lgcyItem = new LegacyDto.Item();
-//		lgcyItem.setId(legacyId);
-//		Legacy lgcy = legacyRepository.findById(legacyId).get();
+	public List<UserDto.Item> findUserList(UserDto.Request userReq, Pageable pageable) throws Exception {
 		List<UserDto.Item> userItemList = new ArrayList<UserDto.Item>();
+
 		Legacy lgcy = new Legacy();
-		lgcy.setId(legacyId);
+		lgcy.setId(userReq.getLegacyId());
+
 		List<User> user = userRepository.findByLegacyId(lgcy, pageable);
+		
 		for (User u : user) {
 			userItemList.add(userMapperImpl.entitiytoItem(u, new CycleAvoidingMappingContext()));
 		}
 		return userItemList;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public UserDto.Item findByUserId(Long id) throws Exception {
+		UserDto.Item item = new UserDto.Item();
+		Optional<User> user = Optional.ofNullable(userRepository.findOneById(id));
+
+		if (!user.isEmpty()) {
+			CustomUserDetailsDto customUserDetailsDto = new CustomUserDetailsDto(user);
+			item = userMapperImpl.entitiytoItem(user.get(), new CycleAvoidingMappingContext());
+			item.setRole((Collection<Item>) customUserDetailsDto.getAuthorities());
+		}
+
+		return item;
 	}
 }
