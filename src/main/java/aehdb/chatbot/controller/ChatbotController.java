@@ -30,15 +30,14 @@ public class ChatbotController {
 
 
     public JSONObject convertingJsonData(List<Optional<ChatbotConversationRequestDTO>> tmp) {
+        System.out.println("============================alltmp==================="+tmp);
 
-        Map<String,Object> jsonConvertResult=new LinkedHashMap<>();
-        List<Map> optionsList=new ArrayList<>();
-
+        Map<String,Object> jsonConvertResult=new HashMap<>();
         //질문 대 카테고리(부모)
         for (int i=0;i<tmp.size();i++){
             Map<String,Object> jsonConvert=new LinkedHashMap<>();
             Optional<ChatbotConversationRequestDTO> oDto=tmp.get(i);
-
+            List<Map> optionsList=new ArrayList<>();
             jsonConvert.put("text",oDto.get().getText());
             if  (oDto.get().getChildChatbotConversation().size()!=0) {
                 Set<ChatbotConversation> childSet= oDto.get().getChildChatbotConversation();
@@ -54,6 +53,7 @@ public class ChatbotController {
                 //정렬후 순차적으로 리턴
                 for (Integer nKey : testMap.keySet())
                 {
+
                     Map<String, Object> options = new LinkedHashMap<>();
                     options.put("text", testMap.get(nKey));
                     options.put("next", nKey.toString());
@@ -61,12 +61,16 @@ public class ChatbotController {
 
                 }
 
-                jsonConvert.put("options",optionsList);
+                jsonConvert.put("options",List.copyOf(optionsList));
+                optionsList.clear();
             }
+
             String s=String.valueOf(i+1);
             jsonConvertResult.put(s,jsonConvert);
-        }
 
+
+        }
+        System.out.println("===================test123=========="+jsonConvertResult);
         JSONObject jsonObject = new JSONObject(jsonConvertResult);
 
 
@@ -85,6 +89,7 @@ public class ChatbotController {
         for (int i=0;i< tmpList.size();i++){
             Long xLong=new Long(tmpList.get(i));
             tmp.add(chatbotConversationRepository.findById(xLong).map(mapToChatbotConversationRequestDTO));
+            System.out.println("============================test==================="+chatbotConversationRepository.findById(xLong).map(mapToChatbotConversationRequestDTO));
 
         }
 
