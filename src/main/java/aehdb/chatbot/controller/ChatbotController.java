@@ -65,7 +65,7 @@ public class ChatbotController {
                 optionsList.clear();
             }
 
-            String s=String.valueOf(i+1);
+            String s=oDto.get().getSeq().toString();
             jsonConvertResult.put(s,jsonConvert);
 
 
