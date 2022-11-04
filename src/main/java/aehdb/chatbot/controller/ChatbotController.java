@@ -34,19 +34,33 @@ public class ChatbotController {
         Map<String,Object> jsonConvertResult=new LinkedHashMap<>();
         List<Map> optionsList=new ArrayList<>();
 
+        //질문 대 카테고리(부모)
         for (int i=0;i<tmp.size();i++){
             Map<String,Object> jsonConvert=new LinkedHashMap<>();
             Optional<ChatbotConversationRequestDTO> oDto=tmp.get(i);
 
-
             jsonConvert.put("text",oDto.get().getText());
             if  (oDto.get().getChildChatbotConversation().size()!=0) {
-                for (ChatbotConversation chatbotConversation : oDto.get().getChildChatbotConversation()) {
-                    Map<String, Object> options = new LinkedHashMap<>();
-                    options.put("text", chatbotConversation.getText());
-                    options.put("next", chatbotConversation.getNext());
-                    optionsList.add(options);
+                Set<ChatbotConversation> childSet= oDto.get().getChildChatbotConversation();
+                Map<Integer, String> testMap = new HashMap<Integer, String>();
+                // 질문소 카테고리(자식)
+                // Set방식은 순번을 지켜서 받아오지 않음
+                for (ChatbotConversation child : childSet) {
+                    testMap.put(Integer.parseInt(child.getNext()),child.getText());
                 }
+                //object를통한 next키값을 정렬
+                Object[] mapkey = testMap.keySet().toArray();
+                Arrays.sort(mapkey);
+                //정렬후 순차적으로 리턴
+                for (Integer nKey : testMap.keySet())
+                {
+                    Map<String, Object> options = new LinkedHashMap<>();
+                    options.put("text", testMap.get(nKey));
+                    options.put("next", nKey.toString());
+                    optionsList.add(options);
+
+                }
+
                 jsonConvert.put("options",optionsList);
             }
             String s=String.valueOf(i+1);
@@ -54,7 +68,7 @@ public class ChatbotController {
         }
 
         JSONObject jsonObject = new JSONObject(jsonConvertResult);
-        System.out.println("=========jsonObject==========="+jsonObject);
+
 
         return jsonObject;
     }
@@ -66,15 +80,14 @@ public class ChatbotController {
         Map<String, Object> data = new HashMap<String, Object>();
         List<Optional<ChatbotConversationRequestDTO>> tmp=new ArrayList<>();
         List<Long> tmpList=chatbotConversationRepository.getAllIds();
+        Collections.sort(tmpList);
         System.out.println("-------------tmpList============="+tmpList);
         for (int i=0;i< tmpList.size();i++){
             Long xLong=new Long(tmpList.get(i));
-            System.out.println("========================xLong===================="+xLong);
-            System.out.println("====================data info==============="+chatbotConversationRepository.findById(xLong).map(mapToChatbotConversationRequestDTO).map(ResponseEntity::ok));
             tmp.add(chatbotConversationRepository.findById(xLong).map(mapToChatbotConversationRequestDTO));
 
         }
-        System.out.println("========================tmp===================="+tmp);
+
         JSONObject jsonObject=null;
         jsonObject = convertingJsonData(tmp);
         return jsonObject;
