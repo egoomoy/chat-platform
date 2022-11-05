@@ -2,8 +2,10 @@ package aehdb.chatbot.controller;
 
 
 import aehdb.chatbot.model.dto.ChatbotConversationRequestDTO;
+import aehdb.chatbot.model.entity.ChatbotAdminInsert;
 import aehdb.chatbot.model.entity.ChatbotConversation;
 import aehdb.chatbot.model.repository.ChatbotConversationRepository;
+import aehdb.chatbot.model.repository.ChatbotInsertRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,6 +19,8 @@ import java.util.function.Function;
 
 import org.json.simple.JSONObject;
 
+import javax.persistence.EntityManager;
+
 
 @RestController
 @RequiredArgsConstructor
@@ -24,8 +28,9 @@ import org.json.simple.JSONObject;
 public class ChatbotController {
 
     @Autowired
-    private ChatbotConversationRepository chatbotConversationRepository;
-
+    public ChatbotConversationRepository chatbotConversationRepository;
+    @Autowired
+    private ChatbotInsertRepository chatbotInsertRepository;
 
     public JSONObject convertingJsonData(List<Optional<ChatbotConversationRequestDTO>> tmp) {
         System.out.println("============================alltmp==================="+tmp);
@@ -76,23 +81,6 @@ public class ChatbotController {
 
         return jsonObject;
     }
-//    @GetMapping("/chatalldata")
-//    public ResponseEntity<Object> getChatAllData() {
-//
-//        List<ChatbotConversationRequestDTO> entityList = chatbotConversationRepository.getAllchatbotConversation();
-//
-//        List<JSONObject> entities = new ArrayList<JSONObject>();
-//        for (ChatbotConversationRequestDTO n : entityList) {
-//            JSONObject ChatbotConversationRequestDTO = new JSONObject();
-//            ChatbotConversationRequestDTO.put("id", n.getId());
-//            ChatbotConversationRequestDTO.put("address", n.getParentChatbotConversation());
-//            entities.add(ChatbotConversationRequestDTO);
-//        }
-//        return new ResponseEntity<Object>(entities, HttpStatus.OK);
-//    }
-
-
-
 
     @GetMapping("/chatalldata")
     public List<Object> getChatAllData() {
@@ -132,12 +120,24 @@ public class ChatbotController {
         return jsonObject;
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<ChatbotConversationRequestDTO> getAllDetails(@PathVariable("id") Long id) {
-        System.out.println("HJIHIHI");
-        return chatbotConversationRepository.findById(id).map(mapToChatbotConversationRequestDTO).map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+    @GetMapping("/insertdata")
+    public ChatbotConversation getAllData2() {
+
+
+
+        ChatbotConversation c= new ChatbotConversation();
+        c.setId(new Long(11));
+        c.setCompanyid("H199");
+
+        c.setNext(null);
+        c.setOptionflag("N");
+        c.setSeq("1");
+        c.setText("유가가가가");
+        c.setParentId("1");
+
+        return chatbotConversationRepository.save(c);
     }
+
 
     private Function<ChatbotConversation, ChatbotConversationRequestDTO> mapToChatbotConversationRequestDTO = p ->ChatbotConversationRequestDTO.builder().id(p.getId()).companyid(p.getCompanyid())
             .seq(p.getSeq()).text(p.getText()).childChatbotConversation(p.getchildChatbotConversation()).build();
