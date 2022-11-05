@@ -6,18 +6,16 @@ import aehdb.chatbot.model.entity.ChatbotConversation;
 import aehdb.chatbot.model.repository.ChatbotConversationRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 import java.util.function.Function;
 
 
-import org.json.simple.parser.JSONParser;
-
 import org.json.simple.JSONObject;
-import org.json.simple.JSONArray;
-
 
 
 @RestController
@@ -77,6 +75,40 @@ public class ChatbotController {
 
 
         return jsonObject;
+    }
+//    @GetMapping("/chatalldata")
+//    public ResponseEntity<Object> getChatAllData() {
+//
+//        List<ChatbotConversationRequestDTO> entityList = chatbotConversationRepository.getAllchatbotConversation();
+//
+//        List<JSONObject> entities = new ArrayList<JSONObject>();
+//        for (ChatbotConversationRequestDTO n : entityList) {
+//            JSONObject ChatbotConversationRequestDTO = new JSONObject();
+//            ChatbotConversationRequestDTO.put("id", n.getId());
+//            ChatbotConversationRequestDTO.put("address", n.getParentChatbotConversation());
+//            entities.add(ChatbotConversationRequestDTO);
+//        }
+//        return new ResponseEntity<Object>(entities, HttpStatus.OK);
+//    }
+
+
+
+
+    @GetMapping("/chatalldata")
+    public List<Object> getChatAllData() {
+
+        List<Object> alt=new ArrayList<Object>();
+
+//        ResponseEntity a= chatbotConversationRepository.findById(new Long(1)).map(mapToChatbotConversationRequestDTO).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
+//        ResponseEntity b= chatbotConversationRepository.findById(new Long(2)).map(mapToChatbotConversationRequestDTO).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
+        List<Long> list= chatbotConversationRepository.getAllIds();
+        for (int i=0;i<list.size();i++){
+            Long xLong=new Long(list.get(i));
+            ResponseEntity tmp= chatbotConversationRepository.findById(xLong).map(mapToChatbotConversationRequestDTO).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
+            alt.add(tmp.getBody());
+        }
+
+        return alt;
     }
 
 
