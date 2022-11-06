@@ -44,7 +44,7 @@ public class ChatbotMessage extends BaseEntity {
     @Column(name = "parent_id")
 	private Long parentId;
 
-	private Integer seq;
+//	private Integer seq;
 	
 	@OneToMany(fetch =FetchType.LAZY, mappedBy = "parentChatBotData")
 	private List<ChatbotMessage> childChatBotData =  new ArrayList<ChatbotMessage>();

@@ -17,7 +17,7 @@ public class ChatbotMessageDTO {
 		private String optnNm;
 		private String message;
 		private Long parentId;
-		private Integer seq;
+//		private Integer seq;
 		private List<ChildChatbotMessageDTO.Item> childChatBotData; /* ChildChatbotMessageDTO 자식의 자식이 나오는 불필요 연결을 끊는다. */
 	}
 
@@ -29,7 +29,7 @@ public class ChatbotMessageDTO {
 		private String optnNm;
 		private String message;
 		private Long parentId;
-		private Integer seq;
+//		private Integer seq;
 		private List<ChildChatbotMessageDTO.Item> childChatBotData;
 	}
 	

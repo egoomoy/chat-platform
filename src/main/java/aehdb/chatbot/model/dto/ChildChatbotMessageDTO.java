@@ -15,7 +15,7 @@ public class ChildChatbotMessageDTO {
 		private String optnNm;
 		private String message;
 		private Long parentId;
-		private Integer seq;
+//		private Integer seq;
 
 	}
 
@@ -27,7 +27,7 @@ public class ChildChatbotMessageDTO {
 		private String optnNm;
 		private String message;
 		private Long parentId;
-		private Integer seq;
+//		private Integer seq;
 	}
 
 	@Getter
