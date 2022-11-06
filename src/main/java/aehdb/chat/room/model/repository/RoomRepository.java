@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;
 //import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import aehdb.chat.room.model.entity.Room;
 
@@ -17,7 +18,7 @@ import aehdb.chat.room.model.entity.Room;
  * 최근에는 JpaRepository를 이용한다.
  * 복잡한 레포를 짤 때는 엔티티매니저를 사용해야할까?
  */
-
+@Repository
 public interface RoomRepository extends JpaRepository<Room, Long> {
 
 //	@Query("select distinct r from Room r left join r.message")

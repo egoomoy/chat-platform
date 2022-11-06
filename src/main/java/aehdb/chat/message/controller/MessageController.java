@@ -39,7 +39,7 @@ public class MessageController {
 	}
 
 	@GetMapping("/chat/messages/{id}")
-	public ResponseMap getMessageDtos(@PathVariable("id") Long id) throws Exception {
+	public ResponseMap getMessage(@PathVariable("id") Long id) throws Exception {
 		// 카프카의 보관주기를 이용하여, 데이터 베이스를 읽지 않고 바로 컨슘해서 가져올 수 있지 않을까?
 		List<MessageDto.Item> MessageItemList = messageSerivce.selectMessageList(id);
 		List<MessageDto.Response> responseMessageList = upgradeMessageMapperImpl.itemToRes(MessageItemList);

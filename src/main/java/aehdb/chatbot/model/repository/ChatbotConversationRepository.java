@@ -1,14 +1,11 @@
 package aehdb.chatbot.model.repository;
 
-import aehdb.chatbot.model.dto.ChatbotConversationRequestDTO;
-import aehdb.chatbot.model.entity.Board2;
-import aehdb.chatbot.model.entity.ChatbotConversation;
-import aehdb.mng.board.model.entity.Board;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
-import java.util.List;
+import aehdb.chatbot.model.entity.ChatbotConversation;
 
 
 public interface ChatbotConversationRepository extends JpaRepository<ChatbotConversation, Long> {

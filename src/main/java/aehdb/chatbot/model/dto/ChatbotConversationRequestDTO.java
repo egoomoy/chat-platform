@@ -1,14 +1,15 @@
 package aehdb.chatbot.model.dto;
 
-import aehdb.chatbot.model.entity.ChatbotConversation;
-import aehdb.chatbot.model.entity.Person;
+import java.util.Set;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import lombok.*;
 
-import java.util.Set;
+import aehdb.chatbot.model.entity.ChatbotConversation;
+import lombok.Builder;
+import lombok.Data;
 
 
 @Data
