@@ -31,15 +31,15 @@ public class ChatbotMessage extends BaseEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Convert(converter = TFCodeConverter.class)
-	@Column(columnDefinition = "char")
-	private TFCode hasOptn = TFCode.FALSE;
-	
+//	@Convert(converter = TFCodeConverter.class)
+//	@Column(columnDefinition = "char")
+//	private TFCode hasOptn = TFCode.FALSE;
+//	
 	@Column(length = 500)
 	private String optnNm;
 	
 	@Column(length = 500)
-	private String botMessage;
+	private String message;
 
     @Column(name = "parent_id")
 	private Long parentId;

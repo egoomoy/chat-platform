@@ -1,6 +1,5 @@
 package aehdb.chatbot.model.dto;
 
-import aehdb.comm.model.converter.TFCode;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,9 +12,8 @@ public class ChildChatbotMessageDTO {
 	@AllArgsConstructor
 	public static class Item {
 		private Long id;
-		private TFCode hasOptn = TFCode.FALSE;
 		private String optnNm;
-		private String botMessage;
+		private String message;
 		private Long parentId;
 		private Integer seq;
 
@@ -26,9 +24,8 @@ public class ChildChatbotMessageDTO {
 	@NoArgsConstructor
 	public static class Response {
 		private Long id;
-		private TFCode hasOptn = TFCode.FALSE;
 		private String optnNm;
-		private String botMessage;
+		private String message;
 		private Long parentId;
 		private Integer seq;
 	}
