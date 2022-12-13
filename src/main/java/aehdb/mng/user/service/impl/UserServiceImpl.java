@@ -113,7 +113,7 @@ public class UserServiceImpl implements UserService {
 		if (!user.isEmpty()) {
 			CustomUserDetailsDto customUserDetailsDto = new CustomUserDetailsDto(user);
 			item = userMapperImpl.entitiytoItem(user.get(), new CycleAvoidingMappingContext());
-			item.setRole((Collection<Item>) customUserDetailsDto.getAuthorities());
+//			item.setRole((Collection<Item>) customUserDetailsDto.getAuthorities());
 		}
 
 		return item;
